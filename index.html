@@ -153,6 +153,112 @@
             color: inherit;
             display: inline-block;
         }
+
+        .prod-header{ /*what we offer*/
+            font-family: 'Montserrat', sans-serif;
+            font-size: 40px;
+            text-align: center;
+            margin: 60px 0px 10px 0px;
+        }
+
+        .product-container {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 20px;
+        }
+
+        .product-container2 {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 20px;
+        }
+
+        .product-card {
+            display: inline-block;
+            width: 580px;
+            margin: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .product-image {
+            width: 550px;
+            height: 550px;
+            overflow: hidden;
+            margin: 0 auto 10px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-name {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .scroll-button {
+            position: absolute;
+            top: 143%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: gray; /*subject to change of the bg color of scroll button*/
+            color: white; /*subject to change the color of the color if scroll icon*/
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .scroll-button2 {
+            position: absolute;
+            top: 323%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: gray; /*subject to change of the bg color of scroll button*/
+            color: white; /*subject to change the color of the color if scroll icon*/
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        #scrollLeftBtn,#scrollLeftBtn2 {
+            left: 10px;
+            opacity: 50%;
+        }
+        
+        #scrollRightBtn,#scrollRightBtn2 {
+            right: 10px;
+            opacity: 50%;
+        }
+
+        .about-section {
+            /* Existing styles... */
+            background-image: url("img/bg.png"); /* Initial background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 1000px;
+        }
+        
+        .about-section h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .about-section p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        
     </style>
 </head>
 <header>
@@ -202,10 +308,173 @@
         <a href="" class="btn">SHOP NOW</a>
     </div>
 
+    <h1 class="prod-header">WHAT WE OFFER</h1>
+    <div class="product-container">
+        <button class="scroll-button" id="scrollLeftBtn"><i class="fas fa-chevron-left"></i></button>
+        <button class="scroll-button" id="scrollRightBtn"><i class="fas fa-chevron-right"></i></button>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic2.png" alt="Product 1">
+            </div>
+            <div class="product-name">Different Color</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic3.png" alt="Product 2">
+            </div>
+            <div class="product-name">Different Sizes</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic4.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic2.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic3.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic4.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic2.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic3.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic4.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic2.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <!-- Add more product cards as needed... -->
+
+    </div>
+
+    <div class="about-section" id="aboutSection">
+        <h1>About Us</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat mauris at bibendum posuere. Praesent at justo et odio dignissim malesuada non a mi. Aenean auctor turpis nec velit placerat, sit amet cursus enim ultricies. Suspendisse eu diam nec dui dignissim consequat. Nulla facilisi. Integer sollicitudin feugiat nunc sit amet convallis.</p>
+        <p>Mauris fermentum odio id dui condimentum, in congue felis finibus. Sed in metus eu elit sagittis semper. Duis et enim et velit euismod facilisis vel nec est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc sit amet nunc sit amet magna ullamcorper dictum. Nulla facilisi. Fusce sagittis massa vitae volutpat fermentum.</p>
+    </div>
+
+    <h1 class="prod-header">TRENDING PRODUCTS</h1>
+    <div class="product-container2">
+        <button class="scroll-button2" id="scrollLeftBtn2"><i class="fas fa-chevron-left"></i></button>
+        <button class="scroll-button2" id="scrollRightBtn2"><i class="fas fa-chevron-right"></i></button>
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic2.png" alt="Product 1">
+            </div>
+            <div class="product-name">Different Color</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic3.png" alt="Product 2">
+            </div>
+            <div class="product-name">Different Sizes</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic4.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic2.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic3.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic4.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic2.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic3.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic4.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="img/pic2.png" alt="Product 3">
+            </div>
+            <div class="product-name">Amazing Quality</div>
+        </div>
+
+        <!-- Add more product cards as needed... -->
+
+    </div>
+
 </body>
 <footer>
 </footer>
 <script>
+    /*for menu*/
     const menuBtn = document.getElementById('menuBtn');
     const menuContainer = document.getElementById('menuContainer');
     const closeMenuBtn = document.getElementById('closeMenuBtn');
@@ -225,5 +494,48 @@
             menuContainer.style.display = 'none';
         }
     });
+
+    /for the scroll of products*/
+    const scrollLeftBtn = document.getElementById('scrollLeftBtn');
+const scrollRightBtn = document.getElementById('scrollRightBtn');
+const productContainer = document.querySelector('.product-container');
+
+scrollLeftBtn.addEventListener('click', () => {
+    productContainer.scrollBy({ left: -350, behavior: 'smooth' });
+});
+
+scrollRightBtn.addEventListener('click', () => {
+    productContainer.scrollBy({ left: 350, behavior: 'smooth' });
+});
+
+const scrollLeftBtn2 = document.getElementById('scrollLeftBtn2');
+const scrollRightBtn2 = document.getElementById('scrollRightBtn2');
+const productContainer2 = document.querySelector('.product-container2');
+
+scrollLeftBtn2.addEventListener('click', () => {
+    productContainer2.scrollBy({ left: -350, behavior: 'smooth' });
+});
+
+scrollRightBtn2.addEventListener('click', () => {
+    productContainer2.scrollBy({ left: 350, behavior: 'smooth' });
+});
+
+
+const aboutSection = document.getElementById('aboutSection');
+    const backgroundImages = [
+        "img/bg1.png",
+        "img/pic2.png",
+        "img/pic3.png",
+        "img/pic4.png"
+    ];
+    let currentIndex = 0;
+
+    function changeBackgroundImage() {
+        currentIndex = (currentIndex + 1) % backgroundImages.length;
+        aboutSection.style.backgroundImage = `url(${backgroundImages[currentIndex]})`;
+    }
+
+    // Change background image every 5 seconds (5000 milliseconds)
+    setInterval(changeBackgroundImage, 5000);
 </script>
 </html>
