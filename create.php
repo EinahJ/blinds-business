@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 // Check if the data was inserted successfully
                 if (mysqli_stmt_affected_rows($stmt) > 0) {
                     // Data inserted successfully, redirect to profile.php
-                    header("Location: home.php");
+                    header("Location: login.php");
                     die;
                 } else {
                   echo '<p class="custom-text">Failed to create an account.</p>';
