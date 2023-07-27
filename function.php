@@ -16,7 +16,7 @@ function check_login($con)
     }
 
     // Determine the profile link based on the login status
-    $profile_link = isset($_SESSION['user_id']) ? "Myprofile.php" : "login.php";
+    $profile_link = isset($_SESSION['user_id']) ? "profile.php" : "login.php";
 
     // Return both the user data and profile link as separate values
     return array('user_data' => $user_data, 'profile_link' => $profile_link);

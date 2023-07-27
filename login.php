@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     if (!empty($email) && !empty($password)) {
 
-        $query = "SELECT * FROM users WHERE email = ?";
+        $query = "SELECT * FROM user WHERE email = ?";
         $stmt = mysqli_prepare($con, $query);
         mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
@@ -23,6 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             // Verify the hashed password
             if (password_verify($password, $user_data['password'])) {
                 $_SESSION['user_id'] = $user_data['user_id'];
+
+                // Check if the user is an admin
+                if ($user_data['privilege'] === 'admin') {
+                    header("Location: profile.php");
+                } else {
                     header("Location: home.php");
                 }
                 die;
@@ -35,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     } else {
         echo '<p class="custom-text">Please fill out all input fields.</p>';
     }
-
+}
 ?>
 
 <!DOCTYPE html>

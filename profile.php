@@ -1,3 +1,9 @@
+<?php
+
+include ("auth.php");
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -162,6 +168,7 @@
             border-radius: 50%;
             margin: 0 auto;
             background-color: #ddd;
+            margin-bottom: 10px;
             /* You can add an image here using background-image if you have one. */
         }
 
@@ -262,19 +269,30 @@
 <body>
 <body>
     <div id="profileDetails">
-        <div class="profile-image"></div>
+        <div class="profile-image"><img class="profile-image" src="img/Logo.png"></div>
         <div class="profile-details-container">
-            <div class="profile-name">John Doe</div>
-            <div class="profile-email">john.doe@example.com</div>
+            <div class="profile-name">
+            <div class="info-value"><?php echo $user_data['name']; ?></div>
+            </div>
+
+            <div class="profile-email">
+            <div class="info-value"><?php echo $user_data['email']; ?></div>
+            </div>
             <div class="profile-details">
-                <h3>Male</h3>
-                <h3>09-405-6230</h3>
-                <h3>123 Main PUP Street Manila City</h3>
+                <div class="info-value"><?php echo $user_data['gender']; ?></div>
+                
+                <div class="info-value"><?php echo $user_data['contact']; ?></div>
+                
+                <div class="info-value"><?php echo $user_data['address']; ?></div>
             </div>
             <div class="profile-buttons">
+            <a href="editprofile.php">
                 <button>Edit Profile</button>
+            </a>
                 <button>Change Password</button>
+                <a href="logout.php">
                 <button>Logout</button>
+                </a>
             </div>
 
             <!-- Add more profile details here such as age, location, etc. -->
