@@ -2,7 +2,7 @@
 session_start();
 
 include("connection.php");
-include("functions.php");
+include("function.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $name = $_POST['name'];
@@ -19,18 +19,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 // Passwords match, proceed with registration
                 $user_id = random_num(10);
                 $privilege = 'user';
+
                 // Hash the password
                 $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-                $query = "INSERT INTO users (user_id, name, email, contact, address, email, password, privilege) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                $query = "INSERT INTO user (user_id, name, email, gender, contact, address, password, privilege) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
                 $stmt = mysqli_prepare($con, $query);
-                mysqli_stmt_bind_param($stmt, "isssssss", $user_id, $first_name, $last_name, $contact, $address, $email, $hashed_password, $privilege);
+                mysqli_stmt_bind_param($stmt, "isssssss", $user_id, $name, $email, $gender, $contact, $address, $hashed_password, $privilege);
                 mysqli_stmt_execute($stmt);
 
                 // Check if the data was inserted successfully
                 if (mysqli_stmt_affected_rows($stmt) > 0) {
                     // Data inserted successfully, redirect to profile.php
-                    header("Location: profile.php");
+                    header("Location: home.php");
                     die;
                 } else {
                   echo '<p class="custom-text">Failed to create an account.</p>';
@@ -190,6 +191,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             width: 300px;
             text-align: center;
             z-index: 2;
+
         }
         
         #regForm h2 {
@@ -298,7 +300,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <body>
     <div id="regForm">
         <h2>Create Account</h2>
-        <form>
+        <form method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required><br>
 
@@ -318,7 +320,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <input type="password" id="password" name="password" required><br>
 
             <label for="password">Confirm Password:</label>
-            <input type="password" id="Cpassword" name="Cpassword" required><br>
+            <input type="password" id="Cpassword" name="confirm-password" required><br>
 
 
             <button type="submit">Register</button>

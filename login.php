@@ -1,3 +1,43 @@
+<?php
+session_start();
+
+include ("connection.php");
+include ("function.php");
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    if (!empty($email) && !empty($password)) {
+
+        $query = "SELECT * FROM users WHERE email = ?";
+        $stmt = mysqli_prepare($con, $query);
+        mysqli_stmt_bind_param($stmt, "s", $email);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        if ($result && mysqli_num_rows($result) > 0) {
+            $user_data = mysqli_fetch_assoc($result);
+            
+            // Verify the hashed password
+            if (password_verify($password, $user_data['password'])) {
+                $_SESSION['user_id'] = $user_data['user_id'];
+                    header("Location: home.php");
+                }
+                die;
+            } else {
+                echo '<p class="custom-text">Invalid password.</p>';
+            }
+        } else {
+            echo '<p class="custom-text">User not found.</p>';
+        }
+    } else {
+        echo '<p class="custom-text">Please fill out all input fields.</p>';
+    }
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>

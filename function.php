@@ -6,7 +6,7 @@ function check_login($con)
 
     if (isset($_SESSION['user_id'])) {
         $id = $_SESSION['user_id'];
-        $query = "SELECT * FROM users WHERE user_id = '$id' LIMIT 1";
+        $query = "SELECT * FROM user WHERE user_id = '$id' LIMIT 1";
 
         $result = mysqli_query($con, $query);
 
@@ -16,7 +16,7 @@ function check_login($con)
     }
 
     // Determine the profile link based on the login status
-    $profile_link = isset($_SESSION['user_id']) ? "MyProfile.php" : "profile.php";
+    $profile_link = isset($_SESSION['user_id']) ? "Myprofile.php" : "login.php";
 
     // Return both the user data and profile link as separate values
     return array('user_data' => $user_data, 'profile_link' => $profile_link);
