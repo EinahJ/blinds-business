@@ -2,6 +2,35 @@
 
 include("auth.php");
 
+// Check if the form is submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get the form data
+    $name = $_POST['name'];
+    $contact = $_POST['contact'];
+    $win_no = $_POST['win_no']; // Corrected to match the form field name
+    $dov = $_POST['dov'];
+    $address = $_POST['address'];
+
+    // Insert the data into the database, including the file path
+    $query = "INSERT INTO sched (name, contact, win_no, dov, address) VALUES (?, ?, ?, ?, ?)";
+    $stmt = mysqli_prepare($con, $query);
+    if (!$stmt) {
+        die("Error in preparing the statement: " . mysqli_error($con));
+    }
+
+    mysqli_stmt_bind_param($stmt, "sssss", $name, $contact, $win_no, $dov, $address);
+    $result = mysqli_stmt_execute($stmt);
+    if (!$result) {
+        die("Error in executing the statement: " . mysqli_error($con));
+    }
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($con);
+
+    header("Location: login.php");
+    // Optionally, display a success message to the user
+    echo "Message sent successfully!";
+}
 ?>
 
 <!DOCTYPE html>
@@ -535,7 +564,7 @@ include("auth.php");
 <span id="closeFormBtn" class="close-form-btn">&times;</span>
     <div class="popup-content">
         <h2>Schedule Visit</h2>
-        <form method="POST" action="schedule.php">
+        <form method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -543,15 +572,15 @@ include("auth.php");
             <input type="text" id="contact" name="contact" required>
 
             <label for="num_windows">Number of Windows:</label>
-            <input type="number" id="num_windows" name="num_windows" min="1" required>
+            <input type="number" id="num_windows" name="win_no" min="1" required>
 
             <label for="date">Date of Visit:</label>
-            <input type="date" id="date" name="date" required>
+            <input type="date" id="date" name="dov" required>
 
             <label for="address">Address:</label>
             <input type="text" id="address" name="address" required>
 
-            <input type="submit" value="Schedule Visit">
+            <button type="submit" value="Schedule Visit">Schedule Now</button>
             <button type="button" id="closePopupBtn">Close</button>
         </form>
     </div>
