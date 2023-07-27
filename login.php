@@ -211,7 +211,7 @@
 
     <nav>
         <ul>
-            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.php">HOME</a></li>
             <li><a href="">PRODUCTS</a></li>
             <li><a href="">CONTACTS</a></li>
         </ul>
@@ -226,7 +226,7 @@
         </div>
         <ul class="menuList">
             <li>
-                <a href="login.html"><i class="fas fa-user"></i>Account</a>
+                <a href="index.php"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
                 <a href="#"><i class="fas fa-calendar"></i>Schedule</a>
@@ -254,7 +254,7 @@
             <input type="password" id="password" name="password" required><br>
 
             <div class="create-account-container">
-                <a href="create.html" id="createAccountLink">Create Account</a>
+                <a href="create.php" id="createAccountLink">Create Account</a>
             </div>
 
             <button type="submit">Login</button>
