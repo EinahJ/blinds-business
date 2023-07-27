@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 if ($user_data['privilege'] === 'admin') {
                     header("Location: none.php");
                 } else {
-                    header("Location: profile.php");
+                    header("Location: home.php");
                 }
                 die;
             } else {
@@ -273,7 +273,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
         <ul class="menuList">
             <li>
-                <a href="index.php"><i class="fas fa-user"></i>Account</a>
+                <a href="<?php echo $profile_link; ?>"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
                 <a href="#"><i class="fas fa-calendar"></i>Schedule</a>

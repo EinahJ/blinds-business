@@ -1,3 +1,9 @@
+<?php
+
+include("auth.php");
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -466,7 +472,7 @@
         </div>
         <ul class="menuList">
             <li>
-                <a href="login.php"><i class="fas fa-user"></i>Account</a>
+                <a href="<?php echo $profile_link; ?>"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
                 <a href="#"><i class="fas fa-calendar"></i>Schedule</a>
@@ -478,7 +484,7 @@
                 <a href="#"><i class="fas fa-comments"></i>Support</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
             </li>
         </ul>
     </div>
