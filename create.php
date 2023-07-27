@@ -190,10 +190,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             padding: 40px 60px 40px 40px;
             margin: 50px auto;
-            width: 300px;
+            width: 500px;
             text-align: center;
-            z-index: 2;
-
         }
         
         #regForm h2 {
@@ -215,11 +213,27 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             margin-bottom: 8px;
             text-align: left;
         }
+
+        #regForm .container{
+            display: flex;
+        }
+
+        #regForm .container input{
+            margin-right: 5px;
+        }
+
+        #regForm .container2{
+            display: flex;
+        }
+
+        #regForm .container2 input{
+            margin-right: 5px;
+        }
         
         #regForm input[type="text"],
         #regForm input[type="email"],
         #regForm input[type="password"] {
-            width: 100%;
+            width: 95%;
             padding: 12px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -303,27 +317,23 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div id="regForm">
         <h2>Create Account</h2>
         <form method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
+            <input type="text" id="name" name="name" placeholder="Name" required><br>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
+            <div class="container">
+            <input type="email" id="email" name="email" placeholder="Email" required><br>
 
-            <label for="gender">Gender:</label>
-            <input type="text" id="gender" name="gender" required><br>
+            <input type="text" id="gender" name="gender" placeholder="Gender" required><br>
+            </div>
 
-            <label for="contact">Contact:</label>
-            <input type="text" id="contact" name="contact" required><br>
+            <div class="container2">
+            <input type="text" id="contact" name="contact" placeholder="Contact Number" required><br>
 
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required><br>
+            <input type="text" id="address" name="address" placeholder="Home Address" required><br>
+            </div>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br>
+            <input type="password" id="password" name="password" placeholder="Password" required><br>
 
-            <label for="password">Confirm Password:</label>
-            <input type="password" id="Cpassword" name="confirm-password" required><br>
-
+            <input type="password" id="Cpassword" name="confirm-password" placeholder="Confirm Password" required><br>
 
             <button type="submit">Register</button>
         </form>
