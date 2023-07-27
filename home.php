@@ -405,6 +405,18 @@ include("auth.php");
         margin-right: 5px;
     }
 
+    .footer-email {
+        margin: 5px auto;
+        padding: 7px 10px;
+        background-color: white;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 4px;
+        width: 90%;
+    }
+
     .gallery {
         flex: 1;
         max-width: 10%;
@@ -523,7 +535,7 @@ include("auth.php");
                 <a href="#"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-comments"></i>Support</a>
+                <a href="support.php"><i class="fas fa-comments"></i>Support</a>
             </li>
         </ul>
     </div>
@@ -554,6 +566,7 @@ include("auth.php");
             <button type="button" id="closePopupBtn">Close</button>
         </form>
     </div>
+    
 </div>
 
     <div class="banner">
@@ -767,14 +780,12 @@ include("auth.php");
     <div class="newsletter">
         <h1>Newsletter</h1>
         <p>Join our email for tips and useful information</p>
-        <button class="btn1">ENTER YOUR EMAIL</button><br>
+        <input type="text" class="footer-email" placeholder="Enter your email">
         <button class="btn2">SUBSCRIBE</button>
         <div class="newsletter-foot">
             <p>Follow us</p>
             <a href="https://www.facebook.com/ecawindowblindstrading" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
             <a href="ecawindowblindstrading@gmail.com" target="_blank"><i class="fab fa-google"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 
@@ -878,5 +889,8 @@ intervalId = setInterval(changeBackgroundImage, 3000);
             popupForm.style.display = 'none';
         }
     });
+
+    
+
 </script>
 </html>

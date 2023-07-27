@@ -1,13 +1,9 @@
-<?php
-
-include ("auth.php");
-
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Profile</title>
+    <title>Contact Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -199,28 +195,30 @@ include ("auth.php");
             display: inline-block;
         }
 
-        #profileDetails {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #f9f9f9;
+        .contact-form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px 40px 20px 20px;
+            background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            padding: 40px 80px;
-            width: 400px;
-            text-align: center;
-            z-index: 2;
+            margin-top: 50px;
         }
-        
-        #profileDetails h2 {
+
+        .contact-form-container h2 {
             font-family: 'Montserrat', sans-serif;
             font-size: 24px;
             margin-bottom: 20px;
             color: #333;
+            text-align: center;
         }
-        
-        #profileDetails p {
+
+        .contact-form-container form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form-container label {
             font-family: 'Montserrat', sans-serif;
             font-size: 16px;
             color: #333;
@@ -228,84 +226,174 @@ include ("auth.php");
             text-align: left;
         }
 
-        #profileDetails i {
-            margin-right: 10px;
+        .contact-form-container input[type="text"],
+        .contact-form-container input[type="email"],
+        .contact-form-container textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
             font-size: 16px;
-            color: gray;
-            margin-bottom: 8px;
-            text-align: left;
-        }
-        
-        #profileDetails .profile-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin: 0 auto;
-            background-color: #ddd;
-            margin-bottom: 10px;
-            /* You can add an image here using background-image if you have one. */
         }
 
-        #profileDetails .profile-name {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
+        .contact-form-container textarea {
+            resize: vertical;
+            min-height: 150px;
         }
 
-        #profileDetails .profile-email {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .profile-details {
-            align-items: center;
-            justify-content: center;
-        }
-
-        .profile-details .info-value{
-            text-align: left;
-            margin-right: 10px;
-            font-size: 15px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .profile-details .info-Gvalue{
-            text-align: left;
-            margin-right: 10px;
-            font-size: 15px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-transform: capitalize;
-        }
-
-
-        #profileDetails .profile-details-container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .profile-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .profile-buttons button {
-            padding: 10px 10px;
-            margin: 0 5px;
+        .contact-form-container input[type="submit"] {
+            padding: 12px 20px;
             background-color: #af733f;
             color: #fff;
             border: none;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 10px;
+            font-size: 16px;
             transition: background-color 0.3s;
+            width: 105%;
         }
 
-        .profile-buttons button:hover {
+        .contact-form-container input[type="submit"]:hover {
             background-color: #955d32;
         }
+
+        footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 20px;
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+    }
+
+    .contacts {
+        flex: 1;
+        max-width: 20%;
+        margin-left: 50px;
+        margin-right: 250px;
+    }
+
+    .contactsHead {
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-logo img {
+        width: 55px;
+        height: 55px;
+        margin-right: 10px;
+    }
+
+    .contactdesc h5 {
+        font-size: 25px;
+    }
+
+    .contactdesc p {
+        font-size: 15px;
+    }
+
+    .contacts h6 {
+        font-size: 12px;
+        margin: 10px 0;
+    }
+
+    .contactInfo {
+        margin-top: 10px;
+        border-top: 1px solid white;
+        padding-top: 10px; /* Add padding to the top */
+    }
+
+    .contactInfo i {
+        margin-right: 5px;
+        margin-bottom: 10px;
+    }
+
+    .contactInfo span {
+        font-size: 12px;
+    }
+
+    .newsletter {
+        flex: 1;
+        max-width: 16%;
+        text-align: left;
+        padding: 0 10px;
+        margin-right: 300px;
+    }
+
+    .newsletter h1 {
+        font-size: 30px;
+    }
+
+    .newsletter p {
+        font-size: 15px;
+        margin: 10px 0;
+    }
+
+    .newsletter .btn1,
+    .newsletter .btn2 {
+        margin: 5px auto;
+        padding: 7px 10px;
+        background-color: #af733f;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .newsletter-foot {
+        display: flex;
+        align-items: center;
+    }
+
+    .newsletter-foot p {
+        font-size: 15px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+
+    .newsletter-foot i {
+        font-size: 15px;
+        margin-right: 5px;
+    }
+
+    .footer-email {
+        margin: 5px auto;
+        padding: 7px 10px;
+        background-color: white;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 4px;
+        width: 90%;
+    }
+
+    .gallery {
+        flex: 1;
+        max-width: 10%;
+        text-align: center;
+    }
+
+    .gallery h6 {
+        font-size: 20px;
+        margin-left: 80px;
+    }
+
+    .row1, .row2{
+        display: flex;
+    }
+
+    .row1 img,
+    .row2 img {
+        width: 105px;
+        height: 105px;
+        margin: 5px;
+    }
+
+        
 
         
     </style>
@@ -343,9 +431,24 @@ include ("auth.php");
     </div>
 </header>
 <body>
-<body>
 
-<div id="popupForm" class="popup">
+<div class="contact-form-container">
+        <h2>Contact Us</h2>
+        <form method="post" action="process_contact_form.php">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="inquiry">Inquiry:</label>
+            <textarea id="inquiry" name="inquiry" required></textarea>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <div id="popupForm" class="popup">
     <div class="popup-content">
         <h2>Schedule Visit</h2>
         <form method="POST" action="schedule.php">
@@ -370,43 +473,61 @@ include ("auth.php");
     </div>
 </div>
 
-    <div id="profileDetails">
-        <div class="profile-image"><img class="profile-image" src="img/Logo.png"></div>
-        <div class="profile-details-container">
-            <div class="profile-name">
-            <div class="info-value"><?php echo $user_data['name']; ?></div>
-            </div>
 
-            <div class="profile-email">
-            <div class="info-value"><?php echo $user_data['email']; ?></div>
-            </div>
-            
-                <div class="profile-details">
-                
-                <div class="info-Gvalue"><i class="fas fa-mars"></i><?php echo $user_data['gender']; ?></div>
-                
-                <div class="info-value"><i class="fas fa-phone"></i><?php echo $user_data['contact']; ?></div>
-                
-                <div class="info-value"><i class="fas fa-map"></i><?php echo $user_data['address']; ?></div>
+    
+</body>
 
-                </div>
-            </div>
-            
-            <div class="profile-buttons">
-            <a href="editprofile.php">
-                <button>Edit Profile</button>
-            </a>
-                <button>Change Password</button>
-                <a href="logout.php">
-                <button>Logout</button>
-                </a>
-            </div>
+<footer>
+    <div class="contacts">
 
-            <!-- Add more profile details here such as age, location, etc. -->
+        <div class="contactsHead">
+            <div class="footer-logo">
+                <img src="img/Logo.png" alt="">
+            </div>
+            <div class="contactdesc"> 
+            <h5>ECA Blinds<h5>
+            <p>Window Blinds Supplier</p>
+            </div>
+        </div>
+
+        <h6>We are top-tier window blinds supplier and service provider. Let us transform your windows into stunning fical points!</h6>
+
+        <div class="contactInfo">
+        <i class="fas fa-phone"></i>
+        <span>0975 908 4803</span><br>
+        <i class="far fa-clock"></i>
+        <span>Mon-Fri: 9:00 AM - 5:00 PM</span><br>
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Nasugbu, Batangas</span>
         </div>
     </div>
-</body>
-</body>
+
+    <div class="newsletter">
+        <h1>Newsletter</h1>
+        <p>Join our email for tips and useful information</p>
+        <input type="text" class="footer-email" placeholder="Enter your email">
+        <button class="btn2">SUBSCRIBE</button>
+        <div class="newsletter-foot">
+            <p>Follow us</p>
+            <a href="https://www.facebook.com/ecawindowblindstrading" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="ecawindowblindstrading@gmail.com" target="_blank"><i class="fab fa-google"></i></a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <h6>Gallery</h6>
+        <div class="row1">
+            <img src="img/pic5.jpg" alt="">
+            <img src="img/pic7.jpg" alt="">
+        </div>
+        <div class="row2">
+            <img src="img/pic9.jpg" alt="">
+            <img src="img/pic8.jpg" alt="">
+        </div>
+    </div>
+</div>
+</footer>
+
     <script>
         const menuBtn = document.getElementById('menuBtn');
     const menuContainer = document.getElementById('menuContainer');

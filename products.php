@@ -28,6 +28,140 @@ include ("auth.php");
             background-color: #d1a680;
         }
 
+        footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .contacts {
+        flex: 1;
+        max-width: 20%;
+        margin-left: 50px;
+        margin-right: 250px;
+    }
+
+    .contactsHead {
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-logo img {
+        width: 55px;
+        height: 55px;
+        margin-right: 10px;
+    }
+
+    .contactdesc h5 {
+        font-size: 25px;
+    }
+
+    .contactdesc p {
+        font-size: 15px;
+    }
+
+    .contacts h6 {
+        font-size: 12px;
+        margin: 10px 0;
+    }
+
+    .contactInfo {
+        margin-top: 10px;
+        border-top: 1px solid white;
+        padding-top: 10px; /* Add padding to the top */
+    }
+
+    .contactInfo i {
+        margin-right: 5px;
+        margin-bottom: 10px;
+    }
+
+    .contactInfo span {
+        font-size: 12px;
+    }
+
+    .newsletter {
+        flex: 1;
+        max-width: 16%;
+        text-align: left;
+        padding: 0 10px;
+        margin-right: 300px;
+    }
+
+    .newsletter h1 {
+        font-size: 30px;
+    }
+
+    .newsletter p {
+        font-size: 15px;
+        margin: 10px 0;
+    }
+
+    .newsletter .btn1,
+    .newsletter .btn2 {
+        margin: 5px auto;
+        padding: 7px 10px;
+        background-color: #af733f;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .newsletter-foot {
+        display: flex;
+        align-items: center;
+    }
+
+    .newsletter-foot p {
+        font-size: 15px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+
+    .newsletter-foot i {
+        font-size: 15px;
+        margin-right: 5px;
+    }
+
+    .footer-email {
+        margin: 5px auto;
+        padding: 7px 10px;
+        background-color: white;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 4px;
+        width: 91%;
+    }
+
+    .gallery {
+        flex: 1;
+        max-width: 10%;
+        text-align: center;
+    }
+
+    .gallery h6 {
+        font-size: 20px;
+        margin-left: 80px;
+    }
+
+    .row1, .row2{
+        display: flex;
+    }
+
+    .row1 img,
+    .row2 img {
+        width: 105px;
+        height: 105px;
+        margin: 5px;
+    }
+
         .popup {
     display: none;
     position: fixed;
@@ -349,6 +483,57 @@ include ("auth.php");
 </div>
 
 </body>
+
+<footer>
+    <div class="contacts">
+
+        <div class="contactsHead">
+            <div class="footer-logo">
+                <img src="img/Logo.png" alt="">
+            </div>
+            <div class="contactdesc"> 
+            <h5>ECA Blinds<h5>
+            <p>Window Blinds Supplier</p>
+            </div>
+        </div>
+
+        <h6>We are top-tier window blinds supplier and service provider. Let us transform your windows into stunning fical points!</h6>
+
+        <div class="contactInfo">
+        <i class="fas fa-phone"></i>
+        <span>0975 908 4803</span><br>
+        <i class="far fa-clock"></i>
+        <span>Mon-Fri: 9:00 AM - 5:00 PM</span><br>
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Nasugbu, Batangas</span>
+        </div>
+    </div>
+
+    <div class="newsletter">
+        <h1>Newsletter</h1>
+        <p>Join our email for tips and useful information</p>
+        <input type="text" class="footer-email" placeholder="Enter your email">
+        <button class="btn2">SUBSCRIBE</button>
+        <div class="newsletter-foot">
+            <p>Follow us</p>
+            <a href="https://www.facebook.com/ecawindowblindstrading" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="ecawindowblindstrading@gmail.com" target="_blank"><i class="fab fa-google"></i></a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <h6>Gallery</h6>
+        <div class="row1">
+            <img src="img/pic5.jpg" alt="">
+            <img src="img/pic7.jpg" alt="">
+        </div>
+        <div class="row2">
+            <img src="img/pic9.jpg" alt="">
+            <img src="img/pic8.jpg" alt="">
+        </div>
+    </div>
+</div>
+</footer>
     <script>
         const menuBtn = document.getElementById('menuBtn');
     const menuContainer = document.getElementById('menuContainer');
