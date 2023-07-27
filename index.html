@@ -162,13 +162,13 @@
         }
 
         .product-container {
-            overflow-x: auto;
+            overflow-x: hidden;
             white-space: nowrap;
             padding: 20px;
         }
 
         .product-container2 {
-            overflow-x: auto;
+            overflow-x: hidden;
             white-space: nowrap;
             padding: 20px;
         }
@@ -197,11 +197,13 @@
         .product-name {
             font-size: 16px;
             font-weight: bold;
+            text-align: left;
+            margin-left: 15px;
         }
 
         .scroll-button {
             position: absolute;
-            top: 143%;
+            top: 149%;
             transform: translateY(-50%);
             width: 50px;
             height: 50px;
@@ -215,7 +217,7 @@
 
         .scroll-button2 {
             position: absolute;
-            top: 323%;
+            top: 265%;
             transform: translateY(-50%);
             width: 50px;
             height: 50px;
@@ -236,26 +238,35 @@
             right: 10px;
             opacity: 50%;
         }
-
+        
         .about-section {
-            /* Existing styles... */
-            background-image: url("img/bg.png"); /* Initial background image */
+            position: relative;
+            background-image: url("img/bg.png"); /* Replace "your-image-url.jpg" with the URL of the image you want to use as the background */
             background-size: cover;
             background-repeat: no-repeat;
-            height: 1000px;
+            background-position: center;
+            margin-top: 40px;
         }
         
-        .about-section h1 {
-            font-family: 'Montserrat', sans-serif;
+        .about-content {
+            position: relative;
+            background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+            padding: 40px;
+            color: white;
+        }
+        
+        .about-content h1 {
             font-size: 40px;
             margin-bottom: 20px;
+            color: white;
+            text-align: center;
         }
         
-        .about-section p {
-            font-family: 'Montserrat', sans-serif;
+        .about-content p {
             font-size: 18px;
             line-height: 1.6;
-            margin-bottom: 20px;
+            padding: 0px 30px 60px 30px;
+            color: white;
         }
         
         
@@ -386,9 +397,16 @@
     </div>
 
     <div class="about-section" id="aboutSection">
-        <h1>About Us</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat mauris at bibendum posuere. Praesent at justo et odio dignissim malesuada non a mi. Aenean auctor turpis nec velit placerat, sit amet cursus enim ultricies. Suspendisse eu diam nec dui dignissim consequat. Nulla facilisi. Integer sollicitudin feugiat nunc sit amet convallis.</p>
-        <p>Mauris fermentum odio id dui condimentum, in congue felis finibus. Sed in metus eu elit sagittis semper. Duis et enim et velit euismod facilisis vel nec est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nunc sit amet nunc sit amet magna ullamcorper dictum. Nulla facilisi. Fusce sagittis massa vitae volutpat fermentum.</p>
+        <div class="about-content">
+            <h1>About Us</h1>
+            <p>
+                At ECA Blinds, we are passionate about enhancing the beauty and functionality of your living spaces through our premium-quality blinds and window treatments. With years of experience in the industry, we take pride in offering an extensive range of blinds that cater to your unique style and requirements.
+    
+                Our Vision
+    
+                Our vision is to be the leading provider of blinds and window coverings, renowned for our exceptional products and outstanding customer service. We aim to transform the way you experience your home or office by providing elegant and practical solutions that blend seamlessly with your decor.
+            </p>
+        </div>
     </div>
 
     <h1 class="prod-header">TRENDING PRODUCTS</h1>
@@ -521,20 +539,21 @@ scrollRightBtn2.addEventListener('click', () => {
 
 
 const aboutSection = document.getElementById('aboutSection');
-    const backgroundImages = [
-        "img/bg1.png",
-        "img/pic2.png",
-        "img/pic3.png",
-        "img/pic4.png"
-    ];
-    let currentIndex = 0;
+const backgroundImages = [
+    "img/pic1.png",
+    "img/pic2.png",
+    "img/pic3.png",
+    "img/pic4.png"
+];
+let currentIndex = 0;
+let intervalId;
 
-    function changeBackgroundImage() {
-        currentIndex = (currentIndex + 1) % backgroundImages.length;
-        aboutSection.style.backgroundImage = `url(${backgroundImages[currentIndex]})`;
-    }
+function changeBackgroundImage() {
+    currentIndex = (currentIndex + 1) % backgroundImages.length;
+    aboutSection.style.backgroundImage = `url(${backgroundImages[currentIndex]})`;
+}
 
-    // Change background image every 5 seconds (5000 milliseconds)
-    setInterval(changeBackgroundImage, 5000);
+// Change background image every 5 seconds (5000 milliseconds)
+intervalId = setInterval(changeBackgroundImage, 3000);
 </script>
 </html>
