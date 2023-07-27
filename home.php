@@ -508,13 +508,13 @@ include("auth.php");
         </div>
         <ul class="menuList">
             <li>
-                <a href="#"><i class="fas fa-home"></i>Home</a>
+                <a href="home.php"><i class="fas fa-home"></i>Home</a>
             </li>
             <li>
                 <a href="#"><i class="fas fa-box"></i>Products</a>
             </li>
             <li>
-                <a href="login.php"><i class="fas fa-user"></i>Account</a>
+                <a href="<?php echo $profile_link; ?>"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
                 <a href="schedule.php"><i class="fas fa-calendar"></i>Schedule</a>
