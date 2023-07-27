@@ -315,6 +315,121 @@
             padding: 0px 30px 60px 30px;
             color: white;
         }
+
+        
+        footer {
+        background-color: #333;
+        color: #fff;
+        padding: 30px 60px;
+        display: flex;
+        align-items: center;
+    }
+
+    .contacts {
+        flex: 1;
+        max-width: 10%;
+    }
+
+    .contactsHead {
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-logo img {
+        width: 55px;
+        height: 55px;
+        margin-right: 10px;
+    }
+
+    .contactdesc h5 {
+        font-size: 25px;
+    }
+
+    .contactdesc p {
+        font-size: 15px;
+    }
+
+    .contacts h6 {
+        font-size: 15px;
+        margin: 10px 0;
+    }
+
+    .contactInfo {
+        margin-top: 10px;
+        border-top: 1px solid white;
+        padding-top: 10px; /* Add padding to the top */
+    }
+
+    .contactInfo i {
+        margin-right: 5px;
+    }
+
+    .contactInfo span {
+        font-size: 12px;
+    }
+
+    .newsletter {
+        flex: 1;
+        max-width: 10%;
+        text-align: left;
+        padding: 0 10px; /* Add padding to the left and right */
+    }
+
+    .newsletter h1 {
+        font-size: 25px;
+    }
+
+    .newsletter p {
+        font-size: 15px;
+        margin: 10px 0;
+    }
+
+    .newsletter .btn1,
+    .newsletter .btn2 {
+        margin: 5px auto;
+        padding: 7px 10px;
+        background-color: #af733f;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .newsletter-foot {
+        margin-top: 10px;
+    }
+
+    .newsletter-foot p {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .newsletter-foot i {
+        font-size: 15px;
+        margin-right: 5px;
+    }
+
+    .gallery {
+        flex: 1;
+        max-width: 10%;
+        text-align: center;
+    }
+
+    .gallery h6 {
+        font-size: 20px;
+    }
+
+    .row1 img,
+    .row2 img {
+        width: 90px;
+        height: 90px;
+        margin: 5px;
+    }
+
+
+
         
         
     </style>
@@ -544,7 +659,59 @@
 
 </body>
 <footer>
+    <div class="contacts">
+
+        <div class="contactsHead">
+            <div class="footer-logo">
+                <img src="img/Logo.png" alt="">
+            </div>
+            <div class="contactdesc"> 
+            <h5>ECA Blinds<h5>
+            <p>Window Blinds Supplier</p>
+            </div>
+        </div>
+
+        <h6>We are top-tier window blinds<br>supplier and service provider. Let us transform your windows into stunning fical points!</h6>
+
+        <div class="contactInfo">
+        <i class="fas fa-phone"></i>
+        <span>123-456-7890</span><br>
+        <i class="far fa-clock"></i>
+        <span>Mon-Fri: 9:00 AM - 5:00 PM</span><br>
+        <i class="fas fa-map-marker-alt"></i>
+        <span>123 Main St, City, Country</span>
+        </div>
+    </div>
+
+    <div class="newsletter">
+        <h1>Newsletter</h1>
+        <p>Join our email for tips and useful information</p>
+        <button class="btn1">Enter your Email</button><br>
+        <button class="btn2">Subscribe</button>
+        <div class="newsletter-foot">
+            <p>Follow us</p>
+            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-google"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <h6>Gallery</h6>
+        <div class="row1">
+            <img src="img/pic2.png" alt="">
+            <img src="img/pic2.png" alt="">
+        </div>
+        <div class="row2">
+            <img src="img/pic2.png" alt="">
+            <img src="img/pic2.png" alt="">
+        </div>
+    </div>
+</div>
 </footer>
+
+
 <script>
     /*for menu*/
     const menuBtn = document.getElementById('menuBtn');

@@ -211,7 +211,7 @@
 
     <nav>
         <ul>
-            <li><a href="index.php">HOME</a></li>
+            <li><a href="home.php">HOME</a></li>
             <li><a href="">PRODUCTS</a></li>
             <li><a href="">CONTACTS</a></li>
         </ul>
