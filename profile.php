@@ -196,6 +196,28 @@
             flex-direction: column;
         }
 
+        .profile-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.profile-buttons button {
+    padding: 10px 10px;
+    margin: 0 5px;
+    background-color: #af733f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 10px;
+    transition: background-color 0.3s;
+}
+
+.profile-buttons button:hover {
+    background-color: #955d32;
+}
+
         
     </style>
 </head>
@@ -249,6 +271,12 @@
                 <h3>09-405-6230</h3>
                 <h3>123 Main PUP Street Manila City</h3>
             </div>
+            <div class="profile-buttons">
+                <button>Edit Profile</button>
+                <button>Change Password</button>
+                <button>Logout</button>
+            </div>
+
             <!-- Add more profile details here such as age, location, etc. -->
         </div>
     </div>
