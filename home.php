@@ -327,7 +327,9 @@
 
     .contacts {
         flex: 1;
-        max-width: 10%;
+        max-width: 20%;
+        margin-left: 50px;
+        margin-right: 300px;
     }
 
     .contactsHead {
@@ -350,7 +352,7 @@
     }
 
     .contacts h6 {
-        font-size: 15px;
+        font-size: 12px;
         margin: 10px 0;
     }
 
@@ -362,6 +364,7 @@
 
     .contactInfo i {
         margin-right: 5px;
+        margin-bottom: 10px;
     }
 
     .contactInfo span {
@@ -370,13 +373,14 @@
 
     .newsletter {
         flex: 1;
-        max-width: 10%;
+        max-width: 16%;
         text-align: left;
-        padding: 0 10px; /* Add padding to the left and right */
+        padding: 0 10px;
+        margin-right: 450px;
     }
 
     .newsletter h1 {
-        font-size: 25px;
+        font-size: 30px;
     }
 
     .newsletter p {
@@ -402,7 +406,7 @@
     }
 
     .newsletter-foot p {
-        font-size: 20px;
+        font-size: 15px;
         margin-bottom: 10px;
     }
 
@@ -421,10 +425,14 @@
         font-size: 20px;
     }
 
+    .row1, .row2{
+        display: flex;
+    }
+
     .row1 img,
     .row2 img {
-        width: 90px;
-        height: 90px;
+        width: 105px;
+        height: 105px;
         margin: 5px;
     }
 
@@ -671,7 +679,7 @@
             </div>
         </div>
 
-        <h6>We are top-tier window blinds<br>supplier and service provider. Let us transform your windows into stunning fical points!</h6>
+        <h6>We are top-tier window blinds supplier and service provider. Let us transform your windows into stunning fical points!</h6>
 
         <div class="contactInfo">
         <i class="fas fa-phone"></i>
@@ -686,8 +694,8 @@
     <div class="newsletter">
         <h1>Newsletter</h1>
         <p>Join our email for tips and useful information</p>
-        <button class="btn1">Enter your Email</button><br>
-        <button class="btn2">Subscribe</button>
+        <button class="btn1">ENTER YOUR EMAIL</button><br>
+        <button class="btn2">SUBSCRIBE</button>
         <div class="newsletter-foot">
             <p>Follow us</p>
             <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
