@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                 // Check if the user is an admin
                 if ($user_data['privilege'] === 'admin') {
-                    header("Location: ADaccountmanage.php");
+                    header("Location: profile.php");
                 } else {
                     header("Location: home.php");
                 }
