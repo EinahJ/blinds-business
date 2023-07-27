@@ -249,10 +249,10 @@ include ("auth.php");
         </div>
         <ul class="menuList">
             <li>
-                <a href="index.php"><i class="fas fa-user"></i>Account</a>
+                <a href=""><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-calendar"></i>Schedule</a>
+                <a href="schedule.php"><i class="fas fa-calendar"></i>Schedule</a>
             </li>
             <li>
                 <a href="#"><i class="fas fa-dollar-sign"></i>Price Estimation</a>

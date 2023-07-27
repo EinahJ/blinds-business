@@ -322,7 +322,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <a href="login.html"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-calendar"></i>Schedule</a>
+                <a href="schedule.php"><i class="fas fa-calendar"></i>Schedule</a>
             </li>
             <li>
                 <a href="#"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
