@@ -378,7 +378,7 @@
         max-width: 16%;
         text-align: left;
         padding: 0 10px;
-        margin-right: 450px;
+        margin-right: 300px;
     }
 
     .newsletter h1 {
@@ -425,6 +425,7 @@
 
     .gallery h6 {
         font-size: 20px;
+        margin-left: 80px;
     }
 
     .row1, .row2{
