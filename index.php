@@ -92,6 +92,53 @@
             margin-top: 30px;
         }
 
+        .banner2 { /*home background img*/
+            background-image: url("img/bg.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 0%;
+            height: 50%;
+            padding: 150px 60px;
+            text-align: center;
+            color: white;
+        }
+
+        .banner2 h1 { /*Ready for new discovery...*/
+            font-family: 'Montserrat', sans-serif;
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .banner2 h2 { /*Eca Blinds is ready to give...*/
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 30px;
+        }
+
+
+        .banner2 .btn2 { /*Shop now button*/
+            display: inline-block;
+            padding: 12px 40px;
+            background-color: #af733f;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            font-weight: bolder;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 30px;
+            margin-left: 700px;
+        }
+
+        #menuContainer {
+            position: absolute;
+            top: 80px;
+            right: 45px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            display: none;
+            z-index: 1;
+        }
+
         #menuContainer {
             position: absolute;
             top: 80px;
@@ -293,7 +340,7 @@
         </div>
         <ul class="menuList">
             <li>
-                <a href="login.html"><i class="fas fa-user"></i>Account</a>
+                <a href="login.php"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
                 <a href="#"><i class="fas fa-calendar"></i>Schedule</a>
@@ -485,6 +532,14 @@
 
         <!-- Add more product cards as needed... -->
 
+    </div>
+
+    <div class="banner2">
+        <h1>READY FOR NEW EXPERIENCE?</h1>
+        <h2>Eca Blinds is ready to give your window a completely new look, wich<br>
+    is achieve through numerous window blinds designs you can find<br>at our store.</h2>
+
+        <a href="" class="btn2">SHOP NOW</a>
     </div>
 
 </body>

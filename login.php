@@ -19,7 +19,7 @@
             display: flex;
             align-items: center;
             margin: 0px 0px 0px 0px;
-            padding: 20px;
+            padding: 20px 20px 20px 50px;
             background-color: #d1a680;
         }
 
