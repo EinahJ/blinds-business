@@ -26,9 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
                 // Check if the user is an admin
                 if ($user_data['privilege'] === 'admin') {
-                    header("Location: profile.php");
+                    header("Location: none.php");
                 } else {
-                    header("Location: home.php");
+                    header("Location: profile.php");
                 }
                 die;
             } else {
@@ -293,7 +293,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <body>
     <div id="loginForm">
         <h2>Login</h2>
-        <form>
+        <form method = "POST">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required><br>
 
@@ -304,7 +304,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <a href="create.php" id="createAccountLink">Create Account</a>
             </div>
 
-            <button type="submit">Login</button>
+            <button type="submit" class="sign-in-button">Login</button>
         </form>
     </div>
 </body>
