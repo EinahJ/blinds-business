@@ -1,3 +1,53 @@
+<?php
+session_start();
+
+include("connection.php");
+include("functions.php");
+
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $gender = $_POST['gender'];
+    $contact = $_POST['contact'];
+    $address = $_POST['address'];
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm-password'];
+
+    if (!empty($name) && !empty($email) && !empty($gender) && !empty($contact) && !empty($address) && !empty($password) && !empty($confirm_password)) {
+        if (isValidName($name)  && isValidContact($contact) && isValidEmail($email)) {
+            if ($password === $confirm_password) {
+                // Passwords match, proceed with registration
+                $user_id = random_num(10);
+                $privilege = 'user';
+                // Hash the password
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+                $query = "INSERT INTO users (user_id, name, email, contact, address, email, password, privilege) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                $stmt = mysqli_prepare($con, $query);
+                mysqli_stmt_bind_param($stmt, "isssssss", $user_id, $first_name, $last_name, $contact, $address, $email, $hashed_password, $privilege);
+                mysqli_stmt_execute($stmt);
+
+                // Check if the data was inserted successfully
+                if (mysqli_stmt_affected_rows($stmt) > 0) {
+                    // Data inserted successfully, redirect to profile.php
+                    header("Location: profile.php");
+                    die;
+                } else {
+                  echo '<p class="custom-text">Failed to create an account.</p>';
+                }
+            } else {
+                echo '<p class="custom-text">Password do not match!</p>';
+            }
+        } else {
+          echo '<p class="custom-text">Please enter some valid information.</p>';
+        }
+    } else {
+      echo '<p class="custom-text">Please fill out all input fields.</p>';
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
