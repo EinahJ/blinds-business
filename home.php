@@ -484,7 +484,7 @@ include("auth.php");
                 <a href="#"><i class="fas fa-comments"></i>Support</a>
             </li>
             <li>
-                <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                <a href=""><i class="fas fa-sign-out-alt"></i>Logout</a>
             </li>
         </ul>
     </div>

@@ -284,9 +284,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <li>
                 <a href="#"><i class="fas fa-comments"></i>Support</a>
             </li>
-            <li>
-                <a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a>
-            </li>
+            
         </ul>
     </div>
 </header>
