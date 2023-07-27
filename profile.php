@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Create Account</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +19,7 @@
             display: flex;
             align-items: center;
             margin: 0px 0px 0px 0px;
-            padding: 20px;
+            padding: 20px 20px 20px 50px;
             background-color: #d1a680;
         }
 
@@ -129,7 +127,7 @@
             display: inline-block;
         }
 
-        #regForm {
+        #profileDetails {
             position: fixed;
             top: 50%;
             left: 50%;
@@ -137,26 +135,20 @@
             background-color: #f9f9f9;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            padding: 40px 60px 40px 40px;
-            margin: 50px auto;
+            padding: 40px 80px;
             width: 300px;
             text-align: center;
             z-index: 2;
         }
         
-        #regForm h2 {
+        #profileDetails h2 {
             font-family: 'Montserrat', sans-serif;
             font-size: 24px;
             margin-bottom: 20px;
             color: #333;
         }
         
-        #regForm form {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        #regForm label {
+        #profileDetails p {
             font-family: 'Montserrat', sans-serif;
             font-size: 16px;
             color: #333;
@@ -164,46 +156,44 @@
             text-align: left;
         }
         
-        #regForm input[type="text"],
-        #regForm input[type="email"],
-        #regForm input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        
-        #regForm a {
-            display: block;
-            text-decoration: none;
-            color: #af733f;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            margin-bottom: 10px;
-            text-align: left;
+        #profileDetails .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto;
+            background-color: #ddd;
+            /* You can add an image here using background-image if you have one. */
         }
 
-        #regForm .create-account-container {
-            display: flex;
-            justify-content: center; /* Center the content horizontally */
+        #profileDetails .profile-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
         }
-        
-        
-        #regForm button {
-            padding: 12px 20px;
-            background-color: #af733f;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+
+        #profileDetails .profile-email {
             font-size: 16px;
-            transition: background-color 0.3s;
+            margin-bottom: 20px;
         }
-        
-        #regForm button:hover {
-            background-color: #955d32;
+
+        .profile-details {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-details h3{
+            margin-right: 10px;
+            font-size: 10px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+
+
+        #profileDetails .profile-details-container {
+            display: flex;
+            flex-direction: column;
         }
 
         
@@ -230,7 +220,7 @@
         </div>
         <ul class="menuList">
             <li>
-                <a href="login.html"><i class="fas fa-user"></i>Account</a>
+                <a href="index.php"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
                 <a href="#"><i class="fas fa-calendar"></i>Schedule</a>
@@ -248,34 +238,21 @@
     </div>
 </header>
 <body>
-    <div id="regForm">
-        <h2>Create Account</h2>
-        <form>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
-
-            <label for="gender">Gender:</label>
-            <input type="text" id="gender" name="gender" required><br>
-
-            <label for="contact">Contact:</label>
-            <input type="text" id="contact" name="contact" required><br>
-
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required><br>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br>
-
-            <label for="password">Confirm Password:</label>
-            <input type="password" id="Cpassword" name="Cpassword" required><br>
-
-
-            <button type="submit">Register</button>
-        </form>
+<body>
+    <div id="profileDetails">
+        <div class="profile-image"></div>
+        <div class="profile-details-container">
+            <div class="profile-name">John Doe</div>
+            <div class="profile-email">john.doe@example.com</div>
+            <div class="profile-details">
+                <h3>Male</h3>
+                <h3>09-405-6230</h3>
+                <h3>123 Main PUP Street Manila City</h3>
+            </div>
+            <!-- Add more profile details here such as age, location, etc. -->
+        </div>
     </div>
+</body>
 </body>
     <script>
         const menuBtn = document.getElementById('menuBtn');
