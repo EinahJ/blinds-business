@@ -28,12 +28,6 @@ include ("auth.php");
             background-color: #d1a680;
         }
 
-        body{
-            background-image: url('img/pic3.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-
         .popup {
     display: none;
     position: fixed;
@@ -208,7 +202,7 @@ include ("auth.php");
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             padding: 40px 80px;
-            width: 400px;
+            width: 300px;
             text-align: center;
             z-index: 2;
         }
@@ -224,14 +218,6 @@ include ("auth.php");
             font-family: 'Montserrat', sans-serif;
             font-size: 16px;
             color: #333;
-            margin-bottom: 8px;
-            text-align: left;
-        }
-
-        #profileDetails i {
-            margin-right: 10px;
-            font-size: 16px;
-            color: gray;
             margin-bottom: 8px;
             text-align: left;
         }
@@ -258,26 +244,18 @@ include ("auth.php");
         }
 
         .profile-details {
+            display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        .profile-details .info-value{
-            text-align: left;
+        .profile-details h3{
             margin-right: 10px;
-            font-size: 15px;
+            font-size: 10px;
             font-weight: bold;
             margin-bottom: 10px;
         }
 
-        .profile-details .info-Gvalue{
-            text-align: left;
-            margin-right: 10px;
-            font-size: 15px;
-            font-weight: bold;
-            margin-bottom: 10px;
-            text-transform: capitalize;
-        }
 
 
         #profileDetails .profile-details-container {
@@ -286,26 +264,26 @@ include ("auth.php");
         }
 
         .profile-buttons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
 
-        .profile-buttons button {
-            padding: 10px 10px;
-            margin: 0 5px;
-            background-color: #af733f;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 10px;
-            transition: background-color 0.3s;
-        }
+.profile-buttons button {
+    padding: 10px 10px;
+    margin: 0 5px;
+    background-color: #af733f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 10px;
+    transition: background-color 0.3s;
+}
 
-        .profile-buttons button:hover {
-            background-color: #955d32;
-        }
+.profile-buttons button:hover {
+    background-color: #955d32;
+}
 
         
     </style>
@@ -343,7 +321,7 @@ include ("auth.php");
     </div>
 </header>
 <body>
-<body>
+
 
 <div id="popupForm" class="popup">
     <div class="popup-content">
@@ -370,42 +348,6 @@ include ("auth.php");
     </div>
 </div>
 
-    <div id="profileDetails">
-        <div class="profile-image"><img class="profile-image" src="img/Logo.png"></div>
-        <div class="profile-details-container">
-            <div class="profile-name">
-            <div class="info-value"><?php echo $user_data['name']; ?></div>
-            </div>
-
-            <div class="profile-email">
-            <div class="info-value"><?php echo $user_data['email']; ?></div>
-            </div>
-            
-                <div class="profile-details">
-                
-                <div class="info-Gvalue"><i class="fas fa-mars"></i><?php echo $user_data['gender']; ?></div>
-                
-                <div class="info-value"><i class="fas fa-phone"></i><?php echo $user_data['contact']; ?></div>
-                
-                <div class="info-value"><i class="fas fa-map"></i><?php echo $user_data['address']; ?></div>
-
-                </div>
-            </div>
-            
-            <div class="profile-buttons">
-            <a href="editprofile.php">
-                <button>Edit Profile</button>
-            </a>
-                <button>Change Password</button>
-                <a href="logout.php">
-                <button>Logout</button>
-                </a>
-            </div>
-
-            <!-- Add more profile details here such as age, location, etc. -->
-        </div>
-    </div>
-</body>
 </body>
     <script>
         const menuBtn = document.getElementById('menuBtn');

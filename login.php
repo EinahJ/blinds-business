@@ -69,6 +69,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             background-color: #d1a680;
         }
 
+        body{
+            background-image: url('img/pic3.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
         .popup {
     display: none;
     position: fixed;
@@ -330,7 +336,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <a href="#"><i class="fas fa-box"></i>Products</a>
             </li>
             <li>
-                <a href="login.php"><i class="fas fa-user"></i>Account</a>
+            <a href="<?php echo $profile_link; ?>"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
                 <a href="schedule.php"><i class="fas fa-calendar"></i>Schedule</a>
@@ -346,7 +352,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 </header>
 <body>
 <div id="popupForm" class="popup">
-<span id="closeFormBtn" class="close-form-btn">&times;</span>
     <div class="popup-content">
         <h2>Schedule Visit</h2>
         <form method="POST" action="schedule.php">
