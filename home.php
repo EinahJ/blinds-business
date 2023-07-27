@@ -252,7 +252,7 @@
 
         .scroll-button {
             position: absolute;
-            top: 190%;
+            top: 185%;
             transform: translateY(-50%);
             width: 50px;
             height: 50px;
@@ -266,7 +266,7 @@
 
         .scroll-button2 {
             position: absolute;
-            top: 340%;
+            top: 335%;
             transform: translateY(-50%);
             width: 50px;
             height: 50px;
@@ -331,7 +331,7 @@
         flex: 1;
         max-width: 20%;
         margin-left: 50px;
-        margin-right: 300px;
+        margin-right: 250px;
     }
 
     .contactsHead {
@@ -686,11 +686,11 @@
 
         <div class="contactInfo">
         <i class="fas fa-phone"></i>
-        <span>123-456-7890</span><br>
+        <span>0975 908 4803</span><br>
         <i class="far fa-clock"></i>
         <span>Mon-Fri: 9:00 AM - 5:00 PM</span><br>
         <i class="fas fa-map-marker-alt"></i>
-        <span>123 Main St, City, Country</span>
+        <span>Nasugbu, Batangas</span>
         </div>
     </div>
 
@@ -701,9 +701,9 @@
         <button class="btn2">SUBSCRIBE</button>
         <div class="newsletter-foot">
             <p>Follow us</p>
-            <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.facebook.com/ecawindowblindstrading" target="_blank"><i class="fab fa-facebook"></i></a>
             <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="#" target="_blank"><i class="fab fa-google"></i></a>
+            <a href="ecawindowblindstrading@gmail.com" target="_blank"><i class="fab fa-google"></i></a>
             <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
@@ -773,10 +773,10 @@ scrollRightBtn2.addEventListener('click', () => {
 
 const aboutSection = document.getElementById('aboutSection');
 const backgroundImages = [
-    "img/pic1.png",
-    "img/pic2.png",
-    "img/pic3.png",
-    "img/pic4.png"
+    "img/pic6.jpg",
+    "img/pic7.jpg",
+    "img/pic8.jpg",
+    "img/pic9.jpg"
 ];
 let currentIndex = 0;
 let intervalId;
@@ -786,7 +786,6 @@ function changeBackgroundImage() {
     aboutSection.style.backgroundImage = `url(${backgroundImages[currentIndex]})`;
 }
 
-// Change background image every 5 seconds (5000 milliseconds)
 intervalId = setInterval(changeBackgroundImage, 3000);
 </script>
 </html>

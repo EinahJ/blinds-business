@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 // Check if the data was inserted successfully
                 if (mysqli_stmt_affected_rows($stmt) > 0) {
                     // Data inserted successfully, redirect to profile.php
-                    header("Location: login.php");
+                    header("Location: home.php");
                     die;
                 } else {
                   echo '<p class="custom-text">Failed to create an account.</p>';
@@ -185,102 +185,40 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
-        }
-
-        #regForm {
-            background-color: #f9f9f9;
+            padding: 40px 60px 40px 40px;
+            background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            padding: 40px 60px 40px 40px;
-            margin: 70px auto;
-            width: 500px;
-            text-align: center;
         }
-        
-        #regForm h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
+
+        .form-container h2 {
             margin-bottom: 20px;
+            text-align: center;
             color: #333;
         }
-        
-        #regForm form {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        #regForm label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 8px;
-            text-align: left;
+
+        label {
+            display: block;
+            margin-bottom: 5px;
         }
 
-        #regForm .container{
-            display: flex;
-            margin-bottom: 10px;
-        }
-
-        #regForm .container input{
-            margin-right: 5px;
-        }
-
-        #regForm select {
-        width: 95%;
-        padding: 12px;
-        margin-bottom: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-        color: gray;
-        }
-
-        #regForm select option:first-child {
-        color: #999;
-        }
-
-        #regForm select option {
-        color: gray;
-        }
-
-        #regForm .container2{
-            display: flex;
-            margin-bottom: 10px;
-        }
-
-        #regForm .container2 input{
-            margin-right: 5px;
-        }
-        
-        #regForm input[type="text"],
-        #regForm input[type="email"],
-        #regForm input[type="password"] {
-            width: 95%;
-            padding: 12px;
-            margin-bottom: 10px;
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
         }
-        
-        #regForm a {
-            display: block;
-            text-decoration: none;
-            color: #af733f;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            margin-bottom: 10px;
-            text-align: left;
+
+        input[type="date"]{
+            color: gray;
         }
 
-        #regForm .create-account-container {
-            display: flex;
-            justify-content: center; /* Center the content horizontally */
-        }
-        
-        
-        #regForm button {
+        input[type="submit"] {
             padding: 12px 20px;
             background-color: #af733f;
             color: #fff;
@@ -288,11 +226,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        
-        #regForm button:hover {
-            background-color: #955d32;
         }
 
         
@@ -337,35 +270,26 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </div>
 </header>
 <body>
-    <div class="form-container">
-    <div id="regForm">
-        <h2>Create Account</h2>
-        <form method="POST">
-            <input type="text" id="name" name="name" placeholder="Name" required><br>
+<div class="form-container">
+        <h2>Visit Schedule Form</h2>
+        <form method="POST" action="schedule.php">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-            <div class="container">
-            <input type="email" id="email" name="email" placeholder="Email" required><br>
+            <label for="contact">Contact Number:</label>
+            <input type="text" id="contact" name="contact" required>
 
-            <select id="gender" name="gender" required>
-            <option value="">Select Gender</option>
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            </select><br>
-            </div>
+            <label for="num_windows">Number of Windows:</label>
+            <input type="number" id="num_windows" name="num_windows" min="1" required>
 
-            <div class="container2">
-            <input type="text" id="contact" name="contact" placeholder="Contact Number" required><br>
+            <label for="date">Date of Visit:</label>
+            <input type="date" id="date" name="date" required>
 
-            <input type="text" id="address" name="address" placeholder="Home Address" required><br>
-            </div>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
 
-            <input type="password" id="password" name="password" placeholder="Password" required><br>
-
-            <input type="password" id="Cpassword" name="confirm-password" placeholder="Confirm Password" required><br>
-
-            <button type="submit">Register</button>
+            <input type="submit" value="Schedule Visit">
         </form>
-    </div>
     </div>
 </body>
     <script>
