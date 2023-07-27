@@ -21,7 +21,7 @@
             display: flex;
             align-items: center;
             margin: 0px 0px 0px 30px;
-            padding: 20px;
+            padding: 15px;
         }
 
         .head-logo img { /*header business logo*/
@@ -31,26 +31,6 @@
         .bus-name { /*ECA BLINDS*/
             margin-right: 100px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-
-        nav ul {
-            list-style-type: none;
-            display: flex;
-        }
-
-        nav ul li { /*nav buttons (e.g home, products)*/
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 20px;
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #333;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
         }
 
         .cart-icon {
@@ -508,14 +488,6 @@
     <a href="" class="head-logo"><img src="img/Logo.png" alt=""></a>
     <h1 class="bus-name">ECA BLINDS</h1>
 
-    <nav>
-        <ul>
-            <li><a href="">HOME</a></li>
-            <li><a href="">PRODUCTS</a></li>
-            <li><a href="">CONTACTS</a></li>
-        </ul>
-    </nav>
-
     <a href="" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
     <a href="" id="menuBtn" class="menu-icon"><i class="fas fa-bars"></i></a>
     <div id="menuContainer">
@@ -525,7 +497,13 @@
         </div>
         <ul class="menuList">
             <li>
+                <a href="login.php"><i class="fas fa-home"></i>Home</a>
+            </li>
+            <li>
                 <a href="login.php"><i class="fas fa-user"></i>Account</a>
+            </li>
+            <li>
+                <a href="schedule.php"><i class="fas fa-box"></i>Products</a>
             </li>
             <li>
                 <a href="schedule.php"><i class="fas fa-calendar"></i>Schedule</a>
@@ -763,7 +741,7 @@
             </div>
             <div class="contactdesc"> 
             <h5>ECA Blinds<h5>
-            <p>Window Blinds Supplier</p>
+            <p>Window Blinds Trading</p>
             </div>
         </div>
 
