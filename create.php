@@ -226,6 +226,24 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             margin-right: 5px;
         }
 
+        #regForm select {
+        width: 95%;
+        padding: 12px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        color: gray;
+        }
+
+        #regForm select option:first-child {
+        color: #999;
+        }
+
+        #regForm select option {
+        color: gray;
+        }
+
         #regForm .container2{
             display: flex;
             margin-bottom: 10px;
@@ -328,7 +346,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <div class="container">
             <input type="email" id="email" name="email" placeholder="Email" required><br>
 
-            <input type="text" id="gender" name="gender" placeholder="Gender" required><br>
+            <select id="gender" name="gender" required>
+            <option value="">Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            </select><br>
             </div>
 
             <div class="container2">
