@@ -1,52 +1,58 @@
 <?php
 session_start();
 
-include ("connection.php");
-include ("function.php");
+include("connection.php");
+include("function.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
-
+    $name = $_POST['name'];
     $email = $_POST['email'];
+    $gender = $_POST['gender'];
+    $contact = $_POST['contact'];
+    $address = $_POST['address'];
     $password = $_POST['password'];
+    $confirm_password = $_POST['confirm-password'];
 
-    if (!empty($email) && !empty($password)) {
+    if (!empty($name) && !empty($email) && !empty($gender) && !empty($contact) && !empty($address) && !empty($password) && !empty($confirm_password)) {
+        if (isValidName($name)  && isValidContact($contact) && isValidEmail($email)) {
+            if ($password === $confirm_password) {
+                // Passwords match, proceed with registration
+                $user_id = random_num(10);
+                $privilege = 'user';
 
-        $query = "SELECT * FROM user WHERE email = ?";
-        $stmt = mysqli_prepare($con, $query);
-        mysqli_stmt_bind_param($stmt, "s", $email);
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
+                // Hash the password
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
-        if ($result && mysqli_num_rows($result) > 0) {
-            $user_data = mysqli_fetch_assoc($result);
-            
-            // Verify the hashed password
-            if (password_verify($password, $user_data['password'])) {
-                $_SESSION['user_id'] = $user_data['user_id'];
+                $query = "INSERT INTO user (user_id, name, email, gender, contact, address, password, privilege) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                $stmt = mysqli_prepare($con, $query);
+                mysqli_stmt_bind_param($stmt, "isssssss", $user_id, $name, $email, $gender, $contact, $address, $hashed_password, $privilege);
+                mysqli_stmt_execute($stmt);
 
-                // Check if the user is an admin
-                if ($user_data['privilege'] === 'admin') {
-                    header("Location: none.php");
-                } else {
+                // Check if the data was inserted successfully
+                if (mysqli_stmt_affected_rows($stmt) > 0) {
+                    // Data inserted successfully, redirect to profile.php
                     header("Location: home.php");
+                    die;
+                } else {
+                  echo '<p class="custom-text">Failed to create an account.</p>';
                 }
-                die;
             } else {
-                echo '<p class="custom-text">Invalid password.</p>';
+                echo '<p class="custom-text">Password do not match!</p>';
             }
         } else {
-            echo '<p class="custom-text">User not found.</p>';
+          echo '<p class="custom-text">Please enter some valid information.</p>';
         }
     } else {
-        echo '<p class="custom-text">Please fill out all input fields.</p>';
+      echo '<p class="custom-text">Please fill out all input fields.</p>';
     }
 }
+
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Page</title>
+    <title>Create Account</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -66,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             display: flex;
             align-items: center;
             margin: 0px 0px 0px 0px;
-            padding: 20px 20px 20px 50px;
+            padding: 20px;
             background-color: #d1a680;
         }
 
@@ -174,67 +180,45 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             display: inline-block;
         }
 
-        #loginForm {
-            position: fixed;
-            top: 50%;
+        .form-container {
+            position: absolute;
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #f9f9f9;
+            padding: 40px 60px 40px 40px;
+            background-color: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            padding: 40px 80px;
-            width: 300px;
-            text-align: center;
-            z-index: 2;
         }
-        
-        #loginForm h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
+
+        .form-container h2 {
             margin-bottom: 20px;
+            text-align: center;
             color: #333;
         }
-        
-        #loginForm form {
-            display: flex;
-            flex-direction: column;
+
+        label {
+            display: block;
+            margin-bottom: 5px;
         }
-        
-        #loginForm label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 8px;
-            text-align: left;
-        }
-        
-        #loginForm input[type="email"],
-        #loginForm input[type="password"] {
+
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        select {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 10px;
+            padding: 10px;
+            margin-bottom: 15px;
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 16px;
         }
-        
-        #loginForm a {
-            display: block;
-            text-decoration: none;
-            color: #af733f;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            margin-bottom: 10px;
-            text-align: left;
+
+        input[type="date"]{
+            color: gray;
         }
 
-        #loginForm .create-account-container {
-            display: flex;
-            justify-content: center; /* Center the content horizontally */
-        }
-        
-        
-        #loginForm button {
+        input[type="submit"] {
             padding: 12px 20px;
             background-color: #af733f;
             color: #fff;
@@ -242,11 +226,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             border-radius: 4px;
             cursor: pointer;
             font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        
-        #loginForm button:hover {
-            background-color: #955d32;
         }
 
         
@@ -273,10 +252,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
         <ul class="menuList">
             <li>
-                <a href="index.php"><i class="fas fa-user"></i>Account</a>
+                <a href="login.html"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
-                <a href="schedule.php"><i class="fas fa-calendar"></i>Schedule</a>
+                <a href="#"><i class="fas fa-calendar"></i>Schedule</a>
             </li>
             <li>
                 <a href="#"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
@@ -284,25 +263,32 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <li>
                 <a href="#"><i class="fas fa-comments"></i>Support</a>
             </li>
-            
+            <li>
+                <a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            </li>
         </ul>
     </div>
 </header>
 <body>
-    <div id="loginForm">
-        <h2>Login</h2>
-        <form method = "POST">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
+<div class="form-container">
+        <h2>Visit Schedule Form</h2>
+        <form method="POST" action="schedule.php">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br>
+            <label for="contact">Contact Number:</label>
+            <input type="text" id="contact" name="contact" required>
 
-            <div class="create-account-container">
-                <a href="create.php" id="createAccountLink">Create Account</a>
-            </div>
+            <label for="num_windows">Number of Windows:</label>
+            <input type="number" id="num_windows" name="num_windows" min="1" required>
 
-            <button type="submit" class="sign-in-button">Login</button>
+            <label for="date">Date of Visit:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <input type="submit" value="Schedule Visit">
         </form>
     </div>
 </body>
