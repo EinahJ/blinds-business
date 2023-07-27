@@ -180,16 +180,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             display: inline-block;
         }
 
-        #regForm {
-            position: fixed;
-            top: 50%;
+        .form-container {
+            position: absolute;
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
+        }
+
+        #regForm {
             background-color: #f9f9f9;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             padding: 40px 60px 40px 40px;
-            margin: 50px auto;
+            margin: 70px auto;
             width: 500px;
             text-align: center;
         }
@@ -216,6 +219,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         #regForm .container{
             display: flex;
+            margin-bottom: 10px;
         }
 
         #regForm .container input{
@@ -224,6 +228,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         #regForm .container2{
             display: flex;
+            margin-bottom: 10px;
         }
 
         #regForm .container2 input{
@@ -314,6 +319,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </div>
 </header>
 <body>
+    <div class="form-container">
     <div id="regForm">
         <h2>Create Account</h2>
         <form method="POST">
@@ -337,6 +343,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
             <button type="submit">Register</button>
         </form>
+    </div>
     </div>
 </body>
     <script>
