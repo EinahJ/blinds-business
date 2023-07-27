@@ -561,7 +561,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 <div id="popupForm" class="popup">
-<span id="closeFormBtn" class="close-form-btn">&times;</span>
     <div class="popup-content">
         <h2>Schedule Visit</h2>
         <form method="POST">
