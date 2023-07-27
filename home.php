@@ -34,15 +34,15 @@
         }
 
         .cart-icon {
-            font-size: 35px;
-            color: black;
+            font-size: 30px;
+            color: #333;
             margin-left: auto;
             margin-right: 25px;
         }
 
         .menu-icon {
-            font-size: 35px;
-            color: black;
+            font-size: 30px;
+            color: #333;
             margin-right: 35px;
         }
 
@@ -481,13 +481,18 @@
     background-color: #ccc;
     margin-top: 10px;
 }
+
+
+
+
+
+        
         
     </style>
 </head>
 <header>
     <a href="" class="head-logo"><img src="img/Logo.png" alt=""></a>
     <h1 class="bus-name">ECA BLINDS</h1>
-
     <a href="" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
     <a href="" id="menuBtn" class="menu-icon"><i class="fas fa-bars"></i></a>
     <div id="menuContainer">
@@ -497,13 +502,13 @@
         </div>
         <ul class="menuList">
             <li>
-                <a href="login.php"><i class="fas fa-home"></i>Home</a>
+                <a href="#"><i class="fas fa-home"></i>Home</a>
+            </li>
+            <li>
+                <a href="#"><i class="fas fa-box"></i>Products</a>
             </li>
             <li>
                 <a href="login.php"><i class="fas fa-user"></i>Account</a>
-            </li>
-            <li>
-                <a href="schedule.php"><i class="fas fa-box"></i>Products</a>
             </li>
             <li>
                 <a href="schedule.php"><i class="fas fa-calendar"></i>Schedule</a>
@@ -514,9 +519,6 @@
             <li>
                 <a href="#"><i class="fas fa-comments"></i>Support</a>
             </li>
-            <li>
-                <a href="#"><i class="fas fa-sign-out-alt"></i>Logout</a>
-            </li>
         </ul>
     </div>
 </header>
@@ -524,7 +526,7 @@
 <body>
 
 <div id="popupForm" class="popup">
-    
+<span id="closeFormBtn" class="close-form-btn">&times;</span>
     <div class="popup-content">
         <h2>Schedule Visit</h2>
         <form method="POST" action="schedule.php">
@@ -538,7 +540,7 @@
             <input type="number" id="num_windows" name="num_windows" min="1" required>
 
             <label for="date">Date of Visit:</label>
-            <input type="date" id="date" name="date" placeholder="" required>
+            <input type="date" id="date" name="date" required>
 
             <label for="address">Address:</label>
             <input type="text" id="address" name="address" required>
@@ -741,7 +743,7 @@
             </div>
             <div class="contactdesc"> 
             <h5>ECA Blinds<h5>
-            <p>Window Blinds Trading</p>
+            <p>Window Blinds Supplier</p>
             </div>
         </div>
 
