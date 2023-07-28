@@ -612,70 +612,112 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="product-image">
                 <img src="products/Checker/Checker.PNG" alt="Product 1">
             </div>
-            <div class="product-name">Different Color</div>
+            <div class="product-name">Checker</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic3.png" alt="Product 2">
+                <img src="products/Crescendo/Crescendo.PNG" alt="Product 2">
             </div>
-            <div class="product-name">Different Sizes</div>
+            <div class="product-name">Crescendo</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic4.png" alt="Product 3">
+                <img src="products/Curves/Curves.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Curves</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic2.png" alt="Product 3">
+                <img src="products/Duology/Duology.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Duology</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic3.png" alt="Product 3">
+                <img src="products/Elegancy/Elegancy.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Elegancy</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic4.png" alt="Product 3">
+                <img src="products/Galaxy/Galaxy.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Galaxy</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic2.png" alt="Product 3">
+                <img src="products/Hannover Premium Blackout/Hannover Premium Blackout.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Hannover Premium Blackout</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic3.png" alt="Product 3">
+                <img src="products/Izmir/Izmir.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Izmir</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic4.png" alt="Product 3">
+                <img src="products/Kingswood/Kingswood.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Kingswood</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic2.png" alt="Product 3">
+                <img src="products/Linen/Linen.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Linen</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="products/Losa Wood Premium/Losa Wood Premium.PNG" alt="Product 3">
+            </div>
+            <div class="product-name">Losa Wood Premium</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="products/Luxury Premium Blackout/Luxury Premium Blackout.PNG" alt="Product 3">
+            </div>
+            <div class="product-name">Luxury Premium Blackout</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="products/Majesty Premium Blackout/Majesty Premium Blackout.PNG" alt="Product 3">
+            </div>
+            <div class="product-name">Majesty Premium Blackout</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="products/Mono/Mono.PNG" alt="Product 3">
+            </div>
+            <div class="product-name">Mono</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="products/Natural/Natural.PNG" alt="Product 3">
+            </div>
+            <div class="product-name">Natural</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="products/Picasso Premium Blackout/Picasso Premium Blackout.PNG" alt="Product 3">
+            </div>
+            <div class="product-name">Picasso Premium Blackout</div>
         </div>
 
         <!-- Add more product cards as needed... -->
@@ -699,77 +741,105 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="product-container2">
         <button class="scroll-button2" id="scrollLeftBtn2"><i class="fas fa-chevron-left"></i></button>
         <button class="scroll-button2" id="scrollRightBtn2"><i class="fas fa-chevron-right"></i></button>
+
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic2.png" alt="Product 1">
+                <img src="products/Pinova/Pinova.PNG" alt="Product 2">
             </div>
-            <div class="product-name">Different Color</div>
+            <div class="product-name">Pinova</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic3.png" alt="Product 2">
+                <img src="products/Pleat _ Twist/Pleat _ Twist.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Different Sizes</div>
+            <div class="product-name">Pleat Twist</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic4.png" alt="Product 3">
+                <img src="products/Pleated 7/Pleated 7.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Pleated 7</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic2.png" alt="Product 3">
+                <img src="products/Pleated Trinity/Pleated Trinity.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Pleated Trinity</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic3.png" alt="Product 3">
+                <img src="products/Prima-S Supreme Blackout/Prima-S Supreme Blackout.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Prima-S Supreme Blackout</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic4.png" alt="Product 3">
+                <img src="products/Prime Wood/Prime Wood.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Prime Wood</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic2.png" alt="Product 3">
+                <img src="products/Sara Screen/Sara Screen.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Sara Screen</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic3.png" alt="Product 3">
+                <img src="products/Silk/Silk.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Silk</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic4.png" alt="Product 3">
+                <img src="products/Timber Wood/Timber Wood.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Timber Wood</div>
         </div>
 
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic2.png" alt="Product 3">
+                <img src="products/Trilogy/Trilogy.PNG" alt="Product 3">
             </div>
-            <div class="product-name">Amazing Quality</div>
+            <div class="product-name">Trilogy</div>
         </div>
 
-        <!-- Add more product cards as needed... -->
+        <div class="product-card">
+            <div class="product-image">
+                <img src="products/Ultima Supreme Blackout/Ultima Supreme Blackout.PNG" alt="Product 3">
+            </div>
+            <div class="product-name">Ultima Supreme Blackout</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="products/Vanity/Vanity.PNG" alt="Product 3">
+            </div>
+            <div class="product-name">Vanity</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="products/Vega/Vega.PNG" alt="Product 3">
+            </div>
+            <div class="product-name">Vega</div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="products/Wider/Wider.PNG" alt="Product 3">
+            </div>
+            <div class="product-name">Wider</div>
+        </div>
+
 
     </div>
 
