@@ -334,7 +334,7 @@ include ("auth.php");
                 <a href="schedule.php"><i class="fas fa-calendar"></i>Schedule</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
+                <a href="estimate.php"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
             </li>
             <li>
                 <a href="#"><i class="fas fa-comments"></i>Support</a>
