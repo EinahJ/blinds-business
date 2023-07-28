@@ -75,66 +75,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             background-color: #d1a680;
         }
 
-        .popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 9999;
-}
+        body{
+            background-image: url('img/pic3.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
 
-.popup-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 30px 45px 30px 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-}
-
-.popup h2 {
-    margin-bottom: 20px;
-    text-align: center;
-    color: #333;
-}
-
-.popup label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.popup input[type="text"],
-.popup input[type="number"],
-.popup input[type="date"],
-.popup select {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-.popup input[type="submit"],
-.popup button {
-    padding: 12px 20px;
-    background-color: #af733f;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.popup button {
-    background-color: #ccc;
-    margin-top: 10px;
-}
 
         .head-logo img { /*header business logo*/
             height: 60px;
@@ -241,120 +187,108 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
 
         .form-container {
-            position: absolute;
-            top: 60%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-        #regForm {
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            padding: 40px 60px 40px 40px;
-            margin: 70px auto;
-            width: 500px;
-            text-align: center;
-        }
-        
-        #regForm h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        
-        #regForm form {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        #regForm label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 8px;
-            text-align: left;
-        }
 
-        #regForm .container{
-            display: flex;
-            margin-bottom: 10px;
-        }
+#regForm {
+        position: absolute;
+        top: 63%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 40px 60px;
+        width: 550px;
+        text-align: center;
+    }
 
-        #regForm .container input{
-            margin-right: 5px;
-        }
+    #regForm h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #333;
+    }
 
-        #regForm select {
-        width: 95%;
+    #regForm form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #regForm label {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 8px;
+        text-align: left;
+    }
+
+    #regForm input[type="text"],
+    #regForm input[type="email"],
+    #regForm input[type="password"]
+     {
+        width: 91%;
+        padding: 12px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    #regForm select{
+        width: 95.5%;
         padding: 12px;
         margin-bottom: 10px;
         border: 1px solid #ccc;
         border-radius: 4px;
         font-size: 16px;
         color: gray;
-        }
+    }
 
-        #regForm select option:first-child {
-        color: #999;
-        }
+    #regForm .container,
+    #regForm .container2 {
+        display: flex;
+        flex-direction: column;
+    }
 
-        #regForm select option {
-        color: gray;
-        }
+    #regForm .create-account-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        font-size: 14px;
+    }
 
-        #regForm .container2{
-            display: flex;
-            margin-bottom: 10px;
-        }
+    #regForm button {
+        padding: 12px 20px;
+        background-color: #af733f;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+    }
 
-        #regForm .container2 input{
-            margin-right: 5px;
-        }
+    #regForm button:hover {
+        background-color: #955d32;
+    }
+
+    #regForm a {
+        display: block;
+        text-decoration: none;
+        color: #af733f;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    #regForm a:hover {
+        text-decoration: underline;
+    }
+
+
         
-        #regForm input[type="text"],
-        #regForm input[type="email"],
-        #regForm input[type="password"] {
-            width: 95%;
-            padding: 12px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        
-        #regForm a {
-            display: block;
-            text-decoration: none;
-            color: #af733f;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            margin-bottom: 10px;
-            text-align: left;
-        }
-
-        #regForm .create-account-container {
-            display: flex;
-            justify-content: center; /* Center the content horizontally */
-        }
-        
-        
-        #regForm button {
-            padding: 12px 20px;
-            background-color: #af733f;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        
-        #regForm button:hover {
-            background-color: #955d32;
-        }
-
         
     </style>
 </head>
@@ -392,31 +326,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 </header>
 <body>
 
-<div id="popupForm" class="popup">
-<span id="closeFormBtn" class="close-form-btn">&times;</span>
-    <div class="popup-content">
-        <h2>Schedule Visit</h2>
-        <form method="POST" action="schedule.php">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="contact">Contact Number:</label>
-            <input type="text" id="contact" name="contact" required>
-
-            <label for="num_windows">Number of Windows:</label>
-            <input type="number" id="num_windows" name="num_windows" min="1" required>
-
-            <label for="date">Date of Visit:</label>
-            <input type="date" id="date" name="date" required>
-
-            <label for="address">Address:</label>
-            <input type="text" id="address" name="address" required>
-
-            <input type="submit" value="Schedule Visit">
-            <button type="button" id="closePopupBtn">Close</button>
-        </form>
-    </div>
-</div>
 
     <div class="form-container">
     <div id="regForm">
@@ -444,8 +353,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
             <input type="password" id="Cpassword" name="confirm-password" placeholder="Confirm Password" required><br>
 
-            <button type="submit">Register</button>
+            
+            <div class="create-account-container">
+            <button type="submit">Sign Up</button>
+            </div>
+            
         </form>
+         <!-- Add this sign-up button -->
+
+            <!-- Add your image here, adjust the src attribute accordingly -->
     </div>
     </div>
 </body>
@@ -470,25 +386,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         }
     });
 
-    const scheduleMenuBtn = document.querySelector('a[href="schedule.php"]');
-    const popupForm = document.getElementById('popupForm');
-    const closePopupBtn = document.getElementById('closePopupBtn');
 
-    scheduleMenuBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        popupForm.style.display = 'block';
-    });
-
-    closePopupBtn.addEventListener('click', () => {
-        popupForm.style.display = 'none';
-    });
-
-    window.addEventListener('click', (event) => {
-        if (!scheduleMenuBtn.contains(event.target) && !popupForm.contains(event.target)) {
-            popupForm.style.display = 'none';
-        }
-    });
     </script>
 
     </html>
