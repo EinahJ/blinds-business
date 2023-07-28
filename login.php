@@ -75,6 +75,67 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             background-repeat: no-repeat;
         }
 
+        .popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 30px 45px 30px 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+.popup label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.popup input[type="text"],
+.popup input[type="number"],
+.popup input[type="date"],
+.popup select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.popup input[type="submit"],
+.popup button {
+    padding: 12px 20px;
+    background-color: #af733f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.popup button {
+    background-color: #ccc;
+    margin-top: 10px;
+}
+
         .head-logo img { /*header business logo*/
             height: 60px;
         }
@@ -226,7 +287,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 #loginForm input[type="email"],
 #loginForm input[type="password"] {
-    width: 100%;
+    width: 91%;
     padding: 12px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -303,7 +364,30 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </div>
 </header>
 <body>
+<div id="popupForm" class="popup">
+    <div class="popup-content">
+        <h2>Schedule Visit</h2>
+        <form method="POST" action="schedule.php">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
 
+            <label for="contact">Contact Number:</label>
+            <input type="text" id="contact" name="contact" required>
+
+            <label for="num_windows">Number of Windows:</label>
+            <input type="number" id="num_windows" name="num_windows" min="1" required>
+
+            <label for="date">Date of Visit:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <input type="submit" value="Schedule Visit">
+            <button type="button" id="closePopupBtn">Close</button>
+        </form>
+    </div>
+</div>
 
     <div id="loginForm">
         <h2>Login</h2>

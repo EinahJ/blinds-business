@@ -226,7 +226,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 #loginForm input[type="email"],
 #loginForm input[type="password"] {
-    width: 100%;
+    width: 91%;
     padding: 12px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
