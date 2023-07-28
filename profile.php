@@ -292,8 +292,8 @@ include ("auth.php");
         }
 
         .profile-buttons button {
-            padding: 10px 10px;
-            margin: 0 5px;
+            padding: 15px 20px;
+            margin: 0 15px;
             background-color: #af733f;
             color: #fff;
             border: none;
