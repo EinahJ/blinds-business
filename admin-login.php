@@ -104,16 +104,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             text-decoration: underline;
         }
 
-        .cart-icon {
-            font-size: 35px;
-            color: black;
-            margin-left: auto;
-            margin-right: 25px;
-        }
-
         .menu-icon {
             font-size: 35px;
             color: black;
+            margin-left: auto;
             margin-right: 35px;
         }
 
@@ -273,7 +267,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <header>
     <a href="" class="head-logo"><img src="img/ecalogo.png" alt=""></a>
     <h1 class="bus-name">ECA BLINDS</h1>
-    <a href="" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
     <a href="" id="menuBtn" class="menu-icon"><i class="fas fa-bars"></i></a>
     <div id="menuContainer">
         <div class="menuHeader">
