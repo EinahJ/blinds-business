@@ -348,19 +348,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <a href="home.php"><i class="fas fa-home"></i>Home</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-box"></i>Products</a>
+                <a href="products.php"><i class="fas fa-box"></i>Products</a>
             </li>
             <li>
-            <a href="<?php echo $profile_link; ?>"><i class="fas fa-user"></i>Account</a>
+                <a href="<?php echo $profile_link; ?>"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
-                <a href=""><i class="fas fa-calendar"></i>Schedule</a>
+                <a href="schedule.php"><i class="fas fa-calendar"></i>Schedule</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
+                <a href="estimate.php"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-comments"></i>Support</a>
+                <a href="support.php"><i class="fas fa-comments"></i>Support</a>
             </li>
         </ul>
     </div>
