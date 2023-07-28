@@ -428,6 +428,13 @@ include ("auth.php");
     justify-content: space-between;
     margin: auto;
 }
+
+.main h1{ /*PRODUCTS*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+}
 .main .produkto{
     max-width: 300px;
     flex: 1 1 210px;
@@ -520,7 +527,9 @@ font-weight: normal;
         </form>
     </div>
 </div>
+
 <div class="main">
+    <h1>PRODUCTS</h1>
 <div class="produkto">
 <img class="imgg" src="img/pic2.png">
 <h2 class="pangalan">Blind 1</h2>
