@@ -3,6 +3,13 @@
 include ("auth.php");
 
 ?>
+<?php
+
+require_once 'connection2.php';
+
+$sql = "SELECT * FROM products";
+$all_products = $conn->query($sql);
+?>
 
 <!DOCTYPE html>
 <html>
@@ -468,24 +475,27 @@ include ("auth.php");
     height: 2px;
     background-color: #000; /* Set the line color */
 }
-.main .produkto{
+main .produkto {
     max-width: 300px;
-    flex: 1 1 210px;
     text-align: center;
-    height: 400px;
-   
     margin: 20px;
 }
-.main .produkto .imgg{
-    height: 50%;
+
+main .produkto .imgg {
+    height: 200px; /* Set a fixed height for the image container */
     margin-bottom: 20px;
+    display: flex; /* Add this to align the image in the center of the container */
+    justify-content: center; /* Add this to align the image in the center of the container */
+    align-items: center; /* Add this to align the image in the center of the container */
+    flex-wrap: wrap;
 }
-.main .produkto .imgg img{
-    width: 70%;
-    height: 100%;
-    object-fit: cover; 
+
+main .produkto .imgg img {
+    max-width: 100%; /* Set the image width to take the full width of the container */
+    max-height: 100%; /* Set the image height to take the full height of the container */
+    object-fit: contain; /* This will maintain the aspect ratio and fit the image within the container */
 }
-.main .produkto .pangalan{
+main .produkto .pangalan{
     padding-left: 1em;
     text-align: left;
     line-height: 3em;
@@ -560,16 +570,25 @@ font-weight: normal;
         </form>
     </div>
 </div>
-
-<div class="main">
-    <div class="products-title">
+<div class="products-title">
         <h2>PRODUCTS</h2>
     </div>
-<div class="produkto">
-<img class="imgg" src="img/pic2.png">
-<h2 class="pangalan">Blind 1</h2>
-</div>
-</div>
+    <main>
+    <?php
+    while ($row = mysqli_fetch_assoc($all_products)) {
+    ?>
+
+        <div class="produkto">
+            <div class="imgg">
+                <img src="<?php echo $row['img']; ?>">
+            </div>
+            <h2 class="pangalan"><?php echo $row['name']; ?></h2>
+        </div>
+
+    <?php
+    }
+    ?>
+</main>
 
 
 
