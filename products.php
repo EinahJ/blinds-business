@@ -475,15 +475,26 @@ $all_products = $conn->query($sql);
     height: 2px;
     background-color: #000; /* Set the line color */
 }
+main{
+    max-width:1500px;
+    width: 95%;
+    margin 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
 main .produkto {
     max-width: 300px;
     text-align: center;
     margin: 20px;
+    
+    
 }
 
 main .produkto .imgg {
     height: 200px; /* Set a fixed height for the image container */
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     display: flex; /* Add this to align the image in the center of the container */
     justify-content: center; /* Add this to align the image in the center of the container */
     align-items: center; /* Add this to align the image in the center of the container */
@@ -496,8 +507,8 @@ main .produkto .imgg img {
     object-fit: contain; /* This will maintain the aspect ratio and fit the image within the container */
 }
 main .produkto .pangalan{
-    padding-left: 1em;
-    text-align: left;
+   
+    text-align: center;
     line-height: 3em;
     height: 15%;
     color: #000;
