@@ -525,10 +525,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     font-size: 16px;
 }
 
-.popup button {
-    background-color: #ccc;
-    margin-top: 10px;
-}
+
 
 
 

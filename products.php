@@ -227,10 +227,7 @@ $all_products = $conn->query($sql);
     font-size: 16px;
 }
 
-.popup button {
-    background-color: #ccc;
-    margin-top: 10px;
-}
+
 
         .head-logo img { /*header business logo*/
             height: 60px;
@@ -427,15 +424,7 @@ $all_products = $conn->query($sql);
 .profile-buttons button:hover {
     background-color: #955d32;
 }
-.main{
-    max-width:1500px;
-    width: 95%;
-    margin: 30px auto;
-    diplay: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: auto;
-}
+
 
 .products-title {
     text-align: center;
