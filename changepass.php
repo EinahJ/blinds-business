@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     } else 
     {
         // Check if the old password matches the one in the database
-        $check_query = "SELECT password FROM users WHERE user_id = ?";
+        $check_query = "SELECT password FROM user WHERE user_id = ?";
         $check_stmt = mysqli_prepare($con, $check_query);
         mysqli_stmt_bind_param($check_stmt, "i", $user_id);
         mysqli_stmt_execute($check_stmt);
@@ -30,12 +30,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if (password_verify($old_password, $stored_password)) {
             // Old password matches, update the new password in the database
             $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
-            $update_password_query = "UPDATE users SET password = ? WHERE user_id = ?";
+            $update_password_query = "UPDATE user SET password = ? WHERE user_id = ?";
             $update_password_stmt = mysqli_prepare($con, $update_password_query);
             mysqli_stmt_bind_param($update_password_stmt, "si", $hashed_password, $user_id);
             mysqli_stmt_execute($update_password_stmt);
 
-            header("Location: MyProfile.php");
+            header("Location: profile.php");
             die;
         } else {
             echo "Old password is incorrect.";
@@ -250,7 +250,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm New Password" required>
       <div class="button-div">
         <button type="submit" class="create-button">Save</button>
-        <button type="button" class="cancel-button" onclick="window.location.href='MyProfile.php';">Cancel</button>
+        <button type="button" class="cancel-button" onclick="window.location.href='profile.php';">Cancel</button>
       </div>
 
       <div class="social-icons">
