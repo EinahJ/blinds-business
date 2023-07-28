@@ -328,6 +328,30 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     background-color: #fff; /* Set the background color */
 }
 
+.price-container {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 70px;
+    margin-left: 20px;
+    height: 50%;
+  }
+
+  .price-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+
+  .price-container p {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    color: #af733f;
+  }
+
         footer {
         background-color: #333;
         color: #fff;
@@ -525,9 +549,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <input type="submit" value="Estimate">
         </form>
+        
+    </div>
+    
+    <img id="selectedImage" src="" alt="" style="display:none;">
+
+    <div class="price-container">
+        <h2>Estimated Price</h2>
+        <p id="estimatedPriceElement">$ 0</p>
     </div>
 
-    <img id="selectedImage" src="" alt="" style="display:none;">
     </div>
 
     <div id="popupForm" class="popup">
@@ -676,6 +707,39 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             selectedImage.style.display = 'none'; // Hide the image if no option is selected
         }
     });
+
+   const blindTypePrices = {
+        'duology': 100,    // Replace with actual price for Duology
+        'trilogy': 130,
+        'primewood': 120,
+        'timberwood': 110,
+        'pleated': 150,
+        'mono': 120,
+        'elegancy': 170,
+        'sara': 200
+        // Add other blind types with their respective prices here
+    };
+
+    blindTypeSelect.addEventListener('change', function () {
+        const selectedOption = this.value;
+        if (selectedOption && blindTypeImages[selectedOption]) {
+            selectedImage.src = blindTypeImages[selectedOption];
+            selectedImage.style.display = 'block'; // Show the image if an option is selected
+            // Calculate and display the estimated price if an option is selected
+            if (blindTypePrices[selectedOption]) {
+                const estimatedPrice = blindTypePrices[selectedOption];
+                estimatedPriceElement.textContent = `$${estimatedPrice}`;
+            } else {
+                estimatedPriceElement.textContent = '-'; // Display a dash if the price is not available
+            }
+        } else {
+            selectedImage.src = '';
+            selectedImage.style.display = 'none'; // Hide the image if no option is selected
+            estimatedPriceElement.textContent = '-'; // Hide the estimated price
+        }
+    });
+
+
     </script>
 
     </html>
