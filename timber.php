@@ -489,56 +489,7 @@
 
 </body>
 
-<footer>
-    <div class="contacts">
 
-        <div class="contactsHead">
-            <div class="footer-logo">
-                <img src="img/Logo.png" alt="">
-            </div>
-            <div class="contactdesc"> 
-            <h5>ECA Blinds<h5>
-            <p>Window Blinds Supplier</p>
-            </div>
-        </div>
-
-        <h6>We are top-tier window blinds supplier and service provider. Let us transform your windows into stunning fical points!</h6>
-
-        <div class="contactInfo">
-        <i class="fas fa-phone"></i>
-        <span>0975 908 4803</span><br>
-        <i class="far fa-clock"></i>
-        <span>Mon-Fri: 9:00 AM - 5:00 PM</span><br>
-        <i class="fas fa-map-marker-alt"></i>
-        <span>Nasugbu, Batangas</span>
-        </div>
-    </div>
-
-    <div class="newsletter">
-        <h1>Newsletter</h1>
-        <p>Join our email for tips and useful information</p>
-        <input type="text" class="footer-email" placeholder="Enter your email">
-        <button class="btn2">SUBSCRIBE</button>
-        <div class="newsletter-foot">
-            <p>Follow us</p>
-            <a href="https://www.facebook.com/ecawindowblindstrading" target="_blank"><i class="fab fa-facebook"></i></a>
-            <a href="ecawindowblindstrading@gmail.com" target="_blank"><i class="fab fa-google"></i></a>
-        </div>
-    </div>
-
-    <div class="gallery">
-        <h6>Gallery</h6>
-        <div class="row1">
-            <img src="img/pic5.jpg" alt="">
-            <img src="img/pic7.jpg" alt="">
-        </div>
-        <div class="row2">
-            <img src="img/pic9.jpg" alt="">
-            <img src="img/pic8.jpg" alt="">
-        </div>
-    </div>
-</div>
-</footer>
     <script>
         const menuBtn = document.getElementById('menuBtn');
     const menuContainer = document.getElementById('menuContainer');
