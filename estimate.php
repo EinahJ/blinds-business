@@ -229,7 +229,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .contact-form-container {
-            max-width: 500px;
+            max-width: 300px;
             margin-left: 10px;
             padding: 20px 40px 20px 20px;
             background-color: #fff;
@@ -262,7 +262,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .contact-form-container input[type="text"],
         .contact-form-container input[type="email"],
         .contact-form-container textarea {
-            width: 100%;
+            width: 96%;
             padding: 12px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -290,7 +290,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .contact-form-container input[type="submit"]:hover {
             background-color: #955d32;
         }
+        .estimate-container {
+    display: flex; /* Use flexbox to place elements side by side */
+    margin: 40px 60px 80px 40px;
+}
 
+.contact-form-container {
+    flex: 1; /* Allow the form to grow and take available space */
+    padding: 40px 60px 40px 40px; /* Add some padding for spacing */
+}
+
+.image-container {
+    flex: 1; /* Allow the image to grow and take available space */
+    padding: 20px; /* Add some padding for spacing */
+}
+
+#selectedImage {
+    width: 100%; /* Make the image occupy the full width of its container */
+    height: 100%;
+    max-width: 500px; /* Set a maximum width for the image */
+    margin: 60px 0px 0px 20px;
+}
         #blindType {
     width: 105%;
     padding: 10px;
@@ -481,7 +501,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </header>
 <body>
-
+<div class="estimate-container">
 <div class="contact-form-container">
         <h2>Design and Price Estimation</h2>
         <form method="POST">
@@ -497,7 +517,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <option value="trilogy">Trilogy</option>
                 <option value="primewood">Primewood</option>
                 <option value="timberwood">Timberwood</option>
-                <option value="pleated">PLeated Trinity</option>
+                <option value="pleated">Pleated Trinity</option>
                 <option value="mono">Mono</option>
                 <option value="elegancy">Elegancy</option>
                 <option value="sara">Sara Screen</option>
@@ -505,7 +525,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             <input type="submit" value="Estimate">
         </form>
-        <img id="selectedImage" src="" alt="" style="width: 100%; margin-top: 20px; display: none;">
+    </div>
+
+    <img id="selectedImage" src="" alt="" style="display:none;">
     </div>
 
     <div id="popupForm" class="popup">
@@ -633,14 +655,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     const blindTypeSelect = document.getElementById('blindType');
     const selectedImage = document.getElementById('selectedImage');
 
-    // Object to map blind type to image source
     const blindTypeImages = {
-        'duology': 'path/to/duology-image.jpg',
-        'trilogy': 'path/to/trilogy-image.jpg',
-        // Add other mappings here...
+        'duology': 'products/Duology/Duology.PNG',
+        'trilogy': 'products/Trilogy/Trilogy.PNG',
+        'primewood': 'products/Prime Wood/Prime Wood.PNG',
+        'timberwood': 'products/Timber Wood/Timber Wood.PNG',
+        'pleated': 'products/Pleated Trinity/Pleated Trinity.PNG',
+        'mono': 'products/Mono/Mono.PNG',
+        'elegancy': 'products/Elegancy/Elegancy.PNG',
+        'sara': 'products/Sara Screen/Sara Screen.PNG'
     };
 
-    // Function to update the image source when an option is selected
     blindTypeSelect.addEventListener('change', function () {
         const selectedOption = this.value;
         if (selectedOption && blindTypeImages[selectedOption]) {
