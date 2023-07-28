@@ -535,6 +535,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <label for="height">Height</label>
             <input type="text" id="height" name="height" required>
 
+
+            <label for="type">Type of Blinds</label>
             <select name="type" id="blindType">
                 <option value="">Select Type</option>
                 <option value="duology">Duology</option>
@@ -547,7 +549,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <option value="sara">Sara Screen</option>
             </select>
 
-            <input type="submit" value="Estimate">
         </form>
         
     </div>

@@ -1,54 +1,8 @@
-<?php
-session_start();
-
-include ("connection.php");
-include ("function.php");
-
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    if (!empty($email) && !empty($password)) {
-
-        $query = "SELECT * FROM user WHERE email = ?";
-        $stmt = mysqli_prepare($con, $query);
-        mysqli_stmt_bind_param($stmt, "s", $email);
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-
-        if ($result && mysqli_num_rows($result) > 0) {
-            $user_data = mysqli_fetch_assoc($result);
-            
-            // Verify the hashed password
-            if (password_verify($password, $user_data['password'])) {
-                $_SESSION['user_id'] = $user_data['user_id'];
-
-                // Check if the user is an admin
-                if ($user_data['privilege'] === 'admin') {
-                    header("Location: none.php");
-                } else {
-                    header("Location: home.php");
-                }
-                die;
-            } else {
-                echo '<p class="custom-text">Invalid password.</p>';
-            }
-        } else {
-            echo '<p class="custom-text">User not found.</p>';
-        }
-    } else {
-        echo '<p class="custom-text">Please fill out all input fields.</p>';
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Page</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Crushed" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,13 +21,142 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             align-items: center;
             padding: 15px;
             background-color: #d1a680;
+            margin-bottom: 30px;
         }
 
-        body{
-            background-image: url('img/pic3.png');
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
+        footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .contacts {
+        flex: 1;
+        max-width: 20%;
+        margin-left: 50px;
+        margin-right: 250px;
+    }
+
+    .contactsHead {
+        display: flex;
+        align-items: center;
+    }
+
+    .footer-logo img {
+        width: 55px;
+        height: 55px;
+        margin-right: 10px;
+    }
+
+    .contactdesc h5 {
+        font-size: 25px;
+    }
+
+    .contactdesc p {
+        font-size: 15px;
+    }
+
+    .contacts h6 {
+        font-size: 12px;
+        margin: 10px 0;
+    }
+
+    .contactInfo {
+        margin-top: 10px;
+        border-top: 1px solid white;
+        padding-top: 10px; /* Add padding to the top */
+    }
+
+    .contactInfo i {
+        margin-right: 5px;
+        margin-bottom: 10px;
+    }
+
+    .contactInfo span {
+        font-size: 12px;
+    }
+
+    .newsletter {
+        flex: 1;
+        max-width: 16%;
+        text-align: left;
+        padding: 0 10px;
+        margin-right: 300px;
+    }
+
+    .newsletter h1 {
+        font-size: 30px;
+    }
+
+    .newsletter p {
+        font-size: 15px;
+        margin: 10px 0;
+    }
+
+    .newsletter .btn1,
+    .newsletter .btn2 {
+        margin: 5px auto;
+        padding: 7px 10px;
+        background-color: #af733f;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .newsletter-foot {
+        display: flex;
+        align-items: center;
+    }
+
+    .newsletter-foot p {
+        font-size: 15px;
+        margin-bottom: 10px;
+        margin-right: 10px;
+    }
+
+    .newsletter-foot i {
+        font-size: 15px;
+        margin-right: 5px;
+    }
+
+    .footer-email {
+        margin: 5px auto;
+        padding: 7px 10px;
+        background-color: white;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 4px;
+        width: 91%;
+    }
+
+    .gallery {
+        flex: 1;
+        max-width: 10%;
+        text-align: center;
+    }
+
+    .gallery h6 {
+        font-size: 20px;
+        margin-left: 80px;
+    }
+
+    .row1, .row2{
+        display: flex;
+    }
+
+    .row1 img,
+    .row2 img {
+        width: 105px;
+        height: 105px;
+        margin: 5px;
+    }
 
         .popup {
     display: none;
@@ -240,94 +323,81 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             display: inline-block;
         }
 
-        #createAccountLink {
-    color: #af733f;
-    text-decoration: underline;
-    margin-left: 5px;
-}
+        .products-title {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative; /* Required for pseudo-elements */
+            font-size: 30px;
+        }
 
-.create-account-container {
-    display: flex;
-    align-items:
-    margin-top: 20px;
-    font-size: 14px;
-}
+        .product-name{
+            margin-left: 40px;
+            font-size: 40px;
+        }
+        
+        /* Style for the products title text */
+        .products-title h2 {
+            display: inline-block;
+            background-color: #fff; /* Set the background color to match the page background */
+            padding: 0 10px;
+            position: relative; /* Required for pseudo-elements */
+        }
+        
+        /* Style for the left line */
+        .products-title h2::before {
+            content: "";
+            position: absolute;
+            left: -500px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 500px; /* Adjust the line width as needed */
+            height: 2px;
+            background-color: #000; /* Set the line color */
+        }
+        
+        /* Style for the right line */
+        .products-title h2::after {
+            content: "";
+            position: absolute;
+            right: -500px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 500px; /* Adjust the line width as needed */
+            height: 2px;
+            background-color: #000; /* Set the line color */
+        }
 
-        #loginForm {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    padding: 40px 60px;
-    width: 300px;
-    text-align: center;
-    z-index: 2;
-}
+        .product-container{
+            margin-left: 150px;
+            display: flex;
+            align-items: center;
+        }
 
-#loginForm h2 {
-    font-size: 28px;
-    margin-bottom: 20px;
-    color: #333;
-}
+        .product-container .prod-img{ 
+            width: 500px;
+            height: 500px;
+            margin: 20px 20px 40px 100px;
+        }
+        .row1, .row2{
+            width: 150px;
+            height: 150px;
+            margin: 10px 20px 0px 70px;
+        }
 
-#loginForm form {
-    display: flex;
-    flex-direction: column;
-}
+        .row1-img{
+            border-radius: 50%;
+        }
 
-#loginForm label {
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 8px;
-    text-align: left;
-}
+        .color-container{
+            display: flex;
+            flex-direction: column;
+        }
 
-#loginForm input[type="email"],
-#loginForm input[type="password"] {
-    width: 91%;
-    padding: 12px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-#loginForm .create-account-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-#loginForm button {
-    padding: 12px 20px;
-    background-color: #af733f;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-#loginForm button:hover {
-    background-color: #955d32;
-}
-
-#loginForm a {
-    display: block;
-    text-decoration: none;
-    color: #af733f;
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-#loginForm a:hover {
-    text-decoration: underline;
-}
-
+        .color-name{
+            padding-left: 100px;
+            font-size: 40px;
+        }
+        
         
     </style>
 </head>
@@ -352,7 +422,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <a href="<?php echo $profile_link; ?>"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
-                <a href=""><i class="fas fa-calendar"></i>Schedule</a>
+                <a href="schedule.php"><i class="fas fa-calendar"></i>Schedule</a>
             </li>
             <li>
                 <a href="#"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
@@ -364,6 +434,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </div>
 </header>
 <body>
+
 <div id="popupForm" class="popup">
     <div class="popup-content">
         <h2>Schedule Visit</h2>
@@ -388,24 +459,86 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </form>
     </div>
 </div>
-
-    <div id="loginForm">
-        <h2>Login</h2>
-        <form method = "POST">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
-
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br>
-            <button type="submit" class="sign-in-button">Login</button>
-            <div class="create-account-container">
-            <p>Don't have an account?</p>
-        </div>
-        <a href="create.php" id="createAccountLink">Sign Up</a>
-
-        </form>
+<div class="products-title">
+        <h2>PRODUCTS</h2>
     </div>
+
+    <h1 class="product-name">Timber Wood</h1>
+
+<div class="product-container">
+    <img src="products/Timber Wood/Timber Wood.PNG" alt="" class="prod-img">
+    <div class="color-container">
+        <h1 class="color-name">Available Colors</h1>
+
+        <div class="row1">
+        <img src="products/Timber Wood/Beige.PNG" alt="" class="row1-img">
+        <img src="products/Timber Wood/Black.PNG" alt="" class="row1-img">
+        <img src="products/Timber Wood/Brown.PNG" alt="" class="row1-img">
+        </div>
+
+        <div class="row2">
+        <img src="products/Timber Wood/Dark Gray.PNG" alt="" class="row1-img">
+        <img src="products/Timber Wood/Khaki.PNG" alt="" class="row1-img">
+        <img src="products/Timber Wood/Teak.PNG" alt="" class="row1-img">
+        </div>
+
+    </div>
+</div>
+
+
+
 </body>
+
+<footer>
+    <div class="contacts">
+
+        <div class="contactsHead">
+            <div class="footer-logo">
+                <img src="img/Logo.png" alt="">
+            </div>
+            <div class="contactdesc"> 
+            <h5>ECA Blinds<h5>
+            <p>Window Blinds Supplier</p>
+            </div>
+        </div>
+
+        <h6>We are top-tier window blinds supplier and service provider. Let us transform your windows into stunning fical points!</h6>
+
+        <div class="contactInfo">
+        <i class="fas fa-phone"></i>
+        <span>0975 908 4803</span><br>
+        <i class="far fa-clock"></i>
+        <span>Mon-Fri: 9:00 AM - 5:00 PM</span><br>
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Nasugbu, Batangas</span>
+        </div>
+    </div>
+
+    <div class="newsletter">
+        <h1>Newsletter</h1>
+        <p>Join our email for tips and useful information</p>
+        <input type="text" class="footer-email" placeholder="Enter your email">
+        <button class="btn2">SUBSCRIBE</button>
+        <div class="newsletter-foot">
+            <p>Follow us</p>
+            <a href="https://www.facebook.com/ecawindowblindstrading" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="ecawindowblindstrading@gmail.com" target="_blank"><i class="fab fa-google"></i></a>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <h6>Gallery</h6>
+        <div class="row1">
+            <img src="img/pic5.jpg" alt="">
+            <img src="img/pic7.jpg" alt="">
+        </div>
+        <div class="row2">
+            <img src="img/pic9.jpg" alt="">
+            <img src="img/pic8.jpg" alt="">
+        </div>
+    </div>
+</div>
+</footer>
     <script>
         const menuBtn = document.getElementById('menuBtn');
     const menuContainer = document.getElementById('menuContainer');
