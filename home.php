@@ -339,6 +339,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         color: #fff;
         padding: 20px 20px;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
     }
 
@@ -600,7 +601,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="banner">
         <h1>DISCOVER THE<br>BEAUTY OF<br>BLINDS</h1>
-        <a href="" class="btn">SHOP NOW</a>
+        <a href="products.php" class="btn">SHOP NOW</a>
     </div>
 
     <h1 class="prod-header">WHAT WE OFFER</h1>
