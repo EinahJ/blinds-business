@@ -496,10 +496,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h2>Design and Price Estimation</h2>
         <form method="POST">
             <label for="width">Width</label>
-            <input type="text" id="width" name="width" required>
+            <input type="text" id="width" name="width" required placeholder="Inches">
 
             <label for="height">Height</label>
-            <input type="text" id="height" name="height" required>
+            <input type="text" id="height" name="height" required placeholder="Inches">
 
 
             <label for="type">Type of Blinds</label>
