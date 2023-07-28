@@ -8,6 +8,7 @@ include ("auth.php");
 <html>
 <head>
     <title>Homepage</title>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Crushed" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -418,6 +419,44 @@ include ("auth.php");
 .profile-buttons button:hover {
     background-color: #955d32;
 }
+.main{
+    max-width:1500px;
+    width: 95%;
+    margin: 30px auto;
+    diplay: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+}
+.main .produkto{
+    max-width: 300px;
+    flex: 1 1 210px;
+    text-align: center;
+    height: 400px;
+   
+    margin: 20px;
+}
+.main .produkto .imgg{
+    height: 50%;
+    margin-bottom: 20px;
+}
+.main .produkto .imgg img{
+    width: 70%;
+    height: 100%;
+    object-fit: cover; 
+}
+.main .produkto .pangalan{
+    padding-left: 1em;
+    text-align: left;
+    line-height: 3em;
+    height: 15%;
+    color: #000;
+font-family: Crushed;
+font-size: 30px;
+font-style: normal;
+font-weight: normal;
+
+}
 
         
     </style>
@@ -481,6 +520,15 @@ include ("auth.php");
         </form>
     </div>
 </div>
+<div class="main">
+<div class="produkto">
+<img class="imgg" src="img/pic2.png">
+<h2 class="pangalan">Blind 1</h2>
+</div>
+</div>
+
+
+
 
 </body>
 
