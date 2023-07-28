@@ -379,7 +379,7 @@
             margin: 20px 20px 40px 100px;
         }
         .row1, .row2{
-            width: 320px;
+            width: 150px;
             height: 150px;
             margin: 10px 20px 0px 70px;
         }
@@ -463,23 +463,23 @@
         <h2>PRODUCTS</h2>
     </div>
 
-    <h1 class="product-name">Duology</h1>
+    <h1 class="product-name">Timber Wood</h1>
 
 <div class="product-container">
-    <img src="products/Duology/Duology.png" alt="" class="prod-img">
+    <img src="products/Timber Wood/Timber Wood.PNG" alt="" class="prod-img">
     <div class="color-container">
         <h1 class="color-name">Available Colors</h1>
 
         <div class="row1">
-        <img src="products/Duology/Brown.PNG" alt="" class="row1-img">
-        <img src="products/Duology/Black.PNG" alt="" class="row1-img">
-        <img src="products/Duology/Green.PNG" alt="" class="row1-img">
+        <img src="products/Timber Wood/Beige.PNG" alt="" class="row1-img">
+        <img src="products/Timber Wood/Black.PNG" alt="" class="row1-img">
+        <img src="products/Timber Wood/Brown.PNG" alt="" class="row1-img">
         </div>
 
         <div class="row2">
-        <img src="products/Duology/Dark Gray.PNG" alt="" class="row1-img">
-        <img src="products/Duology/Gray.PNG" alt="" class="row1-img">
-        <img src="products/Duology/Teak.PNG" alt="" class="row1-img">
+        <img src="products/Timber Wood/Dark Gray.PNG" alt="" class="row1-img">
+        <img src="products/Timber Wood/Khaki.PNG" alt="" class="row1-img">
+        <img src="products/Timber Wood/Teak.PNG" alt="" class="row1-img">
         </div>
 
     </div>
