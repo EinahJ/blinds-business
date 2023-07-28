@@ -203,7 +203,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         padding: 40px 60px;
-        width: 550px;
+        width: 400px;
         text-align: center;
     }
 
@@ -238,7 +238,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 
     #regForm select{
-        width: 95.5%;
+        width: 97%;
         padding: 12px;
         margin-bottom: 10px;
         border: 1px solid #ccc;
