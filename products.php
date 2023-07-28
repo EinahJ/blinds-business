@@ -560,7 +560,7 @@ font-weight: normal;
 <div id="popupForm" class="popup">
     <div class="popup-content">
         <h2>Schedule Visit</h2>
-        <form method="POST" action="schedule.php">
+        <form method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
