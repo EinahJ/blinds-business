@@ -27,6 +27,7 @@ include ("auth.php");
             align-items: center;
             padding: 15px;
             background-color: #d1a680;
+            margin-bottom: 30px;
         }
 
         footer {
@@ -429,11 +430,43 @@ include ("auth.php");
     margin: auto;
 }
 
-.main h1{ /*PRODUCTS*/
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 30px;
+.products-title {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative; /* Required for pseudo-elements */
+    font-size: 30px;
+}
+
+/* Style for the products title text */
+.products-title h2 {
+    display: inline-block;
+    background-color: #fff; /* Set the background color to match the page background */
+    padding: 0 10px;
+    position: relative; /* Required for pseudo-elements */
+}
+
+/* Style for the left line */
+.products-title h2::before {
+    content: "";
+    position: absolute;
+    left: -500px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 500px; /* Adjust the line width as needed */
+    height: 2px;
+    background-color: #000; /* Set the line color */
+}
+
+/* Style for the right line */
+.products-title h2::after {
+    content: "";
+    position: absolute;
+    right: -500px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 500px; /* Adjust the line width as needed */
+    height: 2px;
+    background-color: #000; /* Set the line color */
 }
 .main .produkto{
     max-width: 300px;
@@ -529,7 +562,9 @@ font-weight: normal;
 </div>
 
 <div class="main">
-    <h1>PRODUCTS</h1>
+    <div class="products-title">
+        <h2>PRODUCTS</h2>
+    </div>
 <div class="produkto">
 <img class="imgg" src="img/pic2.png">
 <h2 class="pangalan">Blind 1</h2>
