@@ -577,13 +577,14 @@ font-weight: normal;
     <?php
     while ($row = mysqli_fetch_assoc($all_products)) {
     ?>
-
+        <a href="<?php echo $row['href']; ?>">
         <div class="produkto">
             <div class="imgg">
                 <img src="<?php echo $row['img']; ?>">
             </div>
             <h2 class="pangalan"><?php echo $row['name']; ?></h2>
         </div>
+        </a>
 
     <?php
     }
