@@ -229,8 +229,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
         .contact-form-container {
-            max-width: 500px;
-            margin: 0 auto;
+            max-width: 300px;
+            margin-left: 10px;
             padding: 20px 40px 20px 20px;
             background-color: #fff;
             border-radius: 8px;
@@ -262,7 +262,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .contact-form-container input[type="text"],
         .contact-form-container input[type="email"],
         .contact-form-container textarea {
-            width: 100%;
+            width: 96%;
             padding: 12px;
             margin-bottom: 10px;
             border: 1px solid #ccc;
@@ -290,6 +290,67 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .contact-form-container input[type="submit"]:hover {
             background-color: #955d32;
         }
+        .estimate-container {
+    display: flex; /* Use flexbox to place elements side by side */
+    margin: 40px 60px 80px 40px;
+}
+
+.contact-form-container {
+    flex: 1; /* Allow the form to grow and take available space */
+    padding: 40px 60px 40px 40px; /* Add some padding for spacing */
+}
+
+.image-container {
+    flex: 1; /* Allow the image to grow and take available space */
+    padding: 20px; /* Add some padding for spacing */
+}
+
+#selectedImage {
+    width: 100%; /* Make the image occupy the full width of its container */
+    height: 100%;
+    max-width: 500px; /* Set a maximum width for the image */
+    margin: 60px 0px 0px 20px;
+}
+        #blindType {
+    width: 105%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    appearance: none; /* Remove default styling for select button (not supported in some browsers) */
+    -webkit-appearance: none; /* Safari */
+    -moz-appearance: none; /* Firefox */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Position the drop-down arrow */
+    background-size: 16px 16px; /* Size of the drop-down arrow */
+    background-color: #fff; /* Set the background color */
+}
+
+.price-container {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    margin-top: 70px;
+    margin-left: 20px;
+    height: 50%;
+  }
+
+  .price-container h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+  }
+
+  .price-container p {
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    color: #af733f;
+  }
 
         footer {
         background-color: #333;
@@ -455,7 +516,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <a href="schedule.php"><i class="fas fa-calendar"></i>Schedule</a>
             </li>
             <li>
-                <a href="estimate.php"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
+                <a href="#"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
             </li>
             <li>
                 <a href="#"><i class="fas fa-comments"></i>Support</a>
@@ -464,21 +525,40 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </header>
 <body>
-
+<div class="estimate-container">
 <div class="contact-form-container">
-        <h2>Contact Us</h2>
+        <h2>Design and Price Estimation</h2>
         <form method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <label for="width">Width</label>
+            <input type="text" id="width" name="width" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="height">Height</label>
+            <input type="text" id="height" name="height" required>
 
-            <label for="inquiry">Inquiry:</label>
-            <textarea id="inquiry" name="Inquiry" required></textarea>
+            <select name="type" id="blindType">
+                <option value="">Select Type</option>
+                <option value="duology">Duology</option>
+                <option value="trilogy">Trilogy</option>
+                <option value="primewood">Primewood</option>
+                <option value="timberwood">Timberwood</option>
+                <option value="pleated">Pleated Trinity</option>
+                <option value="mono">Mono</option>
+                <option value="elegancy">Elegancy</option>
+                <option value="sara">Sara Screen</option>
+            </select>
 
-            <input type="submit" value="Submit">
+            <input type="submit" value="Estimate">
         </form>
+        
+    </div>
+    
+    <img id="selectedImage" src="" alt="" style="display:none;">
+
+    <div class="price-container">
+        <h2>Estimated Price</h2>
+        <p id="estimatedPriceElement">₱ 0</p>
+    </div>
+
     </div>
 
     <div id="popupForm" class="popup">
@@ -601,6 +681,71 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             popupForm.style.display = 'none';
         }
     });
+
+
+    const blindTypeSelect = document.getElementById('blindType');
+    const selectedImage = document.getElementById('selectedImage');
+
+    const blindTypeImages = {
+        'duology': 'products/Duology/Duology.PNG',
+        'trilogy': 'products/Trilogy/Trilogy.PNG',
+        'primewood': 'products/Prime Wood/Prime Wood.PNG',
+        'timberwood': 'products/Timber Wood/Timber Wood.PNG',
+        'pleated': 'products/Pleated Trinity/Pleated Trinity.PNG',
+        'mono': 'products/Mono/Mono.PNG',
+        'elegancy': 'products/Elegancy/Elegancy.PNG',
+        'sara': 'products/Sara Screen/Sara Screen.PNG'
+    };
+
+    blindTypeSelect.addEventListener('change', function () {
+        const selectedOption = this.value;
+        if (selectedOption && blindTypeImages[selectedOption]) {
+            selectedImage.src = blindTypeImages[selectedOption];
+            selectedImage.style.display = 'block'; // Show the image if an option is selected
+        } else {
+            selectedImage.src = '';
+            selectedImage.style.display = 'none'; // Hide the image if no option is selected
+        }
+    });
+
+    const blindTypePrices = {
+    'duology': 130,    
+    'trilogy': 150, 
+    'primewood': 120, 
+    'timberwood': 120, 
+    'pleated': 210, 
+    'mono': 170, 
+    'elegancy': 210, 
+    'sara': 240   
+  };
+
+  blindTypeSelect.addEventListener('change', function () {
+    const selectedOption = this.value;
+    if (selectedOption && blindTypeImages[selectedOption]) {
+      selectedImage.src = blindTypeImages[selectedOption];
+      selectedImage.style.display = 'block'; // Show the image if an option is selected
+
+      if (blindTypePrices[selectedOption]) {
+        const width = parseFloat(document.getElementById('width').value);
+        const height = parseFloat(document.getElementById('height').value);
+        const price = blindTypePrices[selectedOption];
+        if (width && height && !isNaN(width) && !isNaN(height)) {
+          const estimatedPrice = ((width * height) / 144) * price;
+          estimatedPriceElement.textContent = `₱${estimatedPrice.toFixed(2)}`;
+        } else {
+          estimatedPriceElement.textContent = '-'; // Display a dash if width or height is not valid
+        }
+      } else {
+        estimatedPriceElement.textContent = '-'; // Display a dash if the price is not available
+      }
+    } else {
+      selectedImage.src = '';
+      selectedImage.style.display = 'none'; // Hide the image if no option is selected
+      estimatedPriceElement.textContent = '-'; // Hide the estimated price
+    }
+  });
+
+
     </script>
 
     </html>

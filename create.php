@@ -379,7 +379,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <a href="<?php echo $profile_link; ?>"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
-                <a href="schedule.php"><i class="fas fa-calendar"></i>Schedule</a>
+                <a href=""><i class="fas fa-calendar"></i>Schedule</a>
             </li>
             <li>
                 <a href="#"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
