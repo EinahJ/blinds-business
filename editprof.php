@@ -138,8 +138,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         .head-logo img { /*header business logo*/
             height: 60px;
+            margin-left: 20px;
+            margin-right: 10px;
         }
-
         .bus-name { /*ECA BLINDS*/
             margin-right: 100px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
