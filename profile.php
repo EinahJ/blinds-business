@@ -395,10 +395,12 @@ include ("auth.php");
             </div>
             
             <div class="profile-buttons">
-            <a href="editprofile.php">
+            <a href="editprof.php">
                 <button>Edit Profile</button>
             </a>
+            <a href="cpass.php">
                 <button>Change Password</button>
+            </a>
                 <a href="logout.php">
                 <button>Logout</button>
                 </a>

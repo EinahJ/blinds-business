@@ -1,44 +1,45 @@
 <?php
-session_start();
-
-include ("connection.php");
-include ("function.php");
+include ("auth.php");
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    // Get the user_id from the session
+    $user_id = $_SESSION['user_id'];
 
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    $old_password = $_POST['password'];
+    $new_password = $_POST['new-password'];
+    $confirm_password = $_POST['confirm-password'];
 
-    if (!empty($email) && !empty($password)) {
+    // Validate the passwords
+    if ($new_password !== $confirm_password) {
+        echo "New password and confirm password do not match.";
+    } else 
+    {
+        // Check if the old password matches the one in the database
+        $check_query = "SELECT password FROM user WHERE user_id = ?";
+        $check_stmt = mysqli_prepare($con, $check_query);
+        mysqli_stmt_bind_param($check_stmt, "i", $user_id);
+        mysqli_stmt_execute($check_stmt);
+        mysqli_stmt_bind_result($check_stmt, $stored_password);
 
-        $query = "SELECT * FROM user WHERE email = ?";
-        $stmt = mysqli_prepare($con, $query);
-        mysqli_stmt_bind_param($stmt, "s", $email);
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
+        // Store the result set in memory
+        mysqli_stmt_store_result($check_stmt);
 
-        if ($result && mysqli_num_rows($result) > 0) {
-            $user_data = mysqli_fetch_assoc($result);
-            
-            // Verify the hashed password
-            if (password_verify($password, $user_data['password'])) {
-                $_SESSION['user_id'] = $user_data['user_id'];
+        // Fetch the result
+        mysqli_stmt_fetch($check_stmt);
 
-                // Check if the user is an admin
-                if ($user_data['privilege'] === 'admin') {
-                    header("Location: none.php");
-                } else {
-                    header("Location: home.php");
-                }
-                die;
-            } else {
-                echo '<p class="custom-text">Invalid password.</p>';
-            }
+        if (password_verify($old_password, $stored_password)) {
+            // Old password matches, update the new password in the database
+            $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+            $update_password_query = "UPDATE user SET password = ? WHERE user_id = ?";
+            $update_password_stmt = mysqli_prepare($con, $update_password_query);
+            mysqli_stmt_bind_param($update_password_stmt, "si", $hashed_password, $user_id);
+            mysqli_stmt_execute($update_password_stmt);
+
+            header("Location: profile.php");
+            die;
         } else {
-            echo '<p class="custom-text">User not found.</p>';
+            echo "Old password is incorrect.";
         }
-    } else {
-        echo '<p class="custom-text">Please fill out all input fields.</p>';
     }
 }
 ?>
@@ -370,7 +371,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <div id="popupForm" class="popup">
     <div class="popup-content">
         <h2>Schedule Visit</h2>
-        <form method="POST" action="schedule.php">
+        <form method="POST" >
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -395,11 +396,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div id="loginForm">
         <h2>Change Password</h2>
         <form method = "POST">
-            <input type="password" id="oldpass" name="oldpass" placeholder="Old Password" required><br>
-            <input type="password" id="newpass" name="newpass" placeholder="New Password" required><br>
-            <input type="password" id="confirm" name="confirm" placeholder="Confirm New Password" required><br>
-            <button type="submit" class="sign-in-button">Save</button>
-            <button type="submit" class="cancel-button">Cancel</button>
+            <input type="password" id="oldpass" name="password" placeholder="Old Password" required><br>
+            <input type="password" id="newpass" name="new-password" placeholder="New Password" required><br>
+            <input type="password" id="confirm" name="confirm-password" placeholder="Confirm New Password" required><br>
+            <button type="submit" class="create-button">Save</button>
+            <button type="button" class="cancel-button" onclick="window.location.href='profile.php';">Cancel</button>
         </form>
     </div>
 </body>

@@ -1,46 +1,37 @@
 <?php
-session_start();
+include ("auth.php");
 
-include ("connection.php");
-include ("function.php");
+if ($_SERVER['REQUEST_METHOD'] == "POST")
+{
+  $name = $_POST['name'];
+  $contact = $_POST['contact'];
+  $address = $_POST['address'];
+  $email = $_POST['email'];
 
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
+  // Validate the input fields
 
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+  if (isValidName($name)  && isValidContact($contact) && isValidEmail($email)) {
+      // Get the user_id from the session
+      $user_id = $_SESSION['user_id'];
 
-    if (!empty($email) && !empty($password)) {
+      // Prepare the UPDATE query
+      $query = "UPDATE user SET name = ?, contact = ?, address = ?, email = ? WHERE user_id = ?";
+      $stmt = mysqli_prepare($con, $query);
+      mysqli_stmt_bind_param($stmt, "ssssi", $name, $contact, $address, $email, $user_id);
 
-        $query = "SELECT * FROM user WHERE email = ?";
-        $stmt = mysqli_prepare($con, $query);
-        mysqli_stmt_bind_param($stmt, "s", $email);
-        mysqli_stmt_execute($stmt);
-        $result = mysqli_stmt_get_result($stmt);
-
-        if ($result && mysqli_num_rows($result) > 0) {
-            $user_data = mysqli_fetch_assoc($result);
-            
-            // Verify the hashed password
-            if (password_verify($password, $user_data['password'])) {
-                $_SESSION['user_id'] = $user_data['user_id'];
-
-                // Check if the user is an admin
-                if ($user_data['privilege'] === 'admin') {
-                    header("Location: none.php");
-                } else {
-                    header("Location: home.php");
-                }
-                die;
-            } else {
-                echo '<p class="custom-text">Invalid password.</p>';
-            }
-        } else {
-            echo '<p class="custom-text">User not found.</p>';
-        }
-    } else {
-        echo '<p class="custom-text">Please fill out all input fields.</p>';
-    }
+      // Execute the UPDATE query
+      if (mysqli_stmt_execute($stmt)) {
+          // Data updated successfully, redirect to profile.php
+          header("Location: profile.php");
+          die;
+      } else {
+        echo '<p class="custom-text">Failed to update user information.</p>';
+      }
+  } else {
+    echo '<p class="custom-text">Please enter some valid information!</p>';
+  }
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -395,12 +386,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div id="loginForm">
         <h2>Edit Profile</h2>
         <form method = "POST">
-            <input type="text" id="name" name="name" placeholder="Full Name" required><br>
-            <input type="text" id="number" name="number" placeholder="Mobile Number" required><br>
-            <input type="text" id="address" name="address" placeholder="Home Address" required><br>
-            <input type="email" id="email" name="email" placeholder="Email Address" required><br>
-            <button type="submit" class="sign-in-button">Save</button>
-            <button type="submit" class="cancel-button">Cancel</button>
+      <input type="text" id="firstname" name="name" placeholder="Full Name" value="<?php echo $user_data['name']; ?>" required>
+      <input type="text" id="contact" name="contact" placeholder="Contact Number" value="<?php echo $user_data['contact']; ?>" required>
+      <input type="text" id="address" name="address" placeholder="Home Address" value="<?php echo $user_data['address']; ?>" required>
+      <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $user_data['email']; ?>" required>
+      <div class="button-div">
+        <button type="submit" class="create-button">Save</button>
+        <button type="button" class="cancel-button" onclick="window.location.href='MyProfile.php';">Cancel</button>
+      </div>
         </form>
     </div>
 </body>
