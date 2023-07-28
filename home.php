@@ -610,7 +610,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button class="scroll-button" id="scrollRightBtn"><i class="fas fa-chevron-right"></i></button>
         <div class="product-card">
             <div class="product-image">
-                <img src="img/pic2.png" alt="Product 1">
+                <img src="products/Checker/Checker.PNG" alt="Product 1">
             </div>
             <div class="product-name">Different Color</div>
         </div>

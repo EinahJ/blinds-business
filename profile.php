@@ -311,7 +311,7 @@ include ("auth.php");
     </style>
 </head>
 <header>
-    <a href="" class="head-logo"><img src="img/Logo.png" alt=""></a>
+    <a href="" class="head-logo"><img src="img/ecalogo.png" alt=""></a>
     <h1 class="bus-name">ECA BLINDS</h1>
     <a href="" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
     <a href="" id="menuBtn" class="menu-icon"><i class="fas fa-bars"></i></a>
@@ -325,10 +325,10 @@ include ("auth.php");
                 <a href="home.php"><i class="fas fa-home"></i>Home</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-box"></i>Products</a>
+                <a href="products.php"><i class="fas fa-box"></i>Products</a>
             </li>
             <li>
-            <a href="<?php echo $profile_link; ?>"><i class="fas fa-user"></i>Account</a>
+                <a href="<?php echo $profile_link; ?>"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
                 <a href="schedule.php"><i class="fas fa-calendar"></i>Schedule</a>
@@ -337,7 +337,7 @@ include ("auth.php");
                 <a href="estimate.php"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
             </li>
             <li>
-                <a href="#"><i class="fas fa-comments"></i>Support</a>
+                <a href="support.php"><i class="fas fa-comments"></i>Support</a>
             </li>
         </ul>
     </div>
