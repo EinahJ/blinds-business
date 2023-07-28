@@ -219,8 +219,10 @@
     margin-top: 10px;
 }
 
-        .head-logo img { /*header business logo*/
+.head-logo img { /*header business logo*/
             height: 60px;
+            margin-left: 20px;
+            margin-right: 10px;
         }
 
         .bus-name { /*ECA BLINDS*/

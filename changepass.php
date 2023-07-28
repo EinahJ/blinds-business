@@ -72,8 +72,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
       border-bottom: 0.5px solid #c2c2c2; /* Add a thin line at the bottom */
     }
 
-    .logo img {
-      height: 250px;
+    .head-logo img { /*header business logo*/
+            height: 60px;
+            margin-left: 20px;
+            margin-right: 10px;
     }
 
     nav ul {
