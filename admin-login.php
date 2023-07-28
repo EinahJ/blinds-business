@@ -306,7 +306,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
     <div id="loginForm">
-        <h2>Login</h2>
+        <h2>Admin Login</h2>
         <form method = "POST">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required><br>
@@ -314,11 +314,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br>
             <button type="submit" class="sign-in-button">Login</button>
-            <div class="create-account-container">
-            <p>Don't have an account?</p>
-        </div>
-        <a href="create.php" id="createAccountLink">Sign Up</a>
-
         </form>
     </div>
 </body>
@@ -340,26 +335,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     window.addEventListener('click', (event) => {
         if (!menuBtn.contains(event.target)) {
             menuContainer.style.display = 'none';
-        }
-    });
-
-    const scheduleMenuBtn = document.querySelector('a[href="schedule.php"]');
-    const popupForm = document.getElementById('popupForm');
-    const closePopupBtn = document.getElementById('closePopupBtn');
-
-    scheduleMenuBtn.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        popupForm.style.display = 'block';
-    });
-
-    closePopupBtn.addEventListener('click', () => {
-        popupForm.style.display = 'none';
-    });
-
-    window.addEventListener('click', (event) => {
-        if (!scheduleMenuBtn.contains(event.target) && !popupForm.contains(event.target)) {
-            popupForm.style.display = 'none';
         }
     });
     </script>
