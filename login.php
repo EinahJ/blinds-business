@@ -240,80 +240,93 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             display: inline-block;
         }
 
-        #loginForm {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            padding: 40px 80px;
-            width: 300px;
-            text-align: center;
-            z-index: 2;
-        }
-        
-        #loginForm h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #333;
-        }
-        
-        #loginForm form {
-            display: flex;
-            flex-direction: column;
-        }
-        
-        #loginForm label {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 8px;
-            text-align: left;
-        }
-        
-        #loginForm input[type="email"],
-        #loginForm input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-        
-        #loginForm a {
-            display: block;
-            text-decoration: none;
-            color: #af733f;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            margin-bottom: 10px;
-            text-align: left;
-        }
+        #createAccountLink {
+    color: #af733f;
+    text-decoration: underline;
+    margin-left: 5px;
+}
 
-        #loginForm .create-account-container {
-            display: flex;
-            justify-content: center; /* Center the content horizontally */
-        }
-        
-        
-        #loginForm button {
-            padding: 12px 20px;
-            background-color: #af733f;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        
-        #loginForm button:hover {
-            background-color: #955d32;
-        }
+.create-account-container {
+    display: flex;
+    align-items:
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+        #loginForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 40px 60px;
+    width: 300px;
+    text-align: center;
+    z-index: 2;
+}
+
+#loginForm h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#loginForm form {
+    display: flex;
+    flex-direction: column;
+}
+
+#loginForm label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+#loginForm input[type="email"],
+#loginForm input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+#loginForm .create-account-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#loginForm button {
+    padding: 12px 20px;
+    background-color: #af733f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#loginForm button:hover {
+    background-color: #955d32;
+}
+
+#loginForm a {
+    display: block;
+    text-decoration: none;
+    color: #af733f;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+#loginForm a:hover {
+    text-decoration: underline;
+}
 
         
     </style>
@@ -384,12 +397,12 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required><br>
-
-            <div class="create-account-container">
-                <a href="create.php" id="createAccountLink">Create Account</a>
-            </div>
-
             <button type="submit" class="sign-in-button">Login</button>
+            <div class="create-account-container">
+            <p>Don't have an account?</p>
+        </div>
+        <a href="create.php" id="createAccountLink">Sign Up</a>
+
         </form>
     </div>
 </body>
