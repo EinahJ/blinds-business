@@ -1,3 +1,36 @@
+<?php
+
+include("auth.php");
+
+// Check if the form is submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get the form data
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $Inquiry = $_POST['Inquiry']; // Corrected to match the form field name
+  
+
+    // Insert the data into the database, including the file path
+    $query = "INSERT INTO mails (name, email, Inquiry) VALUES (?, ?, ?)";
+    $stmt = mysqli_prepare($con, $query);
+    if (!$stmt) {
+        die("Error in preparing the statement: " . mysqli_error($con));
+    }
+
+    mysqli_stmt_bind_param($stmt, "sss", $name, $email, $Inquiry);
+    $result = mysqli_stmt_execute($stmt);
+    if (!$result) {
+        die("Error in executing the statement: " . mysqli_error($con));
+    }
+
+    mysqli_stmt_close($stmt);
+    mysqli_close($con);
+
+    header("Location: login.php");
+    // Optionally, display a success message to the user
+    echo "Message sent successfully!";
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -434,7 +467,7 @@
 
 <div class="contact-form-container">
         <h2>Contact Us</h2>
-        <form method="post" action="process_contact_form.php">
+        <form method="POST">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -442,7 +475,7 @@
             <input type="email" id="email" name="email" required>
 
             <label for="inquiry">Inquiry:</label>
-            <textarea id="inquiry" name="inquiry" required></textarea>
+            <textarea id="inquiry" name="Inquiry" required></textarea>
 
             <input type="submit" value="Submit">
         </form>
