@@ -20,7 +20,8 @@
             display: flex;
             align-items: center;
             padding: 15px;
-            background-color: #d1a680;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
         }
 
@@ -393,11 +394,12 @@
         .color-container{
             display: flex;
             flex-direction: column;
+            margin-left: 30px;
         }
 
         .color-name{
             padding-left: 100px;
-            font-size: 40px;
+            font-size: 25px;
         }
         
         

@@ -99,15 +99,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         .banner .btn { /*Shop now button*/
             display: inline-block;
-            padding: 12px 40px;
-            background-color: #af733f;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 22px;
-            font-weight: bolder;
-            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 25px;
+            color: #AF733F;
+            background-color: transparent;
+            border: 2px solid #AF733F;
             border-radius: 4px;
-            margin-top: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-top: 15px;
         }
 
         .banner2 { /*home background img*/
@@ -135,16 +136,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         .banner2 .btn2 { /*Shop now button*/
             display: inline-block;
-            padding: 12px 40px;
-            background-color: #af733f;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 22px;
-            font-weight: bolder;
-            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 25px;
+            color: #AF733F;
+            background-color: transparent;
+            border: 2px solid #AF733F;
             border-radius: 4px;
-            margin-top: 30px;
-            margin-left: 700px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-top: 15px;
         }
 
         #menuContainer {
