@@ -63,7 +63,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             display: flex;
             align-items: center;
             padding: 15px;
-            background-color: #d1a680;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
         }
 
         body{
@@ -234,18 +236,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 
 #loginForm button {
-    padding: 12px 20px;
-    background-color: #af733f;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    display: inline-block;
+            padding: 10px 10px;
+            font-size: 15px;
+            color: #AF733F;
+            background-color: transparent;
+            border: 1px solid #AF733F;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-top: 15px;
 }
 
 #loginForm button:hover {
     background-color: #955d32;
+    color: white;
 }
 
 #loginForm a {
@@ -259,6 +265,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 #loginForm a:hover {
     text-decoration: underline;
 }
+
 
         
     </style>
@@ -274,11 +281,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div id="loginForm">
         <h2>Admin Login</h2>
         <form method = "POST">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br>
+            <input type="email" id="email" name="email" placeholder="Email" required><br>
 
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="pass" required><br>
+                <input type="password" id="password" name="pass" placeholder="Password" required><br>
             <button type="submit" class="sign-in-button">Login</button>
         </form>
     </div>
