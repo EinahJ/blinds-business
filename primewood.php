@@ -1,16 +1,3 @@
-<?php
-
-include ("auth.php");
-
-?>
-<?php
-
-require_once 'connection2.php';
-
-$sql = "SELECT * FROM products";
-$all_products = $conn->query($sql);
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,7 +30,6 @@ $all_products = $conn->query($sql);
         color: #fff;
         padding: 20px 20px;
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
     }
 
@@ -51,14 +37,12 @@ $all_products = $conn->query($sql);
         flex: 1;
         max-width: 20%;
         margin-left: 50px;
-        margin-right: 300px;
+        margin-right: 250px;
     }
 
     .contactsHead {
         display: flex;
         align-items: center;
-        padding-bottom: 10px;
-        border-bottom: 1px solid white;
     }
 
     .footer-logo img {
@@ -76,7 +60,7 @@ $all_products = $conn->query($sql);
     }
 
     .contacts h6 {
-        font-size: 13px;
+        font-size: 12px;
         margin: 10px 0;
     }
 
@@ -99,43 +83,81 @@ $all_products = $conn->query($sql);
         flex: 1;
         max-width: 16%;
         text-align: left;
-        margin-right: 320px;
+        padding: 0 10px;
+        margin-right: 300px;
     }
 
-    .newsletter .news-head{
-        display: flex;
+    .newsletter h1 {
+        font-size: 30px;
     }
 
     .newsletter p {
-        font-size: 25px;
-        margin-right: 10px;
-
+        font-size: 15px;
+        margin: 10px 0;
     }
 
-    .newsletter i{
-        font-size: 20px;
-        margin-top: 7px;
+    .newsletter .btn1,
+    .newsletter .btn2 {
+        margin: 5px auto;
+        padding: 7px 10px;
+        background-color: #af733f;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+    .newsletter-foot {
+        display: flex;
+        align-items: center;
+    }
+
+    .newsletter-foot p {
+        font-size: 15px;
+        margin-bottom: 10px;
         margin-right: 10px;
+    }
+
+    .newsletter-foot i {
+        font-size: 15px;
+        margin-right: 5px;
+    }
+
+    .footer-email {
+        margin: 5px auto;
+        padding: 7px 10px;
+        background-color: white;
+        color: #fff;
+        font-size: 12px;
+        font-weight: bold;
+        text-decoration: none;
+        border-radius: 4px;
+        width: 91%;
     }
 
     .gallery {
         flex: 1;
         max-width: 10%;
+        text-align: center;
     }
 
-    .gallery p{
-        font-size: 25px;
-        margin-bottom: 10px;
-        border-bottom: 1px solid white;
-        padding-bottom: 10px;
-    }
-    .gallery a:hover{
-        color: #FFDB58;
+    .gallery h6 {
+        font-size: 20px;
+        margin-left: 80px;
     }
 
-    .gallery a{
-        font-size: 15px;
-      }
+    .row1, .row2{
+        display: flex;
+    }
+
+    .row1 img,
+    .row2 img {
+        width: 105px;
+        height: 105px;
+        margin: 5px;
+    }
 
         .popup {
     display: none;
@@ -193,9 +215,12 @@ $all_products = $conn->query($sql);
     font-size: 16px;
 }
 
+.popup button {
+    background-color: #ccc;
+    margin-top: 10px;
+}
 
-
-.head-logo img { /*header business logo*/
+        .head-logo img { /*header business logo*/
             height: 60px;
             margin-left: 20px;
             margin-right: 10px;
@@ -203,6 +228,7 @@ $all_products = $conn->query($sql);
 
         .bus-name { /*ECA BLINDS*/
             margin-right: 100px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
         nav ul {
@@ -228,7 +254,6 @@ $all_products = $conn->query($sql);
         .cart-icon {
             font-size: 35px;
             color: black;
-            margin-left: auto;
             margin-right: 25px;
         }
 
@@ -301,186 +326,88 @@ $all_products = $conn->query($sql);
             display: inline-block;
         }
 
-        #profileDetails {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #f9f9f9;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-            padding: 40px 80px;
-            width: 300px;
+        .products-title {
             text-align: center;
-            z-index: 2;
-        }
-        
-        #profileDetails h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
             margin-bottom: 20px;
-            color: #333;
+            position: relative; /* Required for pseudo-elements */
+            font-size: 30px;
+        }
+
+        .product-name{
+            margin-left: 40px;
+            font-size: 40px;
         }
         
-        #profileDetails p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            color: #333;
-            margin-bottom: 8px;
-            text-align: left;
+        /* Style for the products title text */
+        .products-title h2 {
+            display: inline-block;
+            background-color: #fff; /* Set the background color to match the page background */
+            padding: 0 10px;
+            position: relative; /* Required for pseudo-elements */
         }
         
-        #profileDetails .profile-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin: 0 auto;
-            background-color: #ddd;
-            margin-bottom: 10px;
-            /* You can add an image here using background-image if you have one. */
+        /* Style for the left line */
+        .products-title h2::before {
+            content: "";
+            position: absolute;
+            left: -500px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 500px; /* Adjust the line width as needed */
+            height: 2px;
+            background-color: #000; /* Set the line color */
+        }
+        
+        /* Style for the right line */
+        .products-title h2::after {
+            content: "";
+            position: absolute;
+            right: -500px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 500px; /* Adjust the line width as needed */
+            height: 2px;
+            background-color: #000; /* Set the line color */
         }
 
-        #profileDetails .profile-name {
-            font-size: 20px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        #profileDetails .profile-email {
-            font-size: 16px;
-            margin-bottom: 20px;
-        }
-
-        .profile-details {
+        .product-container{
+            margin-left: 150px;
             display: flex;
             align-items: center;
-            justify-content: center;
         }
 
-        .profile-details h3{
-            margin-right: 10px;
-            font-size: 10px;
-            font-weight: bold;
-            margin-bottom: 10px;
+        .product-container .prod-img{ 
+            width: 500px;
+            height: 500px;
+            margin: 20px 20px 40px 100px;
+        }
+        .row1, .row2{
+            width: 320px;
+            height: 150px;
+            margin: 10px 20px 0px 70px;
         }
 
+        .row1-img{
+            border-radius: 50%;
+        }
 
-
-        #profileDetails .profile-details-container {
+        .color-container{
             display: flex;
             flex-direction: column;
+            margin-left: 30px;
         }
 
-        .profile-buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.profile-buttons button {
-    padding: 10px 10px;
-    margin: 0 5px;
-    background-color: #af733f;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 10px;
-    transition: background-color 0.3s;
-}
-
-.profile-buttons button:hover {
-    background-color: #955d32;
-}
-
-
-.products-title {
-    text-align: center;
-    margin-bottom: 20px;
-    position: relative; /* Required for pseudo-elements */
-    font-size: 30px;
-}
-
-/* Style for the products title text */
-.products-title h2 {
-    display: inline-block;
-    background-color: #fff; /* Set the background color to match the page background */
-    padding: 0 10px;
-    position: relative; /* Required for pseudo-elements */
-}
-
-/* Style for the left line */
-.products-title h2::before {
-    content: "";
-    position: absolute;
-    left: -500px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 500px; /* Adjust the line width as needed */
-    height: 2px;
-    background-color: #000; /* Set the line color */
-}
-
-/* Style for the right line */
-.products-title h2::after {
-    content: "";
-    position: absolute;
-    right: -500px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 500px; /* Adjust the line width as needed */
-    height: 2px;
-    background-color: #000; /* Set the line color */
-}
-main{
-    max-width:1500px;
-    width: 95%;
-    margin 50px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: auto;
-}
-main .produkto {
-    max-width: 350px;
-    text-align: center;
-    margin: 20px;
-    
-    
-}
-
-main .produkto .imgg {
-    height: 200px; /* Set a fixed height for the image container */
-    margin-bottom: 0px;
-    display: flex; /* Add this to align the image in the center of the container */
-    justify-content: center; /* Add this to align the image in the center of the container */
-    align-items: center; /* Add this to align the image in the center of the container */
-    flex-wrap: wrap;
-}
-
-main .produkto .imgg img {
-    max-width: 100%; /* Set the image width to take the full width of the container */
-    max-height: 100%; /* Set the image height to take the full height of the container */
-    object-fit: contain; /* This will maintain the aspect ratio and fit the image within the container */
-}
-main .produkto .pangalan{
-   
-    text-align: left;
-    line-height: 2em;
-    height: 15%;
-    color: #000;
-font-size: 30px;
-font-style: normal;
-font-weight: normal;
-
-}
-
+        .color-name{
+            padding-left: 100px;
+            font-size: 25px;
+        }
+        
         
     </style>
 </head>
 <header>
-    <a href="home.php" class="head-logo"><img src="img/ecalogo.png" alt=""></a>    <h1 class="bus-name">ECA BLINDS</h1>
+    <a href="" class="head-logo"><img src="img/ecalogo.png" alt=""></a>
+    <h1 class="bus-name">ECA BLINDS</h1>
     <a href="" id="menuBtn" class="menu-icon"><i class="fas fa-bars"></i></a>
     <div id="menuContainer">
         <div class="menuHeader">
@@ -514,11 +441,10 @@ font-weight: normal;
 </header>
 <body>
 
-
 <div id="popupForm" class="popup">
     <div class="popup-content">
         <h2>Schedule Visit</h2>
-        <form method="POST">
+        <form method="POST" action="schedule.php">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -542,71 +468,33 @@ font-weight: normal;
 <div class="products-title">
         <h2>PRODUCTS</h2>
     </div>
-    <main>
-    <?php
-    while ($row = mysqli_fetch_assoc($all_products)) {
-    ?>
-        <a href="<?php echo $row['href']; ?>">
-        <div class="produkto">
-            <div class="imgg">
-                <img src="<?php echo $row['img']; ?>">
+
+    <h1 class="product-name">Prime Wood</h1>
+
+    <div class="product-container">
+        <img src="products/Prime Wood/Prime Wood.PNG" alt="" class="prod-img">  
+        <div class="color-container">
+            <h1 class="color-name">Available Colors</h1>
+
+            <div class="row1">
+                <img src="products/Prime Wood/Beige.PNG" alt="" class="row1-img"> 
+                <img src="products/Prime Wood/Dark Brown.PNG" alt="" class="row1-img"> 
+                <img src="products/Prime Wood/Dark Gray.PNG" alt="" class="row1-img"> 
             </div>
-            <h2 class="pangalan"><?php echo $row['name']; ?></h2>
+
+            <div class="row2">
+                <img src="products/Prime Wood/Gray.PNG" alt="" class="row1-img"> 
+                <img src="products/Prime Wood/Teak.PNG" alt="" class="row1-img"> 
+            </div>
+
         </div>
-        </a>
-
-    <?php
-    }
-    ?>
-</main>
-
+    </div>
 
 
 
 </body>
 
-<footer>
-    <div class="contacts">
 
-        <div class="contactsHead">
-            <div class="footer-logo">
-                <img src="img/Logo.png" alt="">
-            </div>
-            <div class="contactdesc"> 
-            <h5>ECA Blinds<h5>
-            <p>Window Blinds Supplier</p>
-            </div>
-        </div>
-
-        <h6>We are top-tier window blinds supplier and service provider. Let us transform your windows into stunning fical points!</h6>
-    </div>
-
-    <div class="newsletter">
-        <div class="news-head">
-        <p>Follow us</p>
-            <a href="https://www.facebook.com/ecawindowblindstrading" target="_blank"><i class="fab fa-facebook"></i></a>
-        </div>
-    
-    <div class="contactInfo">
-        <i class="fas fa-phone"></i>
-        <span>0975 908 4803</span><br>
-        <i class="far fa-clock"></i>
-        <span>Mon-Fri: 9:00 AM - 5:00 PM</span><br>
-        <i class="fas fa-map-marker-alt"></i>
-        <span>Nasugbu, Batangas</span>
-        </div>
-    </div>
-
-    <div class="gallery">
-    <p>Quick Links</p>
-            <a href="products.php">Products</a><br>
-            <a href="profile.php">Accounts</a><br>
-            <a href="estimate.php">Price Estimation</a><br>
-            <a href="measure.php">Measurement Guide</a><br>
-            <a href="support.php">Contact</a>
-    </div>
-</div>
-</footer>
     <script>
         const menuBtn = document.getElementById('menuBtn');
     const menuContainer = document.getElementById('menuContainer');

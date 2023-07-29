@@ -61,12 +61,26 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             transition: all 0.3s ease;
         }
 
+        .custom-text { /*error message*/ 
+  
+  padding: 10px; 
+  background-color: #f8c4c4; /* Light red background color for the error message */ 
+  border: 2px solid #e66161; /* Dark red border */ 
+  color: #be3f3f; /* Dark red text color */ 
+  border-radius: 5px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  max-width: 100%; 
+  text-align: center; 
+  z-index: 1;
+}
+
         header {
             height: 60px;
             display: flex;
             align-items: center;
             padding: 15px;
-            background-color: #d1a680;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         body{
