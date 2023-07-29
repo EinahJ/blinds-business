@@ -33,7 +33,8 @@ $all_products = $conn->query($sql);
             display: flex;
             align-items: center;
             padding: 15px;
-            background-color: #d1a680;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
         }
 
@@ -202,7 +203,6 @@ $all_products = $conn->query($sql);
 
         .bus-name { /*ECA BLINDS*/
             margin-right: 100px;
-            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 
         nav ul {
@@ -435,14 +435,15 @@ $all_products = $conn->query($sql);
 main{
     max-width:1500px;
     width: 95%;
-    margin 30px auto;
+    margin 50px auto;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: space-between;
     margin: auto;
 }
 main .produkto {
-    max-width: 300px;
+    max-width: 350px;
     text-align: center;
     margin: 20px;
     
@@ -465,11 +466,10 @@ main .produkto .imgg img {
 }
 main .produkto .pangalan{
    
-    text-align: center;
-    line-height: 3em;
+    text-align: left;
+    line-height: 2em;
     height: 15%;
     color: #000;
-font-family: Crushed;
 font-size: 30px;
 font-style: normal;
 font-weight: normal;
