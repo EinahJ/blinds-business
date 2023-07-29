@@ -103,7 +103,7 @@ if (isset($_POST['delete_user'])) {
                     <td><?= $user['img']; ?></td>
                     <td><?= $user['name']; ?></td>
                     <td><?= $user['href']; ?></td>
-                    <td><a href="ADeditP.php"><button>Edit</button></a><button>Delete</button></td>
+                    <td><a href="ADeditP.php?product_no=$user['product_no']"><button>Edit</button></a><button>Delete</button></td>
                    
                     
                     

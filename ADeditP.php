@@ -9,7 +9,7 @@ $href = "";
 $errorMessage = "";
 $successMessage = "";
 
-if ($_SERVER['REQUEST_METHOD'] == "GET") {
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     if ( !isset($_GET["product_no"])){
         header("location: ADproduct.php");
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == "GET") {
     //read DB
     $sql = "SELECT * FROM products WHERE product_no = $product_no";
     $result = $con->query($sql);
-    $row = result->fetch_assoc();
+    $row = $result->fetch_assoc();
 
     if (!$row){
         header("location:ADproduct.php");
@@ -45,7 +45,7 @@ else {
             break;
         }
         // add new product to db
-        $sql = "UPDATE products SET img = '$img', name = '$name', href = '$href' WHERE id = $id ";
+        $sql = "UPDATE products SET img = '$img', name = '$name', href = '$href' WHERE product_no = $product_no ";
         $result = $con->query($sql);
 
         header("location: ADproduct.php");
@@ -99,7 +99,7 @@ else {
             
             <div class="form-container">
     <div id="regForm">
-        <h2>Add Product</h2>
+        <h2>Edit Product</h2>
         <?php 
         if ( !empty($errorMessage)){
             echo "
@@ -111,22 +111,19 @@ else {
         }
         ?>
         <form method="POST">
-            <input type="hidden" value="<?php echo $product_no; ?>">
-            <input type="text" id="name" name="img" placeholder="Image" required value="<?php echo $img; ?>"><br>
+    <input type="hidden" name="product_no" value="<?php echo $product_no; ?>">
+    <input type="text" id="name" name="img" placeholder="Image" required value="<?php echo $img; ?>"><br>
 
-            <div class="container">
-            <input type="text" id="email" name="name" placeholder="Product Name" required value="<?php echo $name; ?>"><br>
+    <div class="container">
+        <input type="text" id="email" name="name" placeholder="Product Name" required value="<?php echo $name; ?>"><br>
 
-            <div class="container2">
-            <input type="text" id="contact" name="href" placeholder="Links" required value="<?php echo $href; ?>"><br>
+    <div class="container2">
+        <input type="text" id="contact" name="href" placeholder="Links" required value="<?php echo $href; ?>"><br>
 
-
-            
-            <div class="create-account-container">
-            <button type="submit">Add</button>
-            </div>
-            
-        </form>
+    <div class="create-account-container">
+        <button type="submit">Update</button>
+    </div>
+</form>
          <!-- Add this sign-up button -->
 
             <!-- Add your image here, adjust the src attribute accordingly -->
