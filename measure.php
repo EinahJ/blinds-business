@@ -258,7 +258,6 @@
         .menu-icon {
             font-size: 35px;
             color: black;
-            margin-left: auto;
             margin-right: 35px;
         }
 
@@ -405,6 +404,7 @@
 <header>
     <a href="" class="head-logo"><img src="img/Logo.png" alt=""></a>
     <h1 class="bus-name">ECA BLINDS</h1>
+    <a href="" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
     <a href="" id="menuBtn" class="menu-icon"><i class="fas fa-bars"></i></a>
     <div id="menuContainer">
         <div class="menuHeader">
@@ -459,31 +459,9 @@
         </form>
     </div>
 </div>
-<div class="products-title">
-        <h2>PRODUCTS</h2>
-    </div>
 
-    <h1 class="product-name">Timber Wood</h1>
 
-<div class="product-container">
-    <img src="products/Timber Wood/Timber Wood.PNG" alt="" class="prod-img">
-    <div class="color-container">
-        <h1 class="color-name">Available Colors</h1>
 
-        <div class="row1">
-        <img src="products/Timber Wood/Beige.PNG" alt="" class="row1-img">
-        <img src="products/Timber Wood/Black.PNG" alt="" class="row1-img">
-        <img src="products/Timber Wood/Brown.PNG" alt="" class="row1-img">
-        </div>
-
-        <div class="row2">
-        <img src="products/Timber Wood/Dark Gray.PNG" alt="" class="row1-img">
-        <img src="products/Timber Wood/Khaki.PNG" alt="" class="row1-img">
-        <img src="products/Timber Wood/Teak.PNG" alt="" class="row1-img">
-        </div>
-
-    </div>
-</div>
 
 
 
