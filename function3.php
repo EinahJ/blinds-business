@@ -4,9 +4,9 @@ function check_login($con)
 {
     $user_data = array(); // Initialize an empty array to store the user data
 
-    if (isset($_SESSION['user_id'])) {
-        $id = $_SESSION['user_id'];
-        $query = "SELECT * FROM user WHERE user_id = '$id' LIMIT 1";
+    if (isset($_SESSION['id'])) {
+        $id = $_SESSION['id'];
+        $query = "SELECT * FROM user WHERE id = '$id' LIMIT 1";
 
         $result = mysqli_query($con, $query);
 
@@ -16,14 +16,10 @@ function check_login($con)
     }
 
     // Determine the profile link based on the login status
-    $profile_link = isset($_SESSION['user_id']) ? "profile.php" : "login.php";
-
-    $profile_link1 = isset($_SESSION['user_id']) ? "support.php" : "login.php";
-
-    $profile_link2 = isset($_SESSION['user_id']) ? "schedule.php" : "login.php";
+    $profile_link1 = isset($_SESSION['id']) ? "support.php" : "login.php";
 
     // Return both the user data and profile link as separate values
-    return array('user_data' => $user_data, 'profile_link' => $profile_link, 'profile_link1' => $profile_link1, 'profile_link2' => $profile_link2);
+    return array('user_data' => $user_data, 'profile_link1' => $profile_link1);
 }
 
 

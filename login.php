@@ -343,7 +343,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     </style>
 </head>
 <header>
-    <a href="" class="head-logo"><img src="img/ecalogo.png" alt=""></a>
+    <a href="home.php" class="head-logo"><img src="img/ecalogo.png" alt=""></a>
     <h1 class="bus-name">ECA BLINDS</h1>
     <a href="" id="menuBtn" class="menu-icon"><i class="fas fa-bars"></i></a>
     <div id="menuContainer">
