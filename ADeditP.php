@@ -1,39 +1,64 @@
 <?php
-include ("auth.php");
+include("connection.php");
 
-if ($_SERVER['REQUEST_METHOD'] == "POST")
-{
-  
+$product_no = "";
+$img = "";
+$name = "";
+$href = "";
+
+$errorMessage = "";
+$successMessage = "";
+
+if ($_SERVER['REQUEST_METHOD'] == "GET") {
+
+    if ( !isset($_GET["product_no"])){
+        header("location: ADproduct.php");
+        exit;
+    }
+
+    $product_no = $_GET["product_no"];
+
+    //read DB
+    $sql = "SELECT * FROM products WHERE product_no = $product_no";
+    $result = $con->query($sql);
+    $row = result->fetch_assoc();
+
+    if (!$row){
+        header("location:ADproduct.php");
+        exit;
+    }
+    $product_no = $_POST['product_no'];
+    $img = $_POST['img'];
+    $name = $_POST['name'];
+    $href = $_POST['href'];
+}
+else {
+    //update the products
+    $product_no = $_POST['product_no'];
     $img = $_POST['img'];
     $name = $_POST['name'];
     $href = $_POST['href'];
 
-  // Validate the input fields
+    do {
+        if ( empty($img) || empty($name) || empty($href)){
+            $errorMessage = "All the fields are required";
+            break;
+        }
+        // add new product to db
+        $sql = "UPDATE products SET img = '$img', name = '$name', href = '$href' WHERE id = $id ";
+        $result = $con->query($sql);
 
-  if (isValidName($name) ) {
-      // Get the user_id from the session
-      $product_no = $_SESSION['product_no'];
+        header("location: ADproduct.php");
+        exit;
 
-      // Prepare the UPDATE query
-      $query = "UPDATE products SET img = ?, name = ?, href = ?  WHERE product_no = ?";
-      $stmt = mysqli_prepare($con, $query);
-      mysqli_stmt_bind_param($stmt, "sssi", $img, $name, $href, $product_no);
-
-      // Execute the UPDATE query
-      if (mysqli_stmt_execute($stmt)) {
-          // Data updated successfully, redirect to profile.php
-          header("Location: ADproduct.php");
-          die;
-      } else {
-        echo '<p class="custom-text">Failed to update user information.</p>';
-      }
-  } else {
-    echo '<p class="custom-text">Please enter some valid information!</p>';
-  }
+    }while (false);
 }
+    
+    
+    
+
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -86,14 +111,14 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
         }
         ?>
         <form method="POST">
-            <input type="hidden" value="<?php echo $user_data['product_no']; ?>">
-            <input type="text" id="firstname" name="img" placeholder="Image" value="<?php echo $user_data['img']; ?>"><br>
+            <input type="hidden" value="<?php echo $product_no; ?>">
+            <input type="text" id="name" name="img" placeholder="Image" required value="<?php echo $img; ?>"><br>
 
             <div class="container">
-            <input type="text" id="firstname" name="name" placeholder="Product Name" value="<?php echo $user_data['name']; ?>" ><br>
+            <input type="text" id="email" name="name" placeholder="Product Name" required value="<?php echo $name; ?>"><br>
 
             <div class="container2">
-            <input type="text" id="firstname" name="href" placeholder="Link" value="<?php echo $user_data['href']; ?>" ><br>
+            <input type="text" id="contact" name="href" placeholder="Links" required value="<?php echo $href; ?>"><br>
 
 
             
