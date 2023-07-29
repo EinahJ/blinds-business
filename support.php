@@ -276,22 +276,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .contact-form-container textarea {
             resize: vertical;
             min-height: 150px;
+            font-size: 16px;
         }
 
         .contact-form-container input[type="submit"] {
-            padding: 12px 20px;
-            background-color: #af733f;
-            color: #fff;
-            border: none;
+            display: inline-block;
+            padding: 10px 50px;
+            font-size: 15px;
+            color: #AF733F;
+            background-color: transparent;
+            border: 1px solid #AF733F;
             border-radius: 4px;
+            text-decoration: none;
             cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease, color 0.3s ease;
             width: 105%;
         }
 
         .contact-form-container input[type="submit"]:hover {
             background-color: #955d32;
+            color: white;
         }
 
         footer {
@@ -435,14 +439,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <div class="contact-form-container">
         <h2>Contact Us</h2>
         <form method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" placeholder="Name" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email" placeholder="Contact" required>
 
-            <label for="inquiry">Inquiry:</label>
-            <textarea id="inquiry" name="Inquiry" required></textarea>
+            <textarea id="inquiry" name="Inquiry" placeholder="Input your message here..." required></textarea>
 
             <input type="submit" value="Submit">
         </form>

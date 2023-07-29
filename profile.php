@@ -295,19 +295,22 @@ include ("auth.php");
         }
 
         .profile-buttons button {
-            padding: 15px 20px;
-            margin: 0 15px;
-            background-color: #af733f;
-            color: #fff;
-            border: none;
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 15px;
+            color: #AF733F;
+            background-color: transparent;
+            border: 1px solid #AF733F;
             border-radius: 4px;
+            text-decoration: none;
             cursor: pointer;
-            font-size: 10px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-right: 15px;
         }
 
         .profile-buttons button:hover {
             background-color: #955d32;
+            color: white;
         }
 
         
