@@ -50,8 +50,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div class="column left" >
             <div class="left">
                 <img class="logoo" src="img/ecalogo.png" width="40px" height="55px">
-                <h1 class="eca">Accounts</h1>
-                <h1 class="eca">Visit Shedule</h1>
+                <a href="ADaccount.php"><h1 class="eca">Accounts</h1></a>
+                <a href="ADsched.php"><h1 class="eca">Visit Shedule</h1></a>
+                <a href="ADmails.php"><h1 class="eca">Mails</h1></a>
+                <a href="ADproduct.php"><h1 class="eca">Product Management</h1></a>
                 
                 
             </div>
