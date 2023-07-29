@@ -122,13 +122,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 .popup input[type="submit"],
 .popup button {
-    padding: 12px 20px;
-    background-color: #af733f;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
+    display: inline-block;
+            padding: 10px 10px;
+            font-size: 25px;
+            color: #AF733F;
+            background-color: transparent;
+            border: 2px solid #AF733F;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-top: 15px;
 }
 
 .popup button {
@@ -305,18 +309,22 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 
 #loginForm button {
-    padding: 12px 20px;
-    background-color: #af733f;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    display: inline-block;
+            padding: 10px 10px;
+            font-size: 15px;
+            color: #AF733F;
+            background-color: transparent;
+            border: 1px solid #AF733F;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-top: 15px;
 }
 
 #loginForm button:hover {
     background-color: #955d32;
+    color:white;
 }
 
 #loginForm a {

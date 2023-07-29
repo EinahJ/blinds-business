@@ -187,19 +187,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    margin-bottom: 20px;
 }
 
 
 #regForm {
         position: absolute;
-        top: 63%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
         background-color: #fff;
         border-radius: 8px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        padding: 40px 60px;
+        padding: 20px 60px;
         width: 400px;
         text-align: center;
     }
@@ -228,7 +228,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
      {
         width: 91%;
         padding: 12px;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         border: 1px solid #ccc;
         border-radius: 4px;
         font-size: 16px;
@@ -250,26 +250,43 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         flex-direction: column;
     }
 
+
+.sign-in-link {
+  color: #AF733F;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sign-in-link:hover {
+  color: #8E5F30;
+}
+
     #regForm .create-account-container {
-        display: flex;
         justify-content: center;
-        margin-top: 20px;
+        margin-top: 10px;
         font-size: 14px;
     }
 
     #regForm button {
-        padding: 12px 20px;
-        background-color: #af733f;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s;
+        display: inline-block;
+            padding: 10px 50px;
+            font-size: 15px;
+            color: #AF733F;
+            background-color: transparent;
+            border: 1px solid #AF733F;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     #regForm button:hover {
         background-color: #955d32;
+        color:white;
+    }
+
+    .container p{
+        margin-top: 10px;
     }
 
     #regForm a {
@@ -352,8 +369,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             
             <div class="create-account-container">
             <button type="submit">Sign Up</button>
-            </div>
-            
+            <div class="container">
+    <p>Already have an account? <a href="login.php" class="sign-in-link">Sign in</a></p>
+  </div>
         </form>
          <!-- Add this sign-up button -->
 
