@@ -312,16 +312,24 @@ include ("auth.php");
             background-color: #955d32;
             color: white;
         }
+        #noti_number{
+            margin-left: 1000px;
+            font-size: 25px;
+        }
 
         
     </style>
 </head>
 <header>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <a href="" class="head-logo"><img src="img/ecalogo.png" alt=""></a>
+
     <h1 class="bus-name">ECA BLINDS</h1>
+    <a href="notif.php"><i class="fa fa-bell" aria-hidden="true" id="noti_number" style="color: black;"></i></a>
     <a href="" id="menuBtn" class="menu-icon"><i class="fas fa-bars"></i></a>
     <div id="menuContainer">
         <div class="menuHeader">
+            
             <img class="menuLogo" src="img/Logo.png" alt="Business Logo">
             <button id="closeMenuBtn">Close</button>
         </div>
@@ -458,5 +466,25 @@ include ("auth.php");
         }
     });
     </script>
+    <script type="text/javascript">
+ function loadDoc() {
+  
 
+  setInterval(function(){
+
+   var xhttp = new XMLHttpRequest();
+   xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+     document.getElementById("noti_number").innerHTML = this.responseText;
+    }
+   };
+   xhttp.open("GET", "data.php", true);
+   xhttp.send();
+
+  },1000);
+
+
+ }
+ loadDoc();
+</script>
     </html>
