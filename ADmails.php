@@ -58,7 +58,7 @@ if (isset($_POST['delete_user'])) {
             <div class="Top">
                 
                     
-                    <a href="logout.php"><svg class="logout" xmlns="http://www.w3.org/2000/svg" width="61" height="53" viewBox="0 0 61 53" fill="none">
+                    <a href="logout2.php"><svg class="logout" xmlns="http://www.w3.org/2000/svg" width="61" height="53" viewBox="0 0 61 53" fill="none">
                     <path d="M22.5307 0V7.51022H52.5716V45.0613H22.5307V52.5716H60.0818V0H22.5307ZM15.0204 15.0204L0 26.2858L15.0204 37.5511V30.0409H45.0613V22.5307H15.0204V15.0204Z" fill="black"/>
                     </svg></a>
                     <h3 class="adminName">Welcome, Admin</h3>
