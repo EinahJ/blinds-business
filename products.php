@@ -35,7 +35,6 @@ $all_products = $conn->query($sql);
             padding: 15px;
             background-color: #fff;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
         }
 
         footer {
@@ -476,6 +475,24 @@ font-weight: normal;
 
 }
 
+.banner{
+            background-image: url("img/pic3.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 0%;
+            height: 30%;
+            padding: 100px 60px;
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        .banner h1{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
         
     </style>
 </head>
@@ -539,9 +556,12 @@ font-weight: normal;
         </form>
     </div>
 </div>
-<div class="products-title">
-        <h2>PRODUCTS</h2>
-    </div>
+
+<div class="banner">
+    <h1>PRODUCTS</h1>
+</div>
+
+
     <main>
     <?php
     while ($row = mysqli_fetch_assoc($all_products)) {

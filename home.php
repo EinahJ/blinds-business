@@ -100,8 +100,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         .banner .btn { /*Shop now button*/
             display: inline-block;
-            padding: 10px 20px;
-            font-size: 25px;
+            padding: 10px 30px;
+            font-size: 20px;
             color: #AF733F;
             background-color: transparent;
             border: 2px solid #AF733F;
@@ -112,6 +112,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             margin-top: 15px;
         }
 
+        .banner .btn:hover {
+            color: white;
+        }
+
         .banner2 { /*home background img*/
             background-image: url("img/bg.png");
             background-size: cover;
@@ -120,6 +124,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             height: 50%;
             padding: 150px 60px;
             text-align: center;
+            color: white;
+        }
+
+        .banner2 .btn2:hover {
             color: white;
         }
 
@@ -294,6 +302,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             border-radius: 50%;
             font-size: 20px;
             cursor: pointer;
+        }
+
+        #scrollLeftBtn:hover, #scrollLeftBtn2:hover,
+        #scrollRightBtn:hover, #scrollRightBtn2:hover{
+            opacity: 100%;
         }
         
         #scrollLeftBtn,#scrollLeftBtn2 {
@@ -492,6 +505,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     cursor: pointer;
     font-size: 16px;
 }
+
 
 
         
@@ -810,7 +824,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <h2>Eca Blinds is ready to give your window a completely new look, wich<br>
     is achieve through numerous window blinds designs you can find<br>at our store.</h2>
 
-        <a href="" class="btn2">SHOP NOW</a>
+        <a href="" class="btn2">VIEW PRODUCTS</a>
     </div>
 
 </body>

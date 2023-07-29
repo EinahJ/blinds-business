@@ -297,7 +297,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         .estimate-container {
     display: flex; /* Use flexbox to place elements side by side */
-    margin: 40px 60px 80px 40px;
+    margin: 40px 60px 80px 100px;
 }
 
 .contact-form-container {
@@ -315,6 +315,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     height: 100%;
     max-width: 500px; /* Set a maximum width for the image */
     margin: 60px 0px 0px 20px;
+    border: 1px solid white;
 }
         #blindType {
     width: 105%;
@@ -336,8 +337,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 .price-container {
     padding: 20px;
     background-color: white;
-    border-radius: 8px;
-    margin-top: 70px;
+    border-radius: 4px;
+    margin-top: 65px;
     margin-left: 20px;
     height: 50%;
   }
