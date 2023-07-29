@@ -71,6 +71,7 @@ if (isset($_POST['delete_user'])) {
 
             <div class="orderbox">
     <h2 class="ordernum">Products: (<?= count($user); ?>)</h2>
+    <button>Add Products</button>
     <table class="order-list">
         <thead>
             <tr>
@@ -79,6 +80,7 @@ if (isset($_POST['delete_user'])) {
                 <th>Image</th>
                 <th>Name</th>
                 <th>Link</th>
+                <th>Action</th>
                 
 
                 
@@ -101,6 +103,7 @@ if (isset($_POST['delete_user'])) {
                     <td><?= $user['img']; ?></td>
                     <td><?= $user['name']; ?></td>
                     <td><?= $user['href']; ?></td>
+                    <td><a href="ADeditP.php"><button>Edit</button></a><button>Delete</button></td>
                    
                     
                     
