@@ -475,20 +475,20 @@
     <h1 class="product-name">Timber Wood</h1>
 
 <div class="product-container">
-    <img src="products/Timber Wood/Timber Wood.PNG" alt="" class="prod-img">  /*change photo by product*/
+    <img src="products/Timber Wood/Timber Wood.PNG" alt="" class="prod-img">  
     <div class="color-container">
         <h1 class="color-name">Available Colors</h1>
 
         <div class="row1">
-        <img src="products/Timber Wood/Beige.PNG" alt="" class="row1-img"> /*change photo by product*/
-        <img src="products/Timber Wood/Black.PNG" alt="" class="row1-img"> /*change photo by product*/
-        <img src="products/Timber Wood/Brown.PNG" alt="" class="row1-img"> /*change photo by product*/
+        <img src="products/Timber Wood/Beige.PNG" alt="" class="row1-img"> 
+        <img src="products/Timber Wood/Black.PNG" alt="" class="row1-img"> 
+        <img src="products/Timber Wood/Brown.PNG" alt="" class="row1-img"> 
         </div>
 
         <div class="row2">
-        <img src="products/Timber Wood/Dark Gray.PNG" alt="" class="row1-img"> /*change photo by product*/
-        <img src="products/Timber Wood/Khaki.PNG" alt="" class="row1-img"> /*change photo by product*/
-        <img src="products/Timber Wood/Teak.PNG" alt="" class="row1-img"> /*change photo by product*/
+        <img src="products/Timber Wood/Dark Gray.PNG" alt="" class="row1-img"> 
+        <img src="products/Timber Wood/Khaki.PNG" alt="" class="row1-img"> 
+        <img src="products/Timber Wood/Teak.PNG" alt="" class="row1-img"> 
         </div>
 
     </div>
