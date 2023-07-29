@@ -181,7 +181,7 @@
 }
 
 .popup button {
-    background-color: #ccc;
+    background-color: #af733f;
     margin-top: 10px;
 }
 
