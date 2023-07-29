@@ -7,11 +7,11 @@ include ("function.php");
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $pass = $_POST['pass'];
 
-    if (!empty($email) && !empty($password)) {
+    if (!empty($email) && !empty($pass)) {
 
-        $query = "SELECT * FROM user WHERE email = ?";
+        $query = "SELECT * FROM admin WHERE email = ?";
         $stmt = mysqli_prepare($con, $query);
         mysqli_stmt_bind_param($stmt, "s", $email);
         mysqli_stmt_execute($stmt);
@@ -20,20 +20,17 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if ($result && mysqli_num_rows($result) > 0) {
             $user_data = mysqli_fetch_assoc($result);
             
-            // Verify the hashed password
-            if (password_verify($password, $user_data['password'])) {
-                $_SESSION['user_id'] = $user_data['user_id'];
+            
+
 
                 // Check if the user is an admin
-                if ($user_data['privilege'] === 'admin') {
+                if ($user_data['privilege'] === 'user') {
                     header("Location: none.php");
                 } else {
-                    header("Location: home.php");
+                    header("Location: ADaccount.php");
                 }
                 die;
-            } else {
-                echo '<p class="custom-text">Invalid password.</p>';
-            }
+            
         } else {
             echo '<p class="custom-text">User not found.</p>';
         }
@@ -269,33 +266,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <header>
     <a href="" class="head-logo"><img src="img/ecalogo.png" alt=""></a>
     <h1 class="bus-name">ECA BLINDS</h1>
-    <a href="" id="menuBtn" class="menu-icon"><i class="fas fa-bars"></i></a>
-    <div id="menuContainer">
-        <div class="menuHeader">
-            <img class="menuLogo" src="img/Logo.png" alt="Business Logo">
-            <button id="closeMenuBtn">Close</button>
-        </div>
-        <ul class="menuList">
-            <li>
-                <a href="home.php"><i class="fas fa-home"></i>Home</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-box"></i>Products</a>
-            </li>
-            <li>
-            <a href="<?php echo $profile_link; ?>"><i class="fas fa-user"></i>Account</a>
-            </li>
-            <li>
-                <a href=""><i class="fas fa-calendar"></i>Schedule</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-comments"></i>Support</a>
-            </li>
-        </ul>
-    </div>
+    
 </header>
 <body>
 
@@ -307,7 +278,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <input type="email" id="email" name="email" required><br>
 
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br>
+            <input type="password" id="password" name="pass" required><br>
             <button type="submit" class="sign-in-button">Login</button>
         </form>
     </div>
