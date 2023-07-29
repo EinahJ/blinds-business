@@ -470,7 +470,7 @@ main .produkto .pangalan{
     line-height: 2em;
     height: 15%;
     color: #000;
-font-size: 30px;
+font-size: 20px;
 font-style: normal;
 font-weight: normal;
 
