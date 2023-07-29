@@ -429,6 +429,9 @@
                 <a href="estimate.php"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
             </li>
             <li>
+                <a href="measure.php"><i class="fas fa-ruler"></i>Measurement</a>
+            </li>
+            <li>
                 <a href="support.php"><i class="fas fa-comments"></i>Support</a>
             </li>
         </ul>

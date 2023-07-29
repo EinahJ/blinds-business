@@ -21,7 +21,6 @@
             align-items: center;
             padding: 15px;
             background-color: #d1a680;
-            margin-bottom: 30px;
         }
 
         footer {
@@ -29,6 +28,7 @@
         color: #fff;
         padding: 20px 20px;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
     }
 
@@ -36,12 +36,14 @@
         flex: 1;
         max-width: 20%;
         margin-left: 50px;
-        margin-right: 250px;
+        margin-right: 300px;
     }
 
     .contactsHead {
         display: flex;
         align-items: center;
+        padding-bottom: 10px;
+        border-bottom: 1px solid white;
     }
 
     .footer-logo img {
@@ -59,7 +61,7 @@
     }
 
     .contacts h6 {
-        font-size: 12px;
+        font-size: 13px;
         margin: 10px 0;
     }
 
@@ -82,80 +84,43 @@
         flex: 1;
         max-width: 16%;
         text-align: left;
-        padding: 0 10px;
-        margin-right: 300px;
+        margin-right: 320px;
     }
 
-    .newsletter h1 {
-        font-size: 30px;
+    .newsletter .news-head{
+        display: flex;
     }
 
     .newsletter p {
-        font-size: 15px;
-        margin: 10px 0;
-    }
-
-    .newsletter .btn1,
-    .newsletter .btn2 {
-        margin: 5px auto;
-        padding: 7px 10px;
-        background-color: #af733f;
-        color: #fff;
-        font-size: 12px;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 4px;
-        width: 100%;
-    }
-
-    .newsletter-foot {
-        display: flex;
-        align-items: center;
-    }
-
-    .newsletter-foot p {
-        font-size: 15px;
-        margin-bottom: 10px;
+        font-size: 25px;
         margin-right: 10px;
+
     }
 
-    .newsletter-foot i {
-        font-size: 15px;
-        margin-right: 5px;
-    }
-
-    .footer-email {
-        margin: 5px auto;
-        padding: 7px 10px;
-        background-color: white;
-        color: #fff;
-        font-size: 12px;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 4px;
-        width: 91%;
+    .newsletter i{
+        font-size: 20px;
+        margin-top: 7px;
+        margin-right: 10px;
     }
 
     .gallery {
         flex: 1;
         max-width: 10%;
-        text-align: center;
     }
 
-    .gallery h6 {
-        font-size: 20px;
-        margin-left: 80px;
+    .gallery p{
+        font-size: 25px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid white;
+        padding-bottom: 10px;
+    }
+    .gallery a:hover{
+        color: #FFDB58;
     }
 
-    .row1, .row2{
-        display: flex;
-    }
-
-    .row1 img,
-    .row2 img {
-        width: 105px;
-        height: 105px;
-        margin: 5px;
+    .gallery a{
+        font-size: 15px;
+        margin-bottom: 5px;
     }
 
         .popup {
@@ -221,6 +186,8 @@
 
         .head-logo img { /*header business logo*/
             height: 60px;
+            margin-left: 20px;
+            margin-right: 10px;
         }
 
         .bus-name { /*ECA BLINDS*/
@@ -258,6 +225,7 @@
         .menu-icon {
             font-size: 35px;
             color: black;
+            margin-left: auto;
             margin-right: 35px;
         }
 
@@ -323,11 +291,12 @@
             display: inline-block;
         }
 
-        .products-title {
+        .illustration-title {
             text-align: center;
             margin-bottom: 20px;
             position: relative; /* Required for pseudo-elements */
             font-size: 30px;
+            margin-top: 40px;
         }
 
         .product-name{
@@ -336,7 +305,7 @@
         }
         
         /* Style for the products title text */
-        .products-title h2 {
+        .illustration-title h2 {
             display: inline-block;
             background-color: #fff; /* Set the background color to match the page background */
             padding: 0 10px;
@@ -344,7 +313,7 @@
         }
         
         /* Style for the left line */
-        .products-title h2::before {
+        .illustration-title h2::before {
             content: "";
             position: absolute;
             left: -500px;
@@ -356,7 +325,7 @@
         }
         
         /* Style for the right line */
-        .products-title h2::after {
+        .illustration-title h2::after {
             content: "";
             position: absolute;
             right: -500px;
@@ -367,44 +336,70 @@
             background-color: #000; /* Set the line color */
         }
 
-        .product-container{
-            margin-left: 150px;
+        .banner{
+            background-image: url("img/pic3.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 0%;
+            height: 30%;
+            padding: 100px 60px;
+            text-align: center;
+            color: white;
+        }
+
+        .banner h1{
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .il-img{
             display: flex;
             align-items: center;
+            justify-content: center;
         }
 
-        .product-container .prod-img{ 
-            width: 500px;
-            height: 500px;
-            margin: 20px 20px 40px 100px;
-        }
-        .row1, .row2{
-            width: 150px;
-            height: 150px;
-            margin: 10px 20px 0px 70px;
-        }
+        .container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto;
+}
 
-        .row1-img{
-            border-radius: 50%;
-        }
+.row {
+  display: flex;
+}
 
-        .color-container{
-            display: flex;
-            flex-direction: column;
-        }
+.box {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+  margin-right: 40px;
+  margin-bottom: 20px;
+}
 
-        .color-name{
-            padding-left: 100px;
-            font-size: 40px;
-        }
+.step {
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.description {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+
+        
+
+
         
         
     </style>
 </head>
 <header>
-    <a href="" class="head-logo"><img src="img/Logo.png" alt=""></a>
+    <a href="" class="head-logo"><img src="img/ecalogo.png" alt=""></a>
     <h1 class="bus-name">ECA BLINDS</h1>
-    <a href="" class="cart-icon"><i class="fas fa-shopping-cart"></i></a>
     <a href="" id="menuBtn" class="menu-icon"><i class="fas fa-bars"></i></a>
     <div id="menuContainer">
         <div class="menuHeader">
@@ -461,11 +456,102 @@
 </div>
 
 
+<div class="banner">
+    <h1>MEASUREMENT GUIDE</h1>
+</div>
 
+<div class="illustration-title">
+        <h2>Illustration</h2>
+</div>
+
+<div class="il-img">
+<img src="img/pic10.png" alt="">
+</div>
+
+<div class="illustration-title">
+        <h2>Step by Step Process</h2>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="box" style="background-color: #C6AD7E;">
+        <p class="step">Step 1</p>
+        <p class="description">You will need a measuring tape marked in "inches", a pen, and a notepad or paper to write down the measurements.</p>
+      </div>
+      <div class="box" style="background-color: #998156;">
+        <p class="step">Step 2</p>
+        <p class="description">Start by measuring the width of the window from the inside of the window frame (left side) to the inside of the frame on the opposite side (right side).
+
+Take three measurements: one at the top, one in the middle, and one at the bottom.</p>
+      </div>
+      <div class="box" style="background-color: #A0824C;">
+        <p class="step">Step 3</p>
+        <p class="description">Measure the height of the window from the inside of the window frame (top) to the inside of the frame at the bottom.
+
+Take three measurements: one at the top, one in the middle, and one at the bottom</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="box" style="background-color: #B2935B;">
+        <p class="step">Step 4</p>
+        <p class="description"> Decide whether you want the blinds mounted inside the window frame (inside mount) or outside the frame on the wall (outside mount)</p>
+      </div>
+      <div class="box" style="background-color: #CBA560;">
+        <p class="step">Step 5</p>
+        <p class="description">Double-check all your measurements to ensure they are accurate. Mistakes in measurements can lead to ill-fitting blinds.</p>
+      </div>
+      <div class="box" style="background-color: #725F3D;">
+        <p class="step">Step 6</p>
+        <p class="description">Once you have your accurate measurements in inches and any additional details, proceed to place your order through the website.</p>
+      </div>
+    </div>
+  </div>
 
 
 
 </body>
+
+<footer>
+    <div class="contacts">
+
+        <div class="contactsHead">
+            <div class="footer-logo">
+                <img src="img/Logo.png" alt="">
+            </div>
+            <div class="contactdesc"> 
+            <h5>ECA Blinds<h5>
+            <p>Window Blinds Supplier</p>
+            </div>
+        </div>
+
+        <h6>We are top-tier window blinds supplier and service provider. Let us transform your windows into stunning fical points!</h6>
+    </div>
+
+    <div class="newsletter">
+        <div class="news-head">
+        <p>Follow us</p>
+            <a href="https://www.facebook.com/ecawindowblindstrading" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div>
+    
+    <div class="contactInfo">
+        <i class="fas fa-phone"></i>
+        <span>0975 908 4803</span><br>
+        <i class="far fa-clock"></i>
+        <span>Mon-Fri: 9:00 AM - 5:00 PM</span><br>
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Nasugbu, Batangas</span>
+        </div>
+    </div>
+
+    <div class="gallery">
+    <p>Quick Links</p>
+            <a href="products.php">Products</a><br>
+            <a href="profile.php">Accounts</a><br>
+            <a href="estimate.php">Price Estimation</a><br>
+            <a href="support.php">Contact</a>
+    </div>
+</div>
+</footer>
 
 
     <script>

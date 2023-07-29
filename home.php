@@ -522,6 +522,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <a href="estimate.php"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
             </li>
             <li>
+                <a href="measure.php"><i class="fas fa-ruler"></i>Measurement</a>
+            </li>
+            <li>
                 <a href="support.php"><i class="fas fa-comments"></i>Support</a>
             </li>
         </ul>
@@ -846,6 +849,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <a href="products.php">Products</a><br>
             <a href="profile.php">Accounts</a><br>
             <a href="estimate.php">Price Estimation</a><br>
+            <a href="measure.php">Measurement Guide</a><br>
             <a href="support.php">Contact</a>
     </div>
 </div>
