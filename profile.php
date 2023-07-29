@@ -314,8 +314,8 @@ include ("auth.php");
             color: white;
         }
         #noti_number{
-            margin-left: 1000px;
-            font-size: 25px;
+            margin-left: 1050px;
+            font-size: 30px;
         }
 
         
