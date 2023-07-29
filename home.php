@@ -2,6 +2,7 @@
 
 include("auth.php");
 
+
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get the form data
@@ -516,13 +517,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <a href="<?php echo $profile_link; ?>"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
-                <a href="schedule.php"><i class="fas fa-calendar"></i>Schedule</a>
+                <a href="<?php echo $profile_link2; ?>"><i class="fas fa-calendar"></i>Schedule</a>
             </li>
             <li>
                 <a href="estimate.php"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
             </li>
             <li>
-                <a href="support.php"><i class="fas fa-comments"></i>Support</a>
+                <a href="<?php echo $profile_link1; ?>"><i class="fas fa-comments"></i>Support</a>
             </li>
         </ul>
     </div>
@@ -558,7 +559,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="banner">
         <h1>DISCOVER THE<br>BEAUTY OF<br>BLINDS</h1>
-        <a href="products.php" class="btn">SHOP NOW</a>
+        <a href="products.php" class="btn">VIEW NOW</a>
     </div>
 
     <h1 class="prod-header">WHAT WE OFFER</h1>
