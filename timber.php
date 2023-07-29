@@ -221,6 +221,8 @@
 
         .head-logo img { /*header business logo*/
             height: 60px;
+            margin-left: 20px;
+            margin-right: 10px;
         }
 
         .bus-name { /*ECA BLINDS*/
@@ -403,7 +405,7 @@
     </style>
 </head>
 <header>
-    <a href="" class="head-logo"><img src="img/Logo.png" alt=""></a>
+    <a href="" class="head-logo"><img src="img/ecalogo.png" alt=""></a>
     <h1 class="bus-name">ECA BLINDS</h1>
     <a href="" id="menuBtn" class="menu-icon"><i class="fas fa-bars"></i></a>
     <div id="menuContainer">
