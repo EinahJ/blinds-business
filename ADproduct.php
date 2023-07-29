@@ -51,6 +51,7 @@ if (isset($_POST['delete_user'])) {
                 <a href="ADsched.php"><h1 class="eca">Visit Shedule</h1></a>
                 <a href="ADmails.php"><h1 class="eca">Mails</h1></a>
                 <a href="ADproduct.php"><h1 class="eca">Product Management</h1></a>
+                <a href="ADnotiff.php"><h1 class="eca">Notification Management</h1></a>
                 
                 
             </div>
@@ -73,7 +74,7 @@ if (isset($_POST['delete_user'])) {
 
             <div class="orderbox">
     <h2 class="ordernum">Products: (<?= count($user); ?>)</h2>
-    <button>Add Products</button>
+    
     <table class="order-list">
         <thead>
             <tr>
@@ -105,7 +106,8 @@ if (isset($_POST['delete_user'])) {
                     <td><?= $user['img']; ?></td>
                     <td><?= $user['name']; ?></td>
                     <td><?= $user['href']; ?></td>
-                    <td><a href="ADeditP.php?product_no=$user['product_no']"><button>Edit</button></a><button>Delete</button></td>
+                    <td><a href="delete.php?product_no=<?= $user['product_no'] ?>"><button class="b2">Delete</button></a></td>
+
                    
                     
                     
@@ -114,6 +116,9 @@ if (isset($_POST['delete_user'])) {
             <?php endforeach; ?>
         </tbody>
     </table>
+    <a href="ADcreateP.php">
+    <button class="b1" id="eme">Add Products</button>
+            </a>
 </div>
 
 <script>
@@ -132,6 +137,31 @@ function confirmDelete() {
 }
 body{
     background: #efeff0ca;
+}
+.b2{width: 121px;
+height: 38px;
+flex-shrink: 0;
+background: #000;
+color: white;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.b1{
+    width: 121px;
+height: 38px;
+flex-shrink: 0;
+background: white;
+color: black;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#eme{
+    width: 242px;
+height: 58px;
+    margin-top: 30px;
+   float: right;
+    margin-right: 48px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .logoo{
     margin-top: 14px;

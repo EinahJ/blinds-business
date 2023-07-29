@@ -51,6 +51,7 @@ if (isset($_POST['delete_user'])) {
                 <a href="ADsched.php"><h1 class="eca">Visit Shedule</h1></a>
                 <a href="ADmails.php"><h1 class="eca">Mails</h1></a>
                 <a href="ADproduct.php"><h1 class="eca">Product Management</h1></a>
+                <a href="ADnotiff.php"><h1 class="eca">Notification Management</h1></a>
                 
                 
             </div>

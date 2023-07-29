@@ -54,6 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                 <a href="ADsched.php"><h1 class="eca">Visit Shedule</h1></a>
                 <a href="ADmails.php"><h1 class="eca">Mails</h1></a>
                 <a href="ADproduct.php"><h1 class="eca">Product Management</h1></a>
+                <a href="ADnotiff.php"><h1 class="eca">Notification Management</h1></a>
                 
                 
             </div>
@@ -100,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
             
             <div class="create-account-container">
-            <button type="submit">Add</button>
+            <button type="submit" class="b1">Add</button>
             </div>
             
         </form>
@@ -133,6 +134,7 @@ body{
     margin-left: 20px;
     margin-bottom: 30px;
 }
+
 .eca{
 margin-left: 20px;
 margin-top: 20px;
@@ -376,13 +378,14 @@ margin-right: 10px;
 
     #regForm button {
         padding: 12px 20px;
-        background-color: #af733f;
+        background-color: black;
         color: #fff;
         border: none;
         border-radius: 4px;
         cursor: pointer;
         font-size: 16px;
         transition: background-color 0.3s;
+        color: white;
     }
 
     #regForm button:hover {
@@ -400,6 +403,7 @@ margin-right: 10px;
     #regForm a:hover {
         text-decoration: underline;
     }
+    
 
 
 </style>
