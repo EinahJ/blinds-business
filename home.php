@@ -78,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .menu-icon {
             font-size: 30px;
             color: #333;
+            margin-left: auto;
             margin-right: 35px;
         }
 
@@ -498,7 +499,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <header>
     <a href="" class="head-logo"><img src="img/Logo.png" alt=""></a>
     <h1 class="bus-name">ECA BLINDS</h1>
-    <a href="" class="cart-icon"><i class="fas fa-bell"></i></a>
     <a href="" id="menuBtn" class="menu-icon"><i class="fas fa-bars"></i></a>
     <div id="menuContainer">
         <div class="menuHeader">
