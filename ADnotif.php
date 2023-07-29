@@ -1,34 +1,37 @@
 <?php
-include("auth.php");
+include("connection.php");
 
-// Fetch accounts data from the database
-$query = "SELECT * FROM user";
-$result = mysqli_query($con, $query);
+$subject = "";
+$message = "";
+$status = "";
 
-// Initialize the $users array to store the account data
-$user = array();
+$errorMessage = "";
+$successMessage = "";
 
-// Check if there are any accounts
-if (mysqli_num_rows($result) > 0) {
-    // Loop through accounts and add them to the $users array
-    while ($row = mysqli_fetch_assoc($result)) {
-        $user[] = $row;
-    }
-}
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+    $status = $_POST['status'];
+    
+    do {
+        if ( empty($subject) || empty($message) || empty($status)){
+            $errorMessage = "All the fields are required";
+            break;
+        }
+        // add new product to db
+        $sql = "INSERT INTO notif (subject, message, status) VALUES ('$subject', '$message', '$status')";
+        $result = $con->query($sql);
 
-// Check if the delete button was clicked
-if (isset($_POST['delete_user'])) {
-    $user_id = $_POST['delete_user'];
+        $subject = "";
+        $message = "";
+        $status = "";   
 
-    // Query to delete the user from the database
-    $delete_query = "DELETE FROM users WHERE user_id = ?";
-    $delete_stmt = mysqli_prepare($con, $delete_query);
-    mysqli_stmt_bind_param($delete_stmt, "i", $user_id);
-    mysqli_stmt_execute($delete_stmt);
+        $successMessage = "Product added";
 
-    // After deleting, redirect back to the same page to update the user list
-    header("Location: ADaccountmanage.php");
-    exit;
+        header("location: ADnotiff.php");
+        exit;
+
+    }while (false);
 }
 
 ?>
@@ -52,7 +55,6 @@ if (isset($_POST['delete_user'])) {
                 <a href="ADmails.php"><h1 class="eca">Mails</h1></a>
                 <a href="ADproduct.php"><h1 class="eca">Product Management</h1></a>
                 <a href="ADnotiff.php"><h1 class="eca">Notification Management</h1></a>
-
                 
                 
             </div>
@@ -62,7 +64,7 @@ if (isset($_POST['delete_user'])) {
             <div class="Top">
                 
                     
-                    <a href="logout.php"><svg class="logout" xmlns="http://www.w3.org/2000/svg" width="61" height="53" viewBox="0 0 61 53" fill="none">
+                    <a href="logout2.php"><svg class="logout" xmlns="http://www.w3.org/2000/svg" width="61" height="53" viewBox="0 0 61 53" fill="none">
                     <path d="M22.5307 0V7.51022H52.5716V45.0613H22.5307V52.5716H60.0818V0H22.5307ZM15.0204 15.0204L0 26.2858L15.0204 37.5511V30.0409H45.0613V22.5307H15.0204V15.0204Z" fill="black"/>
                     </svg></a>
                     <h3 class="adminName">Welcome, Admin</h3>
@@ -73,40 +75,42 @@ if (isset($_POST['delete_user'])) {
             </div>
 
 
-            <div class="orderbox">
-    <h2 class="ordernum">Accounts (<?= count($user); ?>)</h2>
-    <table class="order-list">
-        <thead>
-            <tr>
-                
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Gender</th>
-                <th>Contact</th>
-                <th>Address</th>
-                <th>Password</th>
-                
-            </tr>
-        </thead>
-        <tbody id="user-table">
-            <!-- User account data will be dynamically added here -->
-            <?php foreach ($user as $user): ?>
-                <tr>
-                    <td><?= $user['user_id']; ?></td>
-                    <td><?= $user['name']; ?></td>
-                    <td><?= $user['email']; ?></td>
-                    <td><?= $user['gender']; ?></td>
-                    <td><?= $user['contact']; ?></td>
-                    <td><?= $user['address']; ?></td>
-                    <td><?= $user['password']; ?></td>
-                    
-                   
-                </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-</div>
+            
+            <div class="form-container">
+    <div id="regForm">
+        <h2>Send Message</h2>
+        <?php 
+        if ( !empty($errorMessage)){
+            echo "
+            <div clas='alert alert warning alert-dismissible fade show' role='alert'>
+            <strong?$errorMessage</strong>
+            <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+            </div>
+            ";
+        }
+        ?>
+        <form method="POST">
+            <input type="text" id="name" name="subject" placeholder="Subject" required value="<?php echo $subject; ?>"><br>
+
+            <div class="container">
+            <input type="text" id="email" name="message" placeholder="Message" required value="<?php echo $message; ?>"><br>
+
+            <div class="container2">
+            <input type="text" id="contact" name="status" placeholder="Validity" required value="<?php echo $status; ?>"><br>
+
+
+            
+            <div class="create-account-container">
+            <button type="submit" class="b1">Send</button>
+            </div>
+            
+        </form>
+         <!-- Add this sign-up button -->
+
+            <!-- Add your image here, adjust the src attribute accordingly -->
+    </div>
+    </div>
+
 
 <script>
 function confirmDelete() {
@@ -130,6 +134,7 @@ body{
     margin-left: 20px;
     margin-bottom: 30px;
 }
+
 .eca{
 margin-left: 20px;
 margin-top: 20px;
@@ -296,4 +301,109 @@ margin-top: 15px;
 margin-left: 20px;
 margin-right: 10px;
 }
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+
+#regForm {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        padding: 40px 60px;
+        width: 400px;
+        text-align: center;
+    }
+
+    #regForm h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    #regForm form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #regForm label {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 8px;
+        text-align: left;
+    }
+
+    #regForm input[type="text"],
+    #regForm input[type="email"],
+    #regForm input[type="password"]
+     {
+        width: 91%;
+        padding: 12px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    #regForm select{
+        width: 97%;
+        padding: 12px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        color: gray;
+        
+    }
+
+    #regForm .container,
+    #regForm .container2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #regForm .create-account-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    #regForm button {
+        padding: 12px 20px;
+        background-color: black;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+        color: white;
+    }
+
+    #regForm button:hover {
+        background-color: #955d32;
+    }
+
+    #regForm a {
+        display: block;
+        text-decoration: none;
+        color: #af733f;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    #regForm a:hover {
+        text-decoration: underline;
+    }
+    
+
+
 </style>

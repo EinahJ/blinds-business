@@ -2,7 +2,7 @@
 include("auth.php");
 
 // Fetch accounts data from the database
-$query = "SELECT * FROM user";
+$query = "SELECT * FROM notif";
 $result = mysqli_query($con, $query);
 
 // Initialize the $users array to store the account data
@@ -52,7 +52,6 @@ if (isset($_POST['delete_user'])) {
                 <a href="ADmails.php"><h1 class="eca">Mails</h1></a>
                 <a href="ADproduct.php"><h1 class="eca">Product Management</h1></a>
                 <a href="ADnotiff.php"><h1 class="eca">Notification Management</h1></a>
-
                 
                 
             </div>
@@ -62,7 +61,7 @@ if (isset($_POST['delete_user'])) {
             <div class="Top">
                 
                     
-                    <a href="logout.php"><svg class="logout" xmlns="http://www.w3.org/2000/svg" width="61" height="53" viewBox="0 0 61 53" fill="none">
+                    <a href="logout2.php"><svg class="logout" xmlns="http://www.w3.org/2000/svg" width="61" height="53" viewBox="0 0 61 53" fill="none">
                     <path d="M22.5307 0V7.51022H52.5716V45.0613H22.5307V52.5716H60.0818V0H22.5307ZM15.0204 15.0204L0 26.2858L15.0204 37.5511V30.0409H45.0613V22.5307H15.0204V15.0204Z" fill="black"/>
                     </svg></a>
                     <h3 class="adminName">Welcome, Admin</h3>
@@ -74,18 +73,18 @@ if (isset($_POST['delete_user'])) {
 
 
             <div class="orderbox">
-    <h2 class="ordernum">Accounts (<?= count($user); ?>)</h2>
+    <h2 class="ordernum">Notifications: (<?= count($user); ?>)</h2>
+    
     <table class="order-list">
         <thead>
             <tr>
+            <th>Subject</th>
+                <th>Message</th>
+                <th>Validation</th>
+                <th>Action</th>
                 
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Gender</th>
-                <th>Contact</th>
-                <th>Address</th>
-                <th>Password</th>
+
+                
                 
             </tr>
         </thead>
@@ -93,19 +92,22 @@ if (isset($_POST['delete_user'])) {
             <!-- User account data will be dynamically added here -->
             <?php foreach ($user as $user): ?>
                 <tr>
-                    <td><?= $user['user_id']; ?></td>
-                    <td><?= $user['name']; ?></td>
-                    <td><?= $user['email']; ?></td>
-                    <td><?= $user['gender']; ?></td>
-                    <td><?= $user['contact']; ?></td>
-                    <td><?= $user['address']; ?></td>
-                    <td><?= $user['password']; ?></td>
+                    <td><?= $user['subject']; ?></td>
+                    <td><?= $user['message']; ?></td>
+                    <td><?= $user['status']; ?></td>
+                    <td><a href="delete.php?id=<?= $user['id'] ?>"><button class="b2">Delete</button></a></td>
+
+                   
+                    
                     
                    
                 </tr>
             <?php endforeach; ?>
         </tbody>
     </table>
+    <a href="ADnotif.php">
+    <button class="b1" id="eme">Add Message</button>
+            </a>
 </div>
 
 <script>
@@ -124,6 +126,31 @@ function confirmDelete() {
 }
 body{
     background: #efeff0ca;
+}
+.b2{width: 121px;
+height: 38px;
+flex-shrink: 0;
+background: #000;
+color: white;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+.b1{
+    width: 121px;
+height: 38px;
+flex-shrink: 0;
+background: white;
+color: black;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#eme{
+    width: 242px;
+height: 58px;
+    margin-top: 30px;
+   float: right;
+    margin-right: 48px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .logoo{
     margin-top: 14px;
