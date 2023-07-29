@@ -296,19 +296,24 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
 }
 
 #loginForm button {
-    padding: 12px 10px;
-    background-color: #af733f;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-    margin-bottom: 10px;
+    display: inline-block;
+            padding: 10px 50px;
+            font-size: 15px;
+            color: #AF733F;
+            background-color: transparent;
+            border: 1px solid #AF733F;
+            border-radius: 4px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            margin-bottom: 10px;
+            margin-right: 5px;
+            margin-top: 20px;
 }
 
 #loginForm button:hover {
     background-color: #955d32;
+    color: white;
 }
 
 #loginForm a {
