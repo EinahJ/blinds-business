@@ -400,7 +400,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST")
       <input type="email" id="email" name="email" placeholder="Email" value="<?php echo $user_data['email']; ?>" required>
       <div class="button-div">
         <button type="submit" class="create-button">Save</button>
-        <button type="button" class="cancel-button" onclick="window.location.href='MyProfile.php';">Cancel</button>
+        <button type="button" class="cancel-button" onclick="window.location.href='profile.php';">Cancel</button>
       </div>
         </form>
     </div>
