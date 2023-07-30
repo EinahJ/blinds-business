@@ -103,7 +103,7 @@ include ("auth.php");
         }
 
         .bus-name { /*ECA BLINDS*/
-            margin-right: 40px;
+            margin-right: 4h0px;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
 

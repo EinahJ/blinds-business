@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Homepage</title>
+    <title>ECA | Trilogy</title>
+    <link rel="icon" type="image/x-icon" href="img/favcon.png">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Crushed" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -37,10 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Homepage</title>
+    <title>ECA | Homepage</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="img/ecaicon.jpg">
+    <link rel="icon" type="image/x-icon" href="img/favcon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -864,10 +864,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="gallery">
     <p>Quick Links</p>
             <a href="products.php">Products</a><br>
-            <a href="profile.php">Accounts</a><br>
+            <a href="<?php echo $profile_link; ?>">Accounts</a><br>
             <a href="estimate.php">Price Estimation</a><br>
             <a href="measure.php">Measurement Guide</a><br>
-            <a href="support.php">Contact</a>
+            <a href="<?php echo $profile_link1; ?>">Contact Us</a>
     </div>
 </div>
 </footer>

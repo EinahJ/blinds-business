@@ -47,7 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Page</title>
+    <title>ECA | Change pass</title>
+    <link rel="icon" type="image/x-icon" href="img/favcon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -337,7 +338,18 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 #loginForm a:hover {
     text-decoration: underline;
 }
-
+.custom-text { /*error message*/ 
+  
+  padding: 10px; 
+  background-color: #f8c4c4; /* Light red background color for the error message */ 
+  border: 2px solid #e66161; /* Dark red border */ 
+  color: #be3f3f; /* Dark red text color */ 
+  border-radius: 5px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+  max-width: 100%; 
+  text-align: center; 
+  z-index: 1;
+}
         
     </style>
 </head>

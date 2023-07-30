@@ -14,7 +14,8 @@ $all_products = $conn->query($sql);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Homepage</title>
+    <title>ECA | Products</title>
+    <link rel="icon" type="image/x-icon" href="img/favcon.png">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Crushed" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -619,11 +620,11 @@ font-weight: normal;
 
     <div class="gallery">
     <p>Quick Links</p>
-            <a href="products.php">Products</a><br>
-            <a href="profile.php">Accounts</a><br>
+    <a href="products.php">Products</a><br>
+            <a href="<?php echo $profile_link; ?>">Accounts</a><br>
             <a href="estimate.php">Price Estimation</a><br>
             <a href="measure.php">Measurement Guide</a><br>
-            <a href="support.php">Contact</a>
+            <a href="<?php echo $profile_link1; ?>">Contact Us</a>
     </div>
 </div>
 </footer>

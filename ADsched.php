@@ -37,10 +37,10 @@ if (isset($_POST['delete_user'])) {
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Crushed" />
-    <link rel="icon" type="image/png" href="img/DIlogo" sizes="32x32">
+    <link rel="icon" type="image/x-icon" href="img/favcon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account</title>
+    <title>Schedules</title>
 </head>
 <body>
     <div class="row">
