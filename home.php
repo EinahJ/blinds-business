@@ -542,7 +542,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <a href="measure.php"><i class="fas fa-ruler"></i>Measurement</a>
             </li>
             <li>
-                <a href="<?php echo $profile_link1; ?>"><i class="fas fa-comments"></i>Support</a>
+                <a href="<?php echo $profile_link1; ?>"><i class="fas fa-phone"></i>Contact Us</a>
             </li>
         </ul>
     </div>

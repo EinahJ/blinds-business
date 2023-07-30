@@ -331,22 +331,25 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         </div>
         <ul class="menuList">
             <li>
-                <a href=""><i class="fas fa-home"></i>Home</a>
+                <a href="home.php"><i class="fas fa-home"></i>Home</a>
             </li>
             <li>
-                <a href=""><i class="fas fa-box"></i>Products</a>
+                <a href="products.php"><i class="fas fa-box"></i>Products</a>
             </li>
             <li>
                 <a href="<?php echo $profile_link; ?>"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
-                <a href=""><i class="fas fa-calendar"></i>Schedule</a>
+                <a href="<?php echo $profile_link2; ?>"><i class="fas fa-calendar"></i>Schedule</a>
             </li>
             <li>
-                <a href=""><i class="fas fa-dollar-sign"></i>Price Estimation</a>
+                <a href="estimate.php"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
             </li>
             <li>
-                <a href=""><i class="fas fa-comments"></i>Support</a>
+                <a href="measure.php"><i class="fas fa-ruler"></i>Measurement</a>
+            </li>
+            <li>
+                <a href="<?php echo $profile_link1; ?>"><i class="fas fa-phone"></i>Contact Us</a>
             </li>
         </ul>
     </div>
