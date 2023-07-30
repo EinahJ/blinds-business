@@ -483,7 +483,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <a href="<?php echo $profile_link; ?>"><i class="fas fa-user"></i>Account</a>
             </li>
             <li>
-                <a href="<?php echo $profile_link2; ?>"><i class="fas fa-calendar"></i>Schedule</a>
+                <a href="schedule.php"><i class="fas fa-calendar"></i>Schedule</a>
             </li>
             <li>
                 <a href="estimate.php"><i class="fas fa-dollar-sign"></i>Price Estimation</a>
@@ -492,7 +492,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <a href="measure.php"><i class="fas fa-ruler"></i>Measurement</a>
             </li>
             <li>
-                <a href="<?php echo $profile_link1; ?>"><i class="fas fa-phone"></i>Contact Us</a>
+                <a href="support.php"><i class="fas fa-comments"></i>Support</a>
             </li>
         </ul>
     </div>
@@ -599,10 +599,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <div class="gallery">
     <p>Quick Links</p>
             <a href="products.php">Products</a><br>
-            <a href="<?php echo $profile_link; ?>">Accounts</a><br>
+            <a href="profile.php">Accounts</a><br>
             <a href="estimate.php">Price Estimation</a><br>
             <a href="measure.php">Measurement Guide</a><br>
-            <a href="<?php echo $profile_link1; ?>">Contact Us</a>
+            <a href="support.php">Contact</a>
     </div>
 </div>
 </footer>
