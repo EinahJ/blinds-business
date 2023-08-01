@@ -82,7 +82,7 @@ if (isset($_POST['delete_user'])) {
                 <th>Name</th>
                 <th>Contact</th>
                 <th>No of Windows</th>
-                <th>Date of Birth</th>
+                <th>Date</th>
                 <th>Address</th>
 
                 

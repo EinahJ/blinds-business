@@ -27,7 +27,7 @@ if (isset($_POST['delete_user'])) {
     mysqli_stmt_execute($delete_stmt);
 
     // After deleting, redirect back to the same page to update the user list
-    header("Location: ADaccountmanage.php");
+    header("Location: ADnotiff.php");
     exit;
 }
 
@@ -95,7 +95,7 @@ if (isset($_POST['delete_user'])) {
                     <td><?= $user['subject']; ?></td>
                     <td><?= $user['message']; ?></td>
                     <td><?= $user['status']; ?></td>
-                    <td><a href="delete.php?id=<?= $user['id'] ?>"><button class="b2">Delete</button></a></td>
+                    <td><a href="delete2.php?id=<?= $user['id'] ?>"><button class="b2">Delete</button></a></td>
 
                    
                     

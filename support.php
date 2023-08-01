@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     mysqli_stmt_close($stmt);
     mysqli_close($con);
 
-    header("Location: login.php");
+    header("Location: home.php");
     // Optionally, display a success message to the user
     echo "Message sent successfully!";
 }
@@ -442,7 +442,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="POST">
             <input type="text" id="name" name="name" placeholder="Name" required>
 
-            <input type="email" id="email" name="email" placeholder="Contact" required>
+            <input type="email" id="email" name="email" placeholder="Email" required>
 
             <textarea id="inquiry" name="Inquiry" placeholder="Input your message here..." required></textarea>
 
